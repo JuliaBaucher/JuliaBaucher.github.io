@@ -95,24 +95,96 @@
   
 
 <style>
-  #chatbot-frame {
+  /* Floating chat button */
+  #chatbot-launcher {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    width: 400px;
-    height: 600px;
+    background-color: #0078d4;
+    color: white;
     border: none;
-    z-index: 1000;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    border-radius: 10px;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 9999;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Fullscreen/modal chatbot */
+  #chatbot-modal {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9998;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  #chatbot-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  /* Close button */
+  #chatbot-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #ff5f5f;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    font-size: 20px;
+    z-index: 10000;
+    cursor: pointer;
+  }
+
+  @media (min-width: 768px) {
+    #chatbot-modal {
+      width: 400px;
+      height: 600px;
+      bottom: 20px;
+      right: 20px;
+      border-radius: 10px;
+    }
   }
 </style>
 
-<iframe
-  id="chatbot-frame"
-  src="https://app.chatgptbuilder.io/webchat/?p=1257532&ref=Julia Smirnova-Baucher"
-  allow="microphone; camera"
-></iframe>
+<!-- Floating chat button -->
+<button id="chatbot-launcher">💬</button>
+
+<!-- Chatbot modal -->
+<div id="chatbot-modal">
+  <button id="chatbot-close">×</button>
+  <iframe
+    id="chatbot-iframe"
+    src="https://app.chatgptbuilder.io/bots/1257532/l/Julia Smirnova-Baucher"
+    allow="microphone; camera"
+  ></iframe>
+</div>
+
+<script>
+  const launcher = document.getElementById('chatbot-launcher');
+  const modal = document.getElementById('chatbot-modal');
+  const closeBtn = document.getElementById('chatbot-close');
+
+  launcher.addEventListener('click', () => {
+    modal.style.display = 'block';
+  });
+
+  closeBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+</script>
+
 
 
 
