@@ -81,17 +81,17 @@
 
   <section>
     <h2>Prix et Récompenses</h2>
-    <ul>
+  	 <ul style="list-style-type: square; margin-left: 1em; padding-left: 0;">
       <li>🏆 1er prix Startup WE, CCI & GOOGLE, Monaco (2017)</li>
       <li>🏅 Prix d’Excellence – EMERALD PUBLISHING, UK (2008)</li>
       <li>🎓 Bourse doctorale internationale – EGIDE, France (2002)</li>
-      <li>👩‍🔬 Prix concours scientifique jeunesse – Académie des Sciences, Russie (1996)</li>
+      <li>‍🔬 Prix concours scientifique jeunesse – Académie des Sciences, Russie (1996)</li>
     </ul>
-  </section>
+</section>
 
   <section>
     <h2>Formation</h2>
-    <ul>
+    <ul style="list-style-type: square; margin-left: 1em; padding-left: 0;">
       <li><strong>Doctorat en Mécanique Numérique</strong> – École des Mines de Paris, France (2006)</li>
       <li><strong>Diplôme d'Ingénieur en Mécanique</strong> – Université Technique d'État de Moscou, Russie (2002)</li>
     </ul>
@@ -99,7 +99,7 @@
 
   <section>
     <h2>Compétences</h2>
-    <ul>
+    <ul style="list-style-type: square; margin-left: 1em; padding-left: 0;">
       <li><strong>Soft skills :</strong> Esprit analytique, communication claire, leadership collaboratif, orientation résultats.</li>
       <li><strong>Informatique :</strong> Python, SQL, Tableau, Quicksight, ETL, C++, Java, HTML, API, Windows, Linux, Jira, Agile, UX, GDPR.</li>
       <li><strong>Langues :</strong> Français, Anglais, Russe (courants) ; Espagnol (niveau professionnel)</li>
@@ -180,16 +180,21 @@
 
 <button id="chatbot-launcher">💬</button>
 
+...
 <div id="chatbot-modal">
   <button id="chatbot-close">×</button>
   <iframe
     id="chatbot-iframe"
-    src="https://app.chatgptbuilder.io/bots/4517266/l/Julia AI Assistant"
+    src="https://app.chatgptbuilder.io/bots/4517266/l/Julia AI Assistant?session=" 
     allow="microphone; camera"
   ></iframe>
 </div>
 
 <script>
+  // Force unique session each time page loads
+  const chatbotIframe = document.getElementById('chatbot-iframe');
+  chatbotIframe.src += Date.now(); // Append timestamp to break history
+
   const launcher = document.getElementById('chatbot-launcher');
   const modal = document.getElementById('chatbot-modal');
   const closeBtn = document.getElementById('chatbot-close');
@@ -204,6 +209,8 @@
   // Open chatbot when not dragging
   const openChatbot = () => {
     modal.style.display = 'block';
+    // Reset iframe to a new session when opened
+    chatbotIframe.src = "https://app.chatgptbuilder.io/bots/4517266/l/Julia AI Assistant?session=" + Date.now();
   };
 
   closeBtn.addEventListener('click', () => {
@@ -271,10 +278,6 @@
     isDragging = false;
   });
 </script>
-
-
-
-
 
 
 </body>
