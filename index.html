@@ -194,28 +194,36 @@
   const modal = document.getElementById('chatbot-modal');
   const closeBtn = document.getElementById('chatbot-close');
 
-  // Open chatbot
-  launcher.addEventListener('click', () => {
-    modal.style.display = 'block';
-  });
+  let isDragging = false,
+      offsetX = 0,
+      offsetY = 0,
+      startX = 0,
+      startY = 0,
+      moved = false;
 
-  // Close chatbot
+  // Open chatbot when not dragging
+  const openChatbot = () => {
+    modal.style.display = 'block';
+  };
+
   closeBtn.addEventListener('click', () => {
     modal.style.display = 'none';
   });
 
-  // Drag support for desktop
-  let isDragging = false, offsetX, offsetY;
-
-  launcher.addEventListener('mousedown', function (e) {
+  /** DESKTOP DRAG **/
+  launcher.addEventListener('mousedown', e => {
     isDragging = true;
+    startX = e.clientX;
+    startY = e.clientY;
     offsetX = e.clientX - launcher.getBoundingClientRect().left;
     offsetY = e.clientY - launcher.getBoundingClientRect().top;
+    moved = false;
     e.preventDefault();
   });
 
-  document.addEventListener('mousemove', function (e) {
+  document.addEventListener('mousemove', e => {
     if (isDragging) {
+      moved = true;
       launcher.style.left = (e.clientX - offsetX) + 'px';
       launcher.style.top = (e.clientY - offsetY) + 'px';
       launcher.style.bottom = 'auto';
@@ -223,33 +231,47 @@
     }
   });
 
-  document.addEventListener('mouseup', function () {
+  document.addEventListener('mouseup', e => {
+    if (isDragging && !moved) {
+      openChatbot();
+    }
     isDragging = false;
   });
 
-  // Drag support for mobile (touch)
-  launcher.addEventListener('touchstart', function (e) {
-    isDragging = true;
-    const touch = e.touches[0];
-    offsetX = touch.clientX - launcher.getBoundingClientRect().left;
-    offsetY = touch.clientY - launcher.getBoundingClientRect().top;
-    e.preventDefault();
+  /** MOBILE DRAG **/
+  launcher.addEventListener('touchstart', e => {
+    if (e.touches.length === 1) {
+      isDragging = true;
+      startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
+      offsetX = startX - launcher.getBoundingClientRect().left;
+      offsetY = startY - launcher.getBoundingClientRect().top;
+      moved = false;
+    }
   });
 
-  document.addEventListener('touchmove', function (e) {
-    if (isDragging) {
-      const touch = e.touches[0];
-      launcher.style.left = (touch.clientX - offsetX) + 'px';
-      launcher.style.top = (touch.clientY - offsetY) + 'px';
+  document.addEventListener('touchmove', e => {
+    if (isDragging && e.touches.length === 1) {
+      const x = e.touches[0].clientX;
+      const y = e.touches[0].clientY;
+      if (Math.abs(x - startX) > 5 || Math.abs(y - startY) > 5) {
+        moved = true;
+      }
+      launcher.style.left = (x - offsetX) + 'px';
+      launcher.style.top = (y - offsetY) + 'px';
       launcher.style.bottom = 'auto';
       launcher.style.right = 'auto';
     }
   });
 
-  document.addEventListener('touchend', function () {
+  document.addEventListener('touchend', e => {
+    if (isDragging && !moved) {
+      openChatbot();
+    }
     isDragging = false;
   });
 </script>
+
 
 
 
