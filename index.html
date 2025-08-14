@@ -1,288 +1,963 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Julia Smirnova-Baucher – CV</title>
-
+  <title>Julia Smirnova-Baucher — CV</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
+
+
+:root {
+  --primary-color: #ffffff; /* Headings & bullet points in bright white */
+  --primary-light: #ffffff; /* Hover/accent remains bright white */
+  --primary-dark: #ffffff;  /* Strong white for headings */
+
+  --text-primary: #e6e6e6;  /* Main body text - softer white */
+  --text-primary-hover: #ffffff; /* Brighter on hover */
+  --text-secondary: #c9c9c9; /* Secondary info text */
+  --text-on-primary: #000000; /* Text on colored/gradient backgrounds */
+
+  --background: #000000; /* Page background */
+  --surface: #121212; /* Card background */
+  --surface-hover: #1e1e1e; /* Slightly lighter grey for card hover */
+
+  --border: #2e2e2e; /* Same subtle border for normal & hover */
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.6);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.6);
+  --shadow-lg: 0 10px 15px rgba(0,0,0,0.6);
+
+  --gradient-bg: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.05) 100%);
+}
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      line-height: 1.7;
+      color: var(--text-primary);
+      background: var(--background);
+      background-image: url('bg.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-attachment: fixed;
+      min-height: 100vh;
+    }
+
+    .main-container {
+      max-width: 900px;
       margin: 0 auto;
       padding: 2rem;
-      max-width: 900px;
-      background: #f9f9f9;
-      color: #004080; /* Set all text to the same blue */
+      position: relative;
+      z-index: 1;
     }
-    h1, h2 {
-      color: #004080;
+
+    .cv-content {
+      background: rgba(31, 31, 31, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      padding: 3rem;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(64, 64, 64, 0.3);
+      margin-top: 1rem;
     }
-    ul {
-      padding-left: 1.2rem;
-    }
-    section {
+
+    /* Language Selector */
+    .language-selector-container {
+      position: sticky;
+      top: 1rem;
+      z-index: 100;
       margin-bottom: 2rem;
+      display: flex;
+      justify-content: flex-end;
     }
+
+    #language-selector {
+      background: var(--surface);
+      border: 2px solid var(--border);
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-primary);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: var(--shadow-sm);
+      font-family: 'Inter', sans-serif;
+    }
+
+    #language-selector:hover {
+      border-color: var(--primary-color);
+      box-shadow: var(--shadow-md);
+    }
+
+    #language-selector:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.1);
+    }
+
+    /* Typography */
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.025em;
+      line-height: 1.2;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--primary-dark);
+      margin: 2.5rem 0 1.5rem 0;
+      letter-spacing: -0.015em;
+      line-height: 1.3;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--primary-color);
+      position: relative;
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 3rem;
+      height: 2px;
+      background: var(--primary-light);
+    }
+
+    /* Contact Section */
     .contact {
-      margin-bottom: 1rem;
+      background: var(--gradient-bg);
+      padding: 2rem;
+      border-radius: 12px;
+      margin-bottom: 2.5rem;
+      /*border: 1px solid rgba(96, 165, 250, 0.2);*/
     }
+
+    .contact p {
+      margin-bottom: 0.75rem;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .contact p:last-child {
+      margin-bottom: 0;
+    }
+
     .contact a {
+      color: var(--primary-color);
       text-decoration: none;
-      color: #004080;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .contact a:hover {
+      color: var(--primary-light);
+      text-decoration: underline;
+    }
+
+    .contact a:focus {
+      outline: 2px solid var(--primary-color);
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+
+    /* Sections */
+    section {
+      margin-bottom: 3rem;
+    }
+
+    section:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Experience Items */
+    .experience-item, .education-item {
+      margin-bottom: 1.5rem;
+      padding: 1.25rem;
+      background: var(--surface);
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+
+
+	/* HOVER EFFECT */
+	 .experience-item:hover, .education-item:hover, .award-item:hover, .skills-category:hover {
+      box-shadow: var(--shadow-md);
+      border-color: var(--primary-color);
+    }
+	
+	
+
+    .experience-item:last-child, .education-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .job-title {
+      font-weight: 600;
+      color: var(--text-primary);
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      line-height: 1.4;
+    }
+
+    /* Lists */
+    ul {
+      list-style: none;
+      margin-left: 0;
+      padding-left: 0;
+    }
+
+    li {
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: 0.75rem;
+      line-height: 1.6;
+      color: var(--text-primary);
+    }
+
+    li::before {
+      content: '';
+      position: absolute;
+      left: 0.5rem;
+      top: 0.75rem;
+      width: 6px;
+      height: 6px;
+      background: var(--primary-color);
+      transform: rotate(45deg);
+    }
+
+    li:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Awards Section */
+    .awards-grid {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .award-item {
+      background: var(--surface);
+      padding: 1.25rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s ease;
+    }
+
+    .award-item:hover {
+      box-shadow: var(--shadow-md);
+      border-color: var(--primary-color);
+    }
+
+    /* Skills Section */
+    .skills-category {
+      margin-bottom: 1.5rem;
+      padding: 1.25rem;
+      background: var(--surface);
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+
+    .skills-category:last-child {
+      margin-bottom: 0;
+    }
+
+    .skills-title {
+      font-weight: 600;
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+    }
+
+    .skills-content {
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* Chatbot Styles */
+    #chatbot-launcher {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+      color: var(--text-on-primary);
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      font-size: 24px;
+      cursor: move;
+      z-index: 9999;
+      box-shadow: var(--shadow-lg);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #chatbot-launcher:hover {
+      transform: scale(1.05);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+
+    #chatbot-launcher:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.3), var(--shadow-lg);
+    }
+
+    #chatbot-modal {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 9998;
+      background: var(--surface);
+      box-shadow: var(--shadow-lg);
+      border-radius: 12px 12px 0 0;
+    }
+
+    #chatbot-iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 12px 12px 0 0;
+    }
+
+    #chatbot-close {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: #ef4444;
+      color: var(--text-on-primary);
+      border: none;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      font-size: 18px;
+      z-index: 10000;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+      box-shadow: var(--shadow-sm);
+    }
+
+    #chatbot-close:hover {
+      background: #dc2626;
+      transform: scale(1.05);
+    }
+
+    #chatbot-close:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.3);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .main-container {
+        padding: 1rem;
+      }
+
+      .cv-content {
+        padding: 2rem 1.5rem;
+        border-radius: 12px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      h2 {
+        font-size: 1.25rem;
+      }
+
+      .contact {
+        padding: 1.5rem;
+      }
+
+      .experience-item, .education-item {
+        padding: 1.25rem;
+      }
+
+      #chatbot-modal {
+        border-radius: 0;
+      }
+
+      #chatbot-iframe {
+        border-radius: 0;
+      }
+    }
+
+    @media (min-width: 769px) {
+      #chatbot-modal {
+        width: 400px;
+        height: 600px;
+        bottom: 20px;
+        right: 20px;
+        border-radius: 12px;
+      }
+
+      #chatbot-iframe {
+        border-radius: 12px;
+      }
+
+      .awards-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* Print Styles */
+    @media print {
+      body {
+        background: white !important;
+        background-image: none !important;
+        color: black !important;
+      }
+
+      .main-container {
+        max-width: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .cv-content {
+        background: white !important;
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0;
+        margin: 0;
+      }
+
+      .language-selector-container,
+      #chatbot-launcher,
+      #chatbot-modal {
+        display: none !important;
+      }
+
+      h1, h2 {
+        color: black !important;
+      }
+
+      .contact a {
+        color: black !important;
+        text-decoration: underline !important;
+      }
+
+      .experience-item, .education-item, .skills-category, .award-item {
+        background: white !important;
+        box-shadow: none !important;
+        border: 1px solid #ccc !important;
+        break-inside: avoid;
+      }
+
+      * {
+        color: black !important;
+      }
+    }
+
+    /* Animation for content switching */
+    .cv-section {
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+    }
+
+    .cv-section.active {
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
 </head>
 
 <body>
+  <div class="main-container">
+    <div class="language-selector-container">
+      <select id="language-selector">
+        <option value="en">English</option>
+        <option value="fr">Français</option>
+      </select>
+    </div>
 
-  <h1>Julia Smirnova-Baucher</h1>
+    <div class="cv-content">
+      <!-- ENGLISH CV -->
+      <div id="cv-en" class="cv-section active">
+        <h1>Julia Smirnova-Baucher</h1>
+        <div class="contact">
+          <p>📞 +33 (0)6 62 72 83 22</p>
+          <p>📧 <a href="mailto:juliabaucher.work@gmail.com">juliabaucher.work@gmail.com</a></p>
+          <p>🔗 <a href="https://linkedin.com/in/juliasmirnova" target="_blank">linkedin.com/in/juliasmirnova</a></p>
+		  <p>🌐 <a href="https://juliabaucher.github.io/" target="_blank">juliabaucher.github.io</a></p>
+		  
+        </div>
 
-  <div class="contact">
-    <p>📞 +33 (0)6 62 72 83 22</p>
-    <p>📧 <a href="mailto:juliabaucher.work@gmail.com">juliabaucher.work@gmail.com</a></p>
-    <p>🔗 <a href="https://linkedin.com/in/juliasmirnova" target="_blank">linkedin.com/in/juliasmirnova</a></p>
-    <p> Nationalité : Française</p>
+        <section>
+          <h2>Work Experience</h2>
+          
+          <div class="experience-item">
+            <div class="job-title">Senior BI Product Manager Tech for Transportation Services — AMAZON, Luxembourg (2021–2025)</div>
+            <ul>
+              <li>Defined product vision, strategy, risks, success metrics for Logistic Optimisations webapps, ML models.</li>
+              <li>Led cross-functional development of Labor Planning & Assignment web apps, forecasting ML models, BI dashboards: roadmap, prioritization, user journeys, BRD, tech & UX design, sprints, tests, GtoM, KPI.</li>
+              <li>Built partnership: investment strategy, remote stakeholders management, status reports, SLA.</li>
+              <li>Hired and coached FTEs & interns, delivered SCRUM training ranked 4.8/5.0, organized tech events.</li>
+            </ul>
+          </div>
+
+          <div class="experience-item">
+            <div class="job-title">Product Manager & Consultant for Revenue Accounting & Finance — Amadeus, France (2013–2020)</div>
+            <ul>
+              <li>Defined product strategy, identified new opportunities, aligned priorities with airline's consortium, translated business needs into product features, executed programs for Airline's Revenue Accounting.</li>
+              <li>Run onsite consulting sessions to optimise system usage, business processes, overall user experience, monitored SLA KPI for Malaysia Airlines, Vistara, Icelandair, Luxair, Wideroe, South Africa.</li>
+              <li>Conducted multiple pre-sales projects: RFP&RFI responses, workshops, live demo, value proposition.</li>
+            </ul>
+          </div>
+
+          <div class="experience-item">
+            <div class="job-title">Responsable de Produit en e-Commerce & Shopping — Amadeus, France (2006–2013)</div>
+            <ul>
+              <li>Led development of B2C airline's web and mobile applications with millions of monthly users.</li>
+              <li>Defined vision, strategy, value proposition, managed programs execution for Travel Search Engines.</li>
+              <li>Redesigned internet banking platform translating strategic objectives into a feature-based roadmap.</li>
+              <li>Built U/X portfolio for airlines website customization; conducted market research for business cases.</li>
+            </ul>
+          </div>
+
+          <div class="experience-item">
+            <div class="job-title">Research Engineer — University of Cambridge, UK (2006)</div>
+            <ul>
+              <li>Initiated a research stream in injection moulding between Ecole des Mines and Cambridge.</li>
+            </ul>
+          </div>
+
+          <div class="experience-item">
+            <div class="job-title">Data analyst — McKinsey & Company, Russia (2001)</div>
+            <ul>
+              <li>Managed marketing research and data analysis.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h2>Awards</h2>
+          <div class="awards-grid">
+            <div class="award-item">
+              <div class="skills-title">🏆 First prize in Startup Weekend</div>
+              <div class="skills-content">eCommerce platform — GOOGLE for STARTUPS, Monaco (2017)</div>
+            </div>
+            <div class="award-item">
+              <div class="skills-title">🏅 Award for Excellence in Engineering</div>
+              <div class="skills-content">Computations — EMERALD PUBLISHING, UK (2008)</div>
+            </div>
+            <div class="award-item">
+              <div class="skills-title">🎓 Winner of international scholarship</div>
+              <div class="skills-content">PhD studies — EGIDE, France (2002)</div>
+            </div>
+            <div class="award-item">
+              <div class="skills-title">👩‍🔬 Award at youth Scientific Contest</div>
+              <div class="skills-content">"Step-into-the-future" — NATIONAL ACADEMY OF SCIENCE, Russia (1996)</div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2>Education</h2>
+          <div class="education-item">
+            <div class="job-title">PhD in Computational Mechanics — Ecole des Mines de Paris, France (2006)</div>
+          </div>
+          <div class="education-item">
+            <div class="job-title">Engineer's Diploma in Mechanics — Bauman Moscow State Technical University, Russia (2002)</div>
+          </div>
+        </section>
+
+        <section>
+          <h2>Skills & Others</h2>
+          <div class="skills-category">
+            <div class="skills-title">Soft skills:</div>
+            <div class="skills-content">Strong analytical and self-learning capabilities, problem-solving, data-driven decision-making, clear and concise communication, stakeholder management, empathy.</div>
+          </div>
+          <div class="skills-category">
+            <div class="skills-title">IT skills:</div>
+            <div class="skills-content">Python, SQL, Tableau, Quicksight, ETL, C/C++, Java, HTML, API XML, JSON; Windows, Linux, MAC; Microsoft Office, SharePoint, Camtasia, Eclipse, IntelliJ, Postman, WordPress, Jira; SAFe, Agile, Waterfall, CMMI; UX design; PCI DSS; GDPR.</div>
+          </div>
+          <div class="skills-category">
+            <div class="skills-title">Languages:</div>
+            <div class="skills-content">Native Russian; fluent in French and English; communication skills in Spanish.</div>
+          </div>
+          <div class="skills-category">
+            <div class="skills-title">Volunteering:</div>
+            <div class="skills-content">Participation in AFM-Telethons.</div>
+          </div>
+        </section>
+      </div>
+
+      <!-- FRENCH CV -->
+      <div id="cv-fr" class="cv-section">
+        <h1>Julia Smirnova-Baucher</h1>
+
+        <div class="contact">
+          <p>📞 +33 (0)6 62 72 83 22</p>
+          <p>📧 <a href="mailto:juliabaucher.work@gmail.com">juliabaucher.work@gmail.com</a></p>
+          <p>🔗 <a href="https://linkedin.com/in/juliasmirnova" target="_blank">linkedin.com/in/juliasmirnova</a></p>
+          <p>Nationalité : Française</p>
+        </div>
+
+        <section>
+          <h2>Expérience Professionnelle</h2>
+
+          <div class="experience-item">
+            <div class="job-title">Responsable de Produit Tech en Logistique — AMAZON, Luxembourg (2021–2025)</div>
+            <ul>
+              <li>Définition de stratégie produit des webapps et modèles ML pour l'optimisation logistique.</li>
+              <li>Pilotage du développement de webapps de gestion du personnel, modèles de prévision ML, tableaux de bord (Quicksight, Tableau), dans un environnement Agile et DevSecOps : définition de la roadmap produit, rédaction des user stories et critères d'acceptation, ingénieurs et experts sécurité ; conception technique et UX conforme aux standards de codage sécurisé, gestion du backlog, tests, déploiement continu avec contrôle des accès et normes RGPD.</li>
+              <li>Mise en place des partenariats avec clients : stratégie d'investissement, gouvernance, KPIs, sécurité.</li>
+              <li>Recrutement et encadrement des collaborateurs, animation de formations SCRUM (note 4,8/5).</li>
+            </ul>
+          </div>
+
+          <div class="experience-item">
+            <div class="job-title">Responsable de Produit & Consultant — Amadeus, France (2013–2020)</div>
+            <ul>
+              <li>Gestion de développement d'un logiciel de comptabilité et d'audit pour les compagnies aériennes.</li>
+              <li>Définition de stratégie, alignement des priorités avec le consortium de compagnies aériennes.</li>
+              <li>Animation des sessions de consulting sur site pour optimiser l'utilisation du système, les processus métier, mesures de la performance (Malaysia Airlines, Icelandair, Luxair, Vistara, Widerøe).</li>
+              <li>Réalisation de projets de prévente : RFP, présentation et démos, proposition de valeur.</li>
+            </ul>
+          </div>
+
+          <div class="experience-item">
+            <div class="job-title">Responsable Produit e-Commerce & Shopping — Amadeus, France (2006–2013)</div>
+            <ul>
+              <li>Pilotage du développement de apps web et mobile pour des compagnies aériennes avec plusieurs millions d'utilisateurs mensuels (Lufthansa, Japan Airlines, LATAM,..): rédaction de cahiers des charges et spécifications, pilotage des projets, élaboration des scénarios de tests et support client.</li>
+              <li>Définition de stratégie, exécution de programmes pour les moteurs de recherche de voyages.</li>
+              <li>Refonte d'une plateforme de paiement, traduction des objectifs stratégiques en plan de projet.</li>
+              <li>Constitution d'un portefeuille UX pour la personnalisation des sites de compagnies aériennes.</li>
+              <li>Support fonctionnelle sur le marché EU, suivi des incidents, mise à jour de la documentation.</li>
+            </ul>
+          </div>
+
+          <div class="experience-item">
+            <div class="job-title">Ingénieur de Recherche — Université de Cambridge, UK (2006)</div>
+            <ul>
+              <li>Développement d'un modèle mathématique pour un phénomène physique dans le moulage par injection.</li>
+              <li>Implémentation du modèle dans le logiciel industriel (C/C++ Rem@3D, Transvalor).</li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h2>Prix et Récompenses</h2>
+          <div class="awards-grid">
+            <div class="award-item">
+              <div class="skills-title">🏆 1er prix Startup WE</div>
+              <div class="skills-content">CCI & GOOGLE, Monaco (2017)</div>
+            </div>
+            <div class="award-item">
+              <div class="skills-title">🏅 Prix d'Excellence</div>
+              <div class="skills-content">EMERALD PUBLISHING, UK (2008)</div>
+            </div>
+            <div class="award-item">
+              <div class="skills-title">🎓 Bourse doctorale internationale</div>
+              <div class="skills-content">EGIDE, France (2002)</div>
+            </div>
+            <div class="award-item">
+              <div class="skills-title">👩‍🔬 Prix concours scientifique jeunesse</div>
+              <div class="skills-content">Académie des Sciences, Russie (1996)</div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2>Formation</h2>
+          <div class="education-item">
+            <div class="job-title">Doctorat en Mécanique Numérique — École des Mines de Paris, France (2006)</div>
+          </div>
+          <div class="education-item">
+            <div class="job-title">Diplôme d'Ingénieur en Mécanique — Université Technique d'État de Moscou, Russie (2002)</div>
+          </div>
+        </section>
+
+        <section>
+          <h2>Compétences</h2>
+          <div class="skills-category">
+            <div class="skills-title">Soft skills :</div>
+            <div class="skills-content">Esprit analytique, communication claire, leadership collaboratif, orientation résultats.</div>
+          </div>
+          <div class="skills-category">
+            <div class="skills-title">Informatique :</div>
+            <div class="skills-content">Python, SQL, Tableau, Quicksight, ETL, C++, Java, HTML, API, Windows, Linux, Jira, Agile, UX, GDPR.</div>
+          </div>
+          <div class="skills-category">
+            <div class="skills-title">Langues :</div>
+            <div class="skills-content">Français, Anglais, Russe (courants) ; Espagnol (niveau professionnel)</div>
+          </div>
+        </section>
+      </div>
+    </div>
   </div>
 
-  <section>
-    <h2>Expérience Professionnelle</h2>
+  <!-- Chatbot -->
+  <button id="chatbot-launcher">💬</button>
+  <div id="chatbot-modal">
+    <button id="chatbot-close">×</button>
+    <iframe id="chatbot-iframe"
+      src="https://app.chatgptbuilder.io/bots/4517266/l/Julia%20AI%20Assistant?session=${Date.now()}"
+      allow="microphone; camera">
+    </iframe>
+  </div>
 
-    <div><strong>Responsable de Produit Tech en Logistique – AMAZON, Luxembourg (2021–2025)</strong></div>
-    <ul style="list-style-type: square; margin-left: 1em; padding-left: 0;">
-      <li>Définition de stratégie produit des webapps et modèles ML pour l’optimisation logistique.</li>
-      <li>Pilotage du développement de webapps de gestion du personnel, modèles de prévision ML, tableaux de bord (Quicksight, Tableau), dans un environnement Agile et DevSecOps : définition de la roadmap produit, rédaction des user stories et critères d’acceptation, ingénieurs et experts sécurité ; conception technique et UX conforme aux standards de codage sécurisé, gestion du backlog, tests, déploiement continu avec contrôle des accès et normes RGPD.</li>
-      <li>Mise en place des partenariats avec clients : stratégie d’investissement, gouvernance, KPIs, sécurité.</li>
-      <li>Recrutement et encadrement des collaborateurs, animation de formations SCRUM (note 4,8/5).</li>
-    </ul>
-
-    <div><strong>Responsable de Produit & Consultant – Amadeus, France (2013–2020)</strong></div>
-    <ul style="list-style-type: square; margin-left: 1em; padding-left: 0;">
-      <li>Gestion de développement d’un logiciel de comptabilité et d'audit pour les compagnies aériennes.</li>
-      <li>Définition de stratégie, alignement des priorités avec le consortium de compagnies aériennes.</li>
-      <li>Animation des sessions de consulting sur site pour optimiser l'utilisation du système, les processus métier, mesures de la performance (Malaysia Airlines, Icelandair, Luxair, Vistara, Wideröe).</li>
-      <li>Réalisation de projets de prévente : RFP, présentation et démos, proposition de valeur.</li>
-    </ul>
-
-    <div><strong>Responsable Produit e-Commerce & Shopping – Amadeus, France (2006–2013)</strong></div>
-    <ul style="list-style-type: square; margin-left: 1em; padding-left: 0;">
-      <li>Pilotage du développement de apps web et mobile pour des compagnies aériennes avec plusieurs millions d’utilisateurs mensuels (Lufthansa, Japan Airlines, LATAM,..): rédaction de cahiers des charges et spécifications, pilotage des projets, élaboration des scénarios de tests et support client.</li>
-      <li>Définition de stratégie, exécution de programmes pour les moteurs de recherche de voyages.</li>
-      <li>Refonte d’une plateforme de paiement, traduction des objectifs stratégiques en plan de projet.</li>
-      <li>Constitution d’un portefeuille UX pour la personnalisation des sites de compagnies aériennes.</li>
-      <li>Support fonctionnelle sur le marché EU, suivi des incidents, mise à jour de la documentation.</li>
-    </ul>
-
-    <div><strong>Ingénieur de Recherche – Université de Cambridge, UK (2006)</strong></div>
-    <ul style="list-style-type: square; margin-left: 1em; padding-left: 0;">
-      <li>Développement d’un modèle mathématique pour un phénomène physique dans le moulage par injection.</li>
-      <li>Implémentation du modèle dans le logiciel industriel (C/C++ Rem@3D, Transvalor).</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Prix et Récompenses</h2>
-  	 <ul style="list-style-type: square; margin-left: 1em; padding-left: 0;">
-      <li>🏆 1er prix Startup WE, CCI & GOOGLE, Monaco (2017)</li>
-      <li>🏅 Prix d’Excellence – EMERALD PUBLISHING, UK (2008)</li>
-      <li>🎓 Bourse doctorale internationale – EGIDE, France (2002)</li>
-      <li>‍🔬 Prix concours scientifique jeunesse – Académie des Sciences, Russie (1996)</li>
-    </ul>
-</section>
-
-  <section>
-    <h2>Formation</h2>
-    <ul style="list-style-type: square; margin-left: 1em; padding-left: 0;">
-      <li><strong>Doctorat en Mécanique Numérique</strong> – École des Mines de Paris, France (2006)</li>
-      <li><strong>Diplôme d'Ingénieur en Mécanique</strong> – Université Technique d'État de Moscou, Russie (2002)</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Compétences</h2>
-    <ul style="list-style-type: square; margin-left: 1em; padding-left: 0;">
-      <li><strong>Soft skills :</strong> Esprit analytique, communication claire, leadership collaboratif, orientation résultats.</li>
-      <li><strong>Informatique :</strong> Python, SQL, Tableau, Quicksight, ETL, C++, Java, HTML, API, Windows, Linux, Jira, Agile, UX, GDPR.</li>
-      <li><strong>Langues :</strong> Français, Anglais, Russe (courants) ; Espagnol (niveau professionnel)</li>
-    </ul>
-  </section>
-
-  <!-- Optional: Background image (update URL to match your file) -->
-  <style>
-    body {
-      background-image: url('bg.jpg'); /* Replace with your own background image filename */
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-attachment: fixed;
-    }
-  </style>
-  
-  <style>
-  #chatbot-launcher {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #0078d4;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    font-size: 28px;
-    cursor: move;
-    z-index: 9999;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
-  }
-
-  #chatbot-modal {
-    display: none;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 9998;
-    background: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  }
-
-  #chatbot-iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-  }
-
-  #chatbot-close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: #ff5f5f;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 35px;
-    height: 35px;
-    font-size: 20px;
-    z-index: 10000;
-    cursor: pointer;
-  }
-
-  @media (min-width: 768px) {
-    #chatbot-modal {
-      width: 400px;
-      height: 600px;
-      bottom: 20px;
-      right: 20px;
-      border-radius: 10px;
-    }
-  }
-</style>
-
-<button id="chatbot-launcher">💬</button>
-
-...
-<div id="chatbot-modal">
-  <button id="chatbot-close">×</button>
-  <iframe
-    id="chatbot-iframe"
-    src="https://app.chatgptbuilder.io/bots/4517266/l/Julia AI Assistant?session=" 
-    allow="microphone; camera"
-  ></iframe>
-</div>
-
-<script>
-  // Force unique session each time page loads
-  const chatbotIframe = document.getElementById('chatbot-iframe');
-  chatbotIframe.src += Date.now(); // Append timestamp to break history
-
-  const launcher = document.getElementById('chatbot-launcher');
-  const modal = document.getElementById('chatbot-modal');
-  const closeBtn = document.getElementById('chatbot-close');
-
-  let isDragging = false,
-      offsetX = 0,
-      offsetY = 0,
-      startX = 0,
-      startY = 0,
-      moved = false;
-
-  // Open chatbot when not dragging
-  const openChatbot = () => {
-    modal.style.display = 'block';
-    // Reset iframe to a new session when opened
-    chatbotIframe.src = "https://app.chatgptbuilder.io/bots/4517266/l/Julia AI Assistant?session=" + Date.now();
-  };
-
-  closeBtn.addEventListener('click', () => {
-    modal.style.display = 'none';
-  });
-
-  /** DESKTOP DRAG **/
-  launcher.addEventListener('mousedown', e => {
-    isDragging = true;
-    startX = e.clientX;
-    startY = e.clientY;
-    offsetX = e.clientX - launcher.getBoundingClientRect().left;
-    offsetY = e.clientY - launcher.getBoundingClientRect().top;
-    moved = false;
-    e.preventDefault();
-  });
-
-  document.addEventListener('mousemove', e => {
-    if (isDragging) {
-      moved = true;
-      launcher.style.left = (e.clientX - offsetX) + 'px';
-      launcher.style.top = (e.clientY - offsetY) + 'px';
-      launcher.style.bottom = 'auto';
-      launcher.style.right = 'auto';
-    }
-  });
-
-  document.addEventListener('mouseup', e => {
-    if (isDragging && !moved) {
-      openChatbot();
-    }
-    isDragging = false;
-  });
-
-  /** MOBILE DRAG **/
-  launcher.addEventListener('touchstart', e => {
-    if (e.touches.length === 1) {
-      isDragging = true;
-      startX = e.touches[0].clientX;
-      startY = e.touches[0].clientY;
-      offsetX = startX - launcher.getBoundingClientRect().left;
-      offsetY = startY - launcher.getBoundingClientRect().top;
-      moved = false;
-    }
-  });
-
-  document.addEventListener('touchmove', e => {
-    if (isDragging && e.touches.length === 1) {
-      const x = e.touches[0].clientX;
-      const y = e.touches[0].clientY;
-      if (Math.abs(x - startX) > 5 || Math.abs(y - startY) > 5) {
-        moved = true;
+  <script>
+    // Language preference persistence
+    const getStoredLanguage = () => {
+      try {
+        return localStorage.getItem('cv-language') || 'en';
+      } catch (e) {
+        return 'en';
       }
-      launcher.style.left = (x - offsetX) + 'px';
-      launcher.style.top = (y - offsetY) + 'px';
+    };
+
+    const setStoredLanguage = (lang) => {
+      try {
+        localStorage.setItem('cv-language', lang);
+      } catch (e) {
+        // localStorage not available, ignore
+      }
+    };
+
+    // Language switch functionality
+    const selector = document.getElementById('language-selector');
+    const frSection = document.getElementById('cv-fr');
+    const enSection = document.getElementById('cv-en');
+
+    // Initialize with stored preference
+    const initialLang = getStoredLanguage();
+    selector.value = initialLang;
+    switchLanguage(initialLang);
+
+    function switchLanguage(lang) {
+      if (lang === 'fr') {
+        frSection.style.display = 'block';
+        enSection.style.display = 'none';
+        frSection.classList.add('active');
+        enSection.classList.remove('active');
+        document.documentElement.lang = 'fr';
+      } else {
+        frSection.style.display = 'none';
+        enSection.style.display = 'block';
+        enSection.classList.add('active');
+        frSection.classList.remove('active');
+        document.documentElement.lang = 'en';
+      }
+    }
+
+    selector.addEventListener('change', () => {
+      const selectedLang = selector.value;
+      switchLanguage(selectedLang);
+      setStoredLanguage(selectedLang);
+    });
+
+    // Chatbot functionality
+    const launcher = document.getElementById('chatbot-launcher');
+    const modal = document.getElementById('chatbot-modal');
+    const closeBtn = document.getElementById('chatbot-close');
+
+    launcher.addEventListener('click', () => {
+      modal.style.display = 'block';
+      launcher.setAttribute('aria-expanded', 'true');
+    });
+
+    closeBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
+      launcher.setAttribute('aria-expanded', 'false');
+    });
+
+    // Close modal on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.style.display === 'block') {
+        modal.style.display = 'none';
+        launcher.setAttribute('aria-expanded', 'false');
+        launcher.focus();
+      }
+    });
+
+    // Draggable chatbot launcher
+    let isDragging = false;
+    let startX, startY, startLeft, startTop;
+
+    function initiateDrag(e) {
+      isDragging = true;
+      const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+      const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+      const rect = launcher.getBoundingClientRect();
+      
+      startX = clientX;
+      startY = clientY;
+      startLeft = rect.left;
+      startTop = rect.top;
+      
+      launcher.style.transition = 'none';
+      e.preventDefault();
+    }
+
+    function performDrag(e) {
+      if (!isDragging) return;
+      
+      const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+      const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+      
+      const deltaX = clientX - startX;
+      const deltaY = clientY - startY;
+      
+      const newLeft = Math.max(0, Math.min(window.innerWidth - 60, startLeft + deltaX));
+      const newTop = Math.max(0, Math.min(window.innerHeight - 60, startTop + deltaY));
+      
+      launcher.style.left = newLeft + 'px';
+      launcher.style.top = newTop + 'px';
       launcher.style.bottom = 'auto';
       launcher.style.right = 'auto';
     }
-  });
 
-  document.addEventListener('touchend', e => {
-    if (isDragging && !moved) {
-      openChatbot();
+    function completeDrag() {
+      if (isDragging) {
+        isDragging = false;
+        launcher.style.transition = '';
+      }
     }
-    isDragging = false;
-  });
-</script>
 
+    // Mouse events
+    launcher.addEventListener('mousedown', initiateDrag);
+    document.addEventListener('mousemove', performDrag);
+    document.addEventListener('mouseup', completeDrag);
+
+    // Touch events
+    launcher.addEventListener('touchstart', initiateDrag, { passive: false });
+    document.addEventListener('touchmove', performDrag, { passive: false });
+    document.addEventListener('touchend', completeDrag);
+
+    // Accessibility attributes
+    launcher.setAttribute('aria-label', 'Open chat assistant');
+    launcher.setAttribute('aria-expanded', 'false');
+    closeBtn.setAttribute('aria-label', 'Close chat assistant');
+
+    // Update iframe src with timestamp to prevent cache
+    const iframe = document.getElementById('chatbot-iframe');
+    const updateIframeSrc = () => {
+      const baseSrc = "https://app.chatgptbuilder.io/bots/4517266/l/Julia%20AI%20Assistant?session=";
+      iframe.src = baseSrc + Date.now();
+    };
+
+    // Update iframe when modal opens
+    launcher.addEventListener('click', updateIframeSrc);
+
+    // Smooth scrolling for better UX
+    document.documentElement.style.scrollBehavior = 'smooth';
+
+    // Add loading animation for language switching
+    selector.addEventListener('change', () => {
+      const activeSection = document.querySelector('.cv-section.active');
+      if (activeSection) {
+        activeSection.style.opacity = '0.5';
+        setTimeout(() => {
+          activeSection.style.opacity = '1';
+        }, 150);
+      }
+    });
+
+    // Keyboard navigation improvements
+    document.addEventListener('keydown', (e) => {
+      // Focus management for better accessibility
+      if (e.key === 'Tab') {
+        const focusableElements = document.querySelectorAll(
+          'a[href], button, select, input, [tabindex]:not([tabindex="-1"])'
+        );
+        
+        if (modal.style.display === 'block') {
+          // Trap focus within modal when open
+          const modalFocusable = modal.querySelectorAll(
+            'button, iframe, [tabindex]:not([tabindex="-1"])'
+          );
+          
+          if (e.shiftKey) {
+            if (document.activeElement === modalFocusable[0]) {
+              e.preventDefault();
+              modalFocusable[modalFocusable.length - 1].focus();
+            }
+          } else {
+            if (document.activeElement === modalFocusable[modalFocusable.length - 1]) {
+              e.preventDefault();
+              modalFocusable[0].focus();
+            }
+          }
+        }
+      }
+    });
+
+    // Performance optimization - lazy load background image
+    const img = new Image();
+    img.onload = () => {
+      document.body.style.backgroundImage = "url('bg.jpg')";
+    };
+    img.src = 'bg.jpg';
+
+    // Add intersection observer for smooth animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    // Observe experience and education items for scroll animations
+    document.querySelectorAll('.experience-item, .education-item, .award-item').forEach(item => {
+      item.style.opacity = '0';
+      item.style.transform = 'translateY(20px)';
+      item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(item);
+    });
+
+    // Reduce motion for users who prefer it
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.querySelectorAll('.experience-item, .education-item, .award-item').forEach(item => {
+        item.style.opacity = '1';
+        item.style.transform = 'none';
+        item.style.transition = 'none';
+      });
+    }
+
+    console.log('Professional CV website initialized successfully');
+  </script>
 
 </body>
 </html>
-
-
-
-
