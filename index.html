@@ -723,12 +723,12 @@
     </div>
   </div>
 
-  <!-- Chatbot -->
+  <!-- Chatbot               src="https://app.chatgptbuilder.io/bots/4517266/l/Julia%20AI%20Assistant?session=${Date.now()}"                 -->
   <button id="chatbot-launcher">💬</button>
   <div id="chatbot-modal">
     <button id="chatbot-close">×</button>
     <iframe id="chatbot-iframe"
-      //src="https://app.chatgptbuilder.io/bots/4517266/l/Julia%20AI%20Assistant?session=${Date.now()}"
+    
 		src = "  https://app.chatgptbuilder.io/webchat/?p=4517266&ref=1754579564137&cl=0"
       allow="microphone; camera">
     </iframe>
@@ -871,7 +871,7 @@
     const iframe = document.getElementById('chatbot-iframe');
     const updateIframeSrc = () => {
      // const baseSrc = "https://app.chatgptbuilder.io/bots/4517266/l/Julia%20AI%20Assistant?session=";
-	const baseSrc = "  https://app.chatgptbuilder.io/webchat/?p=4517266&ref=1754579564137";
+	const baseSrc = "https://app.chatgptbuilder.io/webchat/?p=4517266&ref=1754579564137&cl=0";
       iframe.src = baseSrc + Date.now();
     };
 
