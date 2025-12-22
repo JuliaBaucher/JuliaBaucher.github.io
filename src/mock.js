@@ -161,7 +161,7 @@ export const education = [
     year: "2006"
   },
   {
-    degree: "Engineering Degree in Mechanics", 
+    degree: "Engineering Degree in Computer Science", 
     institution: "Moscow State Technical University",
     location: "Russia",
     year: "2002"
