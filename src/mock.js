@@ -104,7 +104,7 @@ export const projects = [
     id: 2,
     title: "AWS Bedrock–Powered Assistant for ML Forecast Explainability",
     category: "Generative AI",
-    description: "Shipped AskMe, an AI-powered chatbot that helps operations and planning teams get fast, reliable answers to forecasting and capacity-planning questions. Built a role-aware, serverless solution that provides natural-language explanations tailored to different user groups—operations managers get action-oriented insights, analysts receive data-driven context, and program managers get synthesized views for stakeholder alignment. The system connects to internal data sources, categorizes problems automatically, and routes questions to produce accurate, consistent answers while maintaining a feedback loop for continuous improvement.",
+    description: "Shipped an AWS Bedrock–powered AI assistant that explains ML forecast results to business users and reduced investigation effort from days to minutes.",
     image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop",
     technologies: ["AWS Bedrock", "Serverless", "NLP", "Python", "Authentication", "Data Integration"],
     metrics: "Days to minutes insight reduction, expert dependency eliminated",
