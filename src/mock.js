@@ -112,6 +112,16 @@ export const projects = [
   },
   {
     id: 3,
+    title: "AI-Driven Multi-Agent Framework Automating Enterprise Workflows",
+    category: "Generative AI",
+    description: "Prototyped an Amazon Q-powered multi-agent framework that orchestrates enterprise workflows—including data analytics, task management, and communication—via a single natural-language command.",
+    image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&h=400&fit=crop",
+    technologies: ["Amazon Q", "Multi-Agent Systems", "Workflow Automation", "NLP", "Enterprise Integration"],
+    metrics: "Single command workflow orchestration, cross-platform integration",
+    status: "Prototype"
+  },
+  {
+    id: 4,
     title: "Airline Web Platform",
     category: "Web Development",
     description: "Led product development for airline booking and management platforms serving millions of monthly users for major carriers including Lufthansa and Japan Airlines.",
@@ -121,7 +131,7 @@ export const projects = [
     status: "Production"
   },
   {
-    id: 4,
+    id: 5,
     title: "Financial Audit System",
     category: "Enterprise Software",
     description: "Managed development of comprehensive accounting and audit software for airline industry, providing strategic consulting and optimization services.",
