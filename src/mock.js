@@ -102,6 +102,16 @@ export const projects = [
   },
   {
     id: 2,
+    title: "AWS Bedrock–Powered Assistant for ML Forecast Explainability",
+    category: "Generative AI",
+    description: "Shipped AskMe, an AI-powered chatbot that helps operations and planning teams get fast, reliable answers to forecasting and capacity-planning questions. Built a role-aware, serverless solution that provides natural-language explanations tailored to different user groups—operations managers get action-oriented insights, analysts receive data-driven context, and program managers get synthesized views for stakeholder alignment. The system connects to internal data sources, categorizes problems automatically, and routes questions to produce accurate, consistent answers while maintaining a feedback loop for continuous improvement.",
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop",
+    technologies: ["AWS Bedrock", "Serverless", "NLP", "Python", "Authentication", "Data Integration"],
+    metrics: "Days to minutes insight reduction, expert dependency eliminated",
+    status: "Production"
+  },
+  {
+    id: 3,
     title: "Airline Web Platform",
     category: "Web Development",
     description: "Led product development for airline booking and management platforms serving millions of monthly users for major carriers including Lufthansa and Japan Airlines.",
@@ -111,7 +121,7 @@ export const projects = [
     status: "Production"
   },
   {
-    id: 3,
+    id: 4,
     title: "Financial Audit System",
     category: "Enterprise Software",
     description: "Managed development of comprehensive accounting and audit software for airline industry, providing strategic consulting and optimization services.",
@@ -121,7 +131,7 @@ export const projects = [
     status: "Production"
   },
   {
-    id: 4,
+    id: 5,
     title: "Workforce Management Dashboard",
     category: "Data Analytics",
     description: "Built comprehensive dashboards and analytics tools for workforce management, enabling data-driven decision making across logistics operations.",

@@ -14,13 +14,8 @@ const Hero = ({ currentDesign = 'dark' }) => {
   };
 
   const handleDownloadCV = () => {
-    // Create a link element and trigger download
-    const link = document.createElement('a');
-    link.href = '/CV.pdf';
-    link.download = 'CV.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    // Open CV in new tab (more reliable for PDFs)
+    window.open(`${process.env.PUBLIC_URL}/CV.pdf`, '_blank');
   };
 
   const containerClasses = `min-h-screen flex items-center justify-center relative ${
