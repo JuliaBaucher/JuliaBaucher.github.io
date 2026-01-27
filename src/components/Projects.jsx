@@ -10,11 +10,11 @@ const Projects = ({ currentDesign = 'dark' }) => {
   const [selectedCategory, setSelectedCategory] = useState('All');
 
   // Define categories in specific order with Generative AI between All and Machine Learning
-  const allCategories = ['All', 'Generative AI', 'Machine Learning', 'Web Development', 'Data Analytics'];
+  const allCategories = ['All', 'Enterprise Projects', 'Generative AI', 'Machine Learning', 'Web Development', 'Data Analytics'];
   const projectCategories = new Set(projects.map(project => project.category));
-  const categories = allCategories.filter(cat => cat === 'All' || projectCategories.has(cat));
+  const categories = allCategories.filter(cat => cat === 'All' || cat === 'Enterprise Projects' || projectCategories.has(cat));
   
-  const filteredProjects = selectedCategory === 'All' 
+  const filteredProjects = selectedCategory === 'All' || selectedCategory === 'Enterprise Projects'
     ? projects 
     : projects.filter(project => project.category === selectedCategory);
 
