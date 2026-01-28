@@ -34,11 +34,17 @@ const About = ({ currentDesign = 'dark' }) => {
               }`}>
                 My Story
               </h3>
-              <p className={`text-lg leading-relaxed ${
+              <div className={`text-lg leading-relaxed space-y-4 ${
                 isDark ? 'text-gray-400' : 'text-gray-600'
               }`}>
-                {personalInfo.bio}
-              </p>
+                {personalInfo.bio.split('\n').map((paragraph, index) => (
+                  paragraph.trim() && (
+                    <p key={index}>
+                      {paragraph}
+                    </p>
+                  )
+                ))}
+              </div>
             </div>
 
             {/* Location */}

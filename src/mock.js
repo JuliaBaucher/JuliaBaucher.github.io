@@ -9,7 +9,7 @@ export const personalInfo = {
   linkedin: "linkedin.com/in/juliabaucher",
   portfolio: "https://juliabaucher.github.io",
   location: "France",
-  bio: "Passionate Senior Product Manager with 15+ years of experience leading cross-functional teams to deliver innovative tech solutions. Specialized in building scalable web applications, ML models, and data-driven products that serve millions of users globally. I thrive at the intersection of technology and business strategy, turning complex requirements into elegant, user-focused solutions."
+  bio: "Senior Product Leader with 15+ years of experience turning complex digital technologies into production-ready solutions that integrate seamlessly into real business and operational workflows. I lead products end to end, from identifying high-impact use cases and defining strategy to designing architectures and driving execution. My work includes AI-powered assistants, MCP frameworks, ML forecasting models, web platforms, and BI solutions.\n\nWith a background in leading multiple pre-sales engagements and consulting missions, I build long-lasting relationships with C-level stakeholders and translate executive vision into on-the-ground execution. Certified in Agile and SAFe, I run training sessions for large technical and non-technical audiences and support teams in adopting scalable delivery practices.\n\nI constantly thrive on building products that scale, teams that align, and solutions that deliver measurable impact."
 };
 
 export const skills = {
