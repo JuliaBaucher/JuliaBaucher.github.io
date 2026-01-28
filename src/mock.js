@@ -92,7 +92,7 @@ export const experience = [
 export const projects = [
   {
     id: 1,
-    title: "Logistics Optimization ML Platform",
+    title: "ML model for employee absence forecasting",
     category: "Machine Learning",
     description: "Developed and deployed machine learning models for workforce optimization, achieving 12% reduction in labor costs across multiple Amazon facilities.",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
@@ -102,21 +102,21 @@ export const projects = [
   },
   {
     id: 2,
-    title: "AWS Bedrock–Powered Assistant for ML Forecast Explainability",
+    title: "AI Assistant for ML Forecast Explainability",
     category: "Generative AI",
     description: "Shipped an AWS Bedrock–powered AI assistant that explains ML forecast results to business users and reduced investigation effort from days to minutes.",
     image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop",
-    technologies: ["AWS Bedrock", "Serverless", "NLP", "Python", "Authentication", "Data Integration"],
+    technologies: ["AWS Bedrock", "Serverless", "NLP", "Data Integration"],
     metrics: "Days to minutes insight reduction, expert dependency eliminated",
     status: "Production"
   },
   {
     id: 3,
-    title: "AI-Driven Multi-Agent Framework Automating Enterprise Workflows",
+    title: "MCP multi-agent automation framework",
     category: "Generative AI",
     description: "Prototyped an Amazon Q-powered multi-agent framework that orchestrates enterprise workflows—including data analytics, task management, and communication—via a single natural-language command.",
     image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&h=400&fit=crop",
-    technologies: ["Amazon Q", "Multi-Agent Systems", "Workflow Automation", "NLP", "Enterprise Integration"],
+    technologies: ["Amazon Q", "Multi-Agent Systems", "Workflow Automation", "NLP"],
     metrics: "Single command workflow orchestration, cross-platform integration",
     status: "Prototype"
   },
@@ -124,7 +124,7 @@ export const projects = [
     id: 4,
     title: "Airline Web Platform",
     category: "Web Development",
-    description: "Led product development for airline booking and management platforms serving millions of monthly users for major carriers including Lufthansa and Japan Airlines.",
+    description: "Led the product development of airline web and mobile applications serving millions of monthly users. Delivered an innovative instant search feature for promoting travel offers, adopted by the majority of European airlines.",
     image: "https://images.unsplash.com/photo-1556075798-4825dfaaf498?w=600&h=400&fit=crop",
     technologies: ["Web Apps", "Mobile", "UX Design", "Payment Systems"],
     metrics: "Millions of monthly users, 15+ airlines",
