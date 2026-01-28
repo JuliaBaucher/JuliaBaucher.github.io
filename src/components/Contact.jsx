@@ -1,34 +1,10 @@
-import React, { useState } from 'react';
-import { Mail, Phone, Linkedin, ExternalLink, Send, MapPin } from 'lucide-react';
-import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
-import { Button } from './ui/button';
-import { Input } from './ui/input';
-import { Textarea } from './ui/textarea';
+import React from 'react';
+import { Mail, Phone, Linkedin, ExternalLink, MapPin } from 'lucide-react';
+import { Card, CardContent } from './ui/card';
 import { personalInfo } from '../mock';
 
 const Contact = ({ currentDesign = 'dark' }) => {
   const isDark = currentDesign === 'dark';
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
-
-  const handleInputChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Mock form submission
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! I\'ll get back to you soon.');
-    setFormData({ name: '', email: '', subject: '', message: '' });
-  };
 
   const sectionClasses = `py-20 ${
     isDark ? 'bg-black' : 'bg-white'
@@ -58,10 +34,10 @@ const Contact = ({ currentDesign = 'dark' }) => {
     },
     {
       icon: ExternalLink,
-      label: 'Portfolio',
-      value: 'View my work',
+      label: 'CV website with chatbot',
+      value: 'View my profile',
       href: personalInfo.portfolio,
-      description: 'Interactive CV with chatbot'
+      description: 'Chat with my AI Assistant to get more details'
     }
   ];
 
@@ -85,7 +61,7 @@ const Contact = ({ currentDesign = 'dark' }) => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="max-w-4xl mx-auto">
           {/* Contact Information */}
           <div className="space-y-8">
             <div>
@@ -163,102 +139,6 @@ const Contact = ({ currentDesign = 'dark' }) => {
                 );
               })}
             </div>
-          </div>
-
-          {/* Contact Form */}
-          <div>
-            <Card className={`${
-              isDark 
-                ? 'bg-gray-900 border-gray-800' 
-                : 'bg-gray-50 border-gray-200'
-            }`}>
-              <CardHeader>
-                <CardTitle className={`text-xl ${
-                  isDark ? 'text-white' : 'text-gray-900'
-                }`}>
-                  Send a Message
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    <div>
-                      <Input
-                        name="name"
-                        placeholder="Your Name"
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        required
-                        className={`${
-                          isDark 
-                            ? 'bg-gray-800 border-gray-700 text-white placeholder:text-gray-400' 
-                            : 'bg-white border-gray-300 text-gray-900 placeholder:text-gray-500'
-                        }`}
-                      />
-                    </div>
-                    <div>
-                      <Input
-                        name="email"
-                        type="email"
-                        placeholder="Your Email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        required
-                        className={`${
-                          isDark 
-                            ? 'bg-gray-800 border-gray-700 text-white placeholder:text-gray-400' 
-                            : 'bg-white border-gray-300 text-gray-900 placeholder:text-gray-500'
-                        }`}
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <Input
-                      name="subject"
-                      placeholder="Subject"
-                      value={formData.subject}
-                      onChange={handleInputChange}
-                      required
-                      className={`${
-                        isDark 
-                          ? 'bg-gray-800 border-gray-700 text-white placeholder:text-gray-400' 
-                          : 'bg-white border-gray-300 text-gray-900 placeholder:text-gray-500'
-                      }`}
-                    />
-                  </div>
-
-                  <div>
-                    <Textarea
-                      name="message"
-                      placeholder="Your message..."
-                      rows={6}
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      required
-                      className={`${
-                        isDark 
-                          ? 'bg-gray-800 border-gray-700 text-white placeholder:text-gray-400' 
-                          : 'bg-white border-gray-300 text-gray-900 placeholder:text-gray-500'
-                      }`}
-                    />
-                  </div>
-
-                  <Button
-                    type="submit"
-                    size="lg"
-                    className={`w-full group ${
-                      isDark 
-                        ? 'bg-white text-black hover:bg-gray-200' 
-                        : 'bg-gray-900 text-white hover:bg-gray-800'
-                    } transition-all duration-300 hover:scale-[1.02]`}
-                  >
-                    <Send className="mr-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                    Send Message
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </div>
