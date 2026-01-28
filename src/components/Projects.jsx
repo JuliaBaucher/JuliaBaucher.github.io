@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ExternalLink, Github, TrendingUp, Users } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
@@ -7,6 +8,7 @@ import { projects } from '../mock';
 
 const Projects = ({ currentDesign = 'dark' }) => {
   const isDark = currentDesign === 'dark';
+  const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState('All');
 
   // Define categories in specific order with Generative AI between All and Machine Learning
@@ -157,7 +159,10 @@ const Projects = ({ currentDesign = 'dark' }) => {
                         ? 'border-gray-600 text-gray-300 hover:bg-gray-800 hover:text-white' 
                         : 'border-gray-300 text-gray-700 hover:bg-gray-100'
                     }`}
-                    onClick={() => console.log('View project details:', project.title)}
+                    onClick={() => {
+                      window.scrollTo(0, 0);
+                      navigate(`/project/${project.id}`);
+                    }}
                   >
                     <ExternalLink className="h-4 w-4 mr-2 group-hover/btn:translate-x-1 transition-transform" />
                     View Details

@@ -1,0 +1,73 @@
+Feature Project — AskMe
+
+AI Operations Support Chatbot
+
+Problem
+
+Operational and planning teams relied on the same ML forecasts but required very different explanations depending on their role. Accessing the right interpretation was slow, fragmented across dashboards and documentation, and heavily dependent on a small number of experts—creating bottlenecks, delays, and inconsistent decision-making.
+
+Context
+
+AskMe was developed in a high-pressure operational environment where forecasting accuracy directly impacts capacity planning, staffing, and business performance. Multiple personas (operations managers, planning analysts, program managers) needed fast, reliable, and role-appropriate explanations of ML forecasts, all grounded in the same trusted data sources and governance rules.
+
+Your Role
+
+I acted as Product Lead and AI Product Owner, owning the solution end to end:
+
+Identified the core operational pain points and validated use cases with stakeholders
+
+Defined functional and non-functional requirements, including security, governance, and explainability
+
+Designed the user experience and role-based behavior of the chatbot
+
+Partnered with engineering and data teams to deliver a production-ready, serverless AI solution
+
+Oversaw rollout, feedback loops, and continuous improvement
+
+Decisions & Trade-offs
+
+Explanation over prediction: Focused on interpreting existing ML outputs rather than building new models, maximizing adoption and trust
+
+Role-based responses: Accepted higher prompt and logic complexity to ensure each persona received actionable, relevant answers
+
+Controlled autonomy: Designed the chatbot as semi-autonomous, with explicit escalation paths to human experts to manage risk
+
+Limited memory: Chose short-lived session memory to reduce compliance and governance risks
+
+Strict scope control: Restricted problem categories and enforced refusals when data or confidence was insufficient
+
+Architecture (AI-focused)
+
+AskMe is a serverless, role-aware AI assistant integrated with internal forecasting knowledge:
+
+Authentication & identity: User email and role determine prompt configuration and response depth
+
+Prompt structure: System instructions, business context (problem categories, rules, sources), and user query
+
+RAG pipeline: Dynamic retrieval of relevant internal documentation to ground responses and prevent hallucinations
+
+Application logic: Classifies question type, routes queries, and structures outputs consistently
+
+Auditability: Logs requests, detected categories, and sources used for traceability and improvement
+
+Feedback loop: Users validate responses or escalate, feeding continuous model and knowledge refinement
+
+Outcomes / Metrics
+
+Reduced time to access reliable explanations from days to minutes
+
+Significantly decreased reliance on expert teams for repetitive investigations
+
+Improved consistency and confidence in forecast-driven decisions across teams
+
+Demonstrated how AI copilots can augment decision-makers directly within operational workflows
+
+What I’d Improve
+
+Introduce lightweight confidence scoring to make uncertainty more explicit
+
+Expand multilingual support for broader international teams
+
+Add proactive insights (e.g., anomaly detection alerts) rather than purely reactive Q&A
+
+Integrate deeper workflow actions (ticket creation, reporting) while preserving governance controls
