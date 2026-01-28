@@ -157,7 +157,7 @@ export const projects = [
     status: "Production"
   },
   {
-    id: 5,
+    id: 6,
     title: "Workforce Management Dashboard",
     category: "Data Analytics",
     description: "Built comprehensive dashboards and analytics tools for workforce management, enabling data-driven decision making across logistics operations.",
