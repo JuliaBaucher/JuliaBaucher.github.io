@@ -44,21 +44,37 @@ export const skills = {
 export const experience = [
   {
     id: 1,
-    title: "Senior Tech Product Manager - Logistics",
+    title: "Senior Product Manager III – ML & AI Solutions",
     company: "Amazon",
     location: "Luxembourg",
-    period: "2021 - 2025",
-    description: "Led product strategy for logistics optimization web applications and ML models, managing cross-functional teams in an Agile environment.",
+    period: "2023 - 2026",
+    description: "Led product strategy and delivery of machine learning and generative AI solutions, driving scalable, production-ready AI products aligned with business and operational needs.",
     achievements: [
-      "Delivered ML models that reduced labor costs by 12%",
-      "Managed development of workforce management web applications",
-      "Established strategic partnerships with key clients",
-      "Mentored and recruited team members, conducted SCRUM training (4.8/5 rating)"
+      "Defined ML product strategy and identified expansion opportunities to increase product reach and impact",
+      "Led end-to-end development of an ML model forecasting employee absences, improving forecast accuracy by up to 400 bps",
+      "Designed and delivered a GenAI chatbot on AWS Bedrock to interpret ML model outputs, including structured prompting (BPMN), input/output contracts, memory, autonomy levels, auditability, and sentiment analysis",
+      "Prototyped multi-agent AI systems using Amazon Q and MCP to automate cross-platform workflows and reduce manual operational effort"
     ],
-    technologies: ["Python", "ML/AI", "Agile", "DevOps", "Quicksight", "Tableau"]
+    technologies: ["ML/AI", "Generative AI", "AWS Bedrock", "Amazon Q", "MCP", "Python", "MLOps", "Agile"]
   },
   {
     id: 2,
+    title: "Senior BI Product Manager Tech – Transportation Services",
+    company: "Amazon",
+    location: "Luxembourg",
+    period: "2021 - 2023",
+    description: "Led product vision and strategy for cloud-based logistics and transportation optimization platforms, driving data-driven decision-making through scalable web applications, analytics, and dashboards.",
+    achievements: [
+      "Defined product vision, strategy, risks, and KPIs for cloud-based logistics optimization platforms",
+      "Led cross-functional, remote development of Labor Planning & Assignment web applications, data pipelines, and analytical dashboards",
+      "Owned end-to-end product delivery including roadmap definition, user journeys, BRDs, technical and UX design, Agile delivery, testing, go-to-market, and KPI tracking",
+      "Built and managed strategic partnerships, including investment strategy, stakeholder alignment, and executive reporting",
+      "Hired and coached FTEs and interns, delivered SCRUM training ranked 4.8/5, and organized internal tech events"
+    ],
+    technologies: ["BI & Analytics", "Cloud Platforms", "Agile / SCRUM", "DevOps", "QuickSight", "Tableau"]
+  },
+  {
+    id: 3,
     title: "Product Manager & Financial Solutions Consultant",
     company: "Amadeus",
     location: "France",
@@ -73,7 +89,7 @@ export const experience = [
     technologies: ["Financial Software", "Business Process", "Consulting", "Strategy"]
   },
   {
-    id: 3,
+    id: 4,
     title: "E-Commerce & Mobile Product Manager",
     company: "Amadeus",
     location: "France", 
