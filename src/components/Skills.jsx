@@ -83,21 +83,61 @@ const Skills = ({ currentDesign = 'dark' }) => {
                 </CardHeader>
                 
                 <CardContent>
-                  <div className="flex flex-wrap gap-2">
-                    {category.skills.map((skill, skillIndex) => (
-                      <Badge 
-                        key={skillIndex} 
-                        variant="secondary" 
-                        className={`${
-                          isDark 
-                            ? 'bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-white' 
-                            : 'bg-gray-200 text-gray-700 hover:bg-gray-300 hover:text-gray-900'
-                        } transition-all duration-200 hover:scale-105 cursor-default`}
-                      >
-                        {skill}
-                      </Badge>
-                    ))}
-                  </div>
+                  {/* Handle grouped technical skills differently */}
+                  {category.title === 'Technical Skills' ? (
+                    <div className="flex flex-col gap-3">
+                      {category.skills.map((group, groupIndex) => (
+                        <div key={groupIndex} className="flex flex-wrap gap-2">
+                          {group.map((skill, skillIndex) => (
+                            <Badge 
+                              key={skillIndex} 
+                              variant="secondary" 
+                              className={`${
+                                isDark 
+                                  ? 'bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-white' 
+                                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300 hover:text-gray-900'
+                              } transition-all duration-200 hover:scale-105 cursor-default`}
+                            >
+                              {skill}
+                            </Badge>
+                          ))}
+                        </div>
+                      ))}
+                    </div>
+                  ) : category.title === 'Management Skills' || category.title === 'Languages' ? (
+                    /* Left-aligned single column for Management and Languages */
+                    <div className="flex flex-col gap-2">
+                      {category.skills.map((skill, skillIndex) => (
+                        <Badge 
+                          key={skillIndex} 
+                          variant="secondary" 
+                          className={`${
+                            isDark 
+                              ? 'bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-white' 
+                              : 'bg-gray-200 text-gray-700 hover:bg-gray-300 hover:text-gray-900'
+                          } transition-all duration-200 hover:scale-105 cursor-default w-fit`}
+                        >
+                          {skill}
+                        </Badge>
+                      ))}
+                    </div>
+                  ) : (
+                    <div className="flex flex-wrap gap-2">
+                      {category.skills.map((skill, skillIndex) => (
+                        <Badge 
+                          key={skillIndex} 
+                          variant="secondary" 
+                          className={`${
+                            isDark 
+                              ? 'bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-white' 
+                              : 'bg-gray-200 text-gray-700 hover:bg-gray-300 hover:text-gray-900'
+                          } transition-all duration-200 hover:scale-105 cursor-default`}
+                        >
+                          {skill}
+                        </Badge>
+                      ))}
+                    </div>
+                  )}
                 </CardContent>
               </Card>
             );

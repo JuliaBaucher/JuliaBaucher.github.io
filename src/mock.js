@@ -15,27 +15,29 @@ export const personalInfo = {
 
 export const skills = {
   technical: [
-    "Product Strategy & Roadmap",
-    "Machine Learning & AI",
-    "Python & SQL",
-    "Agile & Scrum",
-    "Data Analytics & BI",
-    "API Development",
-    "DevOps & CI/CD",
-    "UX/UI Design"
+    // Group 1: AI & ML (top priority - current focus)
+    ["GenAI", "LLMs", "RAG", "MCP", "MLOps"],
+    // Group 2: Data & BI (proven expertise)
+    ["BI", "ETL", "SQL", "QuickSight", "Tableau"],
+    // Group 3: Cloud & Platform (infrastructure)
+    ["AWS", "GCP", "Azure", "GitHub"],
+    // Group 4: APIs & DevOps
+    ["APIs", "FastAPI", "CI/CD", "DevOps"],
+    // Group 5: Product & Compliance
+    ["UX", "Agile", "SAFe"],
+    // Group 6: Security & Compliance (enterprise readiness)
+    ["PCI DSS", "GDPR"]
   ],
   management: [
-    "Cross-functional Leadership",
-    "Stakeholder Management",
-    "Team Building & Mentoring",
-    "Strategic Planning",
-    "Risk Assessment",
-    "Budget Management",
-    "Performance Optimization",
-    "Client Relations"
+    "Analytical & systems thinking",
+    "Problem solving & decision-making",
+    "Stakeholder alignment",
+    "Clear and concise communication",
+    "Empathy & customer focus",
+    "Continuous learning & adaptability"
   ],
   languages: [
-    "French (Native)",
+    "French (Fluent)",
     "English (Fluent)",
     "Russian (Fluent)",
     "Spanish (Conversational)"
