@@ -1,8 +1,9 @@
 import React from "react";
 import "./App.css";
-import { Routes, Route } from "react-router-dom";   // 👈 removed BrowserRouter
+import { Routes, Route } from "react-router-dom";
 import Portfolio from "./components/Portfolio";
 import ProjectDetail from "./components/ProjectDetail";
+import ProjectsPage from "./components/ProjectsPage";
 import { Toaster } from "./components/ui/toaster";
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Portfolio />} />
+        <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/project/:id" element={<ProjectDetail />} />
       </Routes>
       <Toaster />
