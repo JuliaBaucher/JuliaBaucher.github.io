@@ -138,7 +138,7 @@ export const projects = [
   },
   {
     id: 4,
-    title: "Airline Web Platform",
+    title: "Airline Web Platforms",
     category: "Web Development",
     description: "Led the product development of airline web and mobile applications serving millions of monthly users. Delivered an innovative instant search feature for promoting travel offers, adopted by the majority of European airlines.",
     image: "https://images.unsplash.com/photo-1556075798-4825dfaaf498?w=600&h=400&fit=crop",
@@ -149,7 +149,7 @@ export const projects = [
   {
     id: 5,
     title: "Revenue Accounting & Auditing Platform",
-    category: "Enterprise Software",
+    category: "Consulting",
     description: "Managed development of comprehensive accounting and audit software for airline industry, providing strategic consulting and optimization services.",
     image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=400&fit=crop",
     technologies: ["Enterprise Software", "Financial Systems", "Consulting"],
@@ -179,7 +179,7 @@ export const projects = [
   {
     id: 8,
     title: "Strategic Partnership Framework",
-    category: "Enterprise Software",
+    category: "Consulting",
     description: "Led a strategic partnership to define investment decisions for operational projects, supported by a strong governance model for project intake, product rollout, and change management, driven by continuous feedback from operations stakeholders.",
     image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop",
     technologies: ["Investment Strategy", "Stakeholder Alignment", "Governance", "Change Management", "Agile Delivery"],
@@ -459,7 +459,7 @@ export const projectDetails = {
     ]
   },
   "4": {
-    title: "Airline Web Platform (Instant Search)",
+    title: "Airline Web Platforms (Instant Search)",
     subtitle: "Feature Project — High-Performance Travel Search & Conversion Engine",
     sections: [
       {
