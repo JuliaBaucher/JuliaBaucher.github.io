@@ -175,7 +175,7 @@ const Chatbot = ({ currentDesign = 'dark' }) => {
       {/* Chat Window */}
       {isOpen && (
         <div
-          className={`fixed bottom-24 right-6 w-96 h-[600px] rounded-lg shadow-2xl flex flex-col z-50 ${
+          className={`fixed bottom-24 right-6 w-96 max-h-[85vh] rounded-lg shadow-2xl flex flex-col z-50 ${
             isDark ? 'bg-gray-900 border border-gray-800' : 'bg-white border border-gray-200'
           }`}
           style={{ maxWidth: 'calc(100vw - 3rem)' }}
