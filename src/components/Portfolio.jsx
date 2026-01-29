@@ -21,13 +21,26 @@ const Portfolio = () => {
   useEffect(() => {
     if (location.hash) {
       const sectionId = location.hash.replace('#', '');
-      // Wait for the page to render, then scroll
-      setTimeout(() => {
+      
+      // Function to scroll to element
+      const scrollToElement = () => {
         const element = document.getElementById(sectionId);
         if (element) {
           element.scrollIntoView({ behavior: 'smooth' });
+          return true;
         }
-      }, 100);
+        return false;
+      };
+      
+      // Try immediately
+      if (!scrollToElement()) {
+        // If not found, try again after a delay
+        const timer = setTimeout(() => {
+          scrollToElement();
+        }, 300);
+        
+        return () => clearTimeout(timer);
+      }
     }
   }, [location]);
 
