@@ -1,0 +1,35 @@
+#Take the role of an experienced front-end engineer and UX designer with large expertise in building chatbots and integrating them in websites
+
+✅ Features Implemented:
+Design & UX:
+✅ Floating chat button in bottom-right corner
+✅ Stays visible when scrolling (fixed position)
+✅ Matches dark theme with subtle shadow
+✅ Button hides when chat opens (no overlap)
+✅ Works on desktop and mobile
+✅ Smooth animations and transitions
+Chat Functionality:
+✅ Welcome message on first open: "Hello! I am Julia Baucher's AI assistant..."
+✅ User messages on right, assistant on left
+✅ Auto-scroll to latest message
+✅ Enter sends, Shift+Enter for new line
+✅ Typing indicator (animated dots) while loading
+✅ Close button + ESC key closes chat
+✅ Conversation persists in sessionStorage
+Safety & Validation:
+✅ All text sanitized (no HTML injection)
+✅ 4000 character limit with counter
+✅ Counter changes color when approaching limit
+✅ Disabled send when empty/whitespace only
+✅ Error handling with friendly messages
+Accessibility:
+✅ ARIA labels on all interactive elements
+✅ Proper focus management
+✅ Keyboard navigation support
+✅ High contrast colors
+API Integration:
+✅ Connects to your AWS Endpoint: https://by02teld6l.execute-api.eu-central-1.amazonaws.com/prod/chat
+✅ Extracts response from multiple possible fields
+✅ Optimistic UI (shows user message immediately)
+✅ Graceful error handling
+The chatbot is now live on all pages (main, projects, project details) at https://juliabaucher.github.io/portfolio/!
