@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { Button } from './ui/button';
 
 const Header = ({ currentDesign = 'dark' }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,14 +19,24 @@ const Header = ({ currentDesign = 'dark' }) => {
   }, []);
 
   const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    // Check if we're on the main page
+    if (location.pathname === '/' || location.pathname === '/portfolio/') {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+        setIsMenuOpen(false);
+      }
+    } else {
+      // Navigate to main page with hash
+      navigate(`/#${sectionId}`);
       setIsMenuOpen(false);
     }
   };
 
   const isDark = currentDesign === 'dark';
+  
+  // Check if we're on the projects page
+  const isProjectsPage = location.pathname.includes('/projects');
   
   const headerClasses = `fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
     isScrolled 
@@ -37,7 +50,7 @@ const Header = ({ currentDesign = 'dark' }) => {
     { id: 'skills', label: 'Skills' },
     { id: 'projects', label: 'Projects' },
     { id: 'contact', label: 'Contact' }
-  ];
+  ].filter(item => !(isProjectsPage && item.id === 'projects')); // Remove Projects if on projects page
 
   return (
     <header className={headerClasses}>
@@ -45,7 +58,13 @@ const Header = ({ currentDesign = 'dark' }) => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <button
-            onClick={() => scrollToSection('hero')}
+            onClick={() => {
+              if (location.pathname === '/' || location.pathname === '/portfolio/') {
+                scrollToSection('hero');
+              } else {
+                navigate('/');
+              }
+            }}
             className={`text-xl font-bold transition-colors hover:scale-105 transform duration-200 ${
               isDark ? 'text-white hover:text-gray-300' : 'text-gray-900 hover:text-gray-600'
             }`}

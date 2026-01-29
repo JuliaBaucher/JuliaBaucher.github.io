@@ -1,9 +1,12 @@
 import React from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { Mail, Linkedin, ExternalLink, Heart } from 'lucide-react';
 import { personalInfo } from '../mock';
 
 const Footer = ({ currentDesign = 'dark' }) => {
   const isDark = currentDesign === 'dark';
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const footerClasses = `py-12 border-t ${
     isDark ? 'bg-gray-950 border-gray-800' : 'bg-gray-50 border-gray-200'
@@ -30,11 +33,20 @@ const Footer = ({ currentDesign = 'dark' }) => {
   ];
 
   const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    // Check if we're on the main page
+    if (location.pathname === '/' || location.pathname === '/portfolio/') {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // Navigate to main page with hash
+      navigate(`/#${sectionId}`);
     }
   };
+
+  // Check if we're on the projects page
+  const isProjectsPage = location.pathname.includes('/projects');
 
   return (
     <footer className={footerClasses}>
@@ -43,7 +55,13 @@ const Footer = ({ currentDesign = 'dark' }) => {
           {/* Branding */}
           <div className="md:col-span-1">
             <button
-              onClick={() => scrollToSection('hero')}
+              onClick={() => {
+                if (location.pathname === '/' || location.pathname === '/portfolio/') {
+                  scrollToSection('hero');
+                } else {
+                  navigate('/');
+                }
+              }}
               className={`text-2xl font-bold transition-colors hover:scale-105 transform duration-200 ${
                 isDark ? 'text-white hover:text-gray-300' : 'text-gray-900 hover:text-gray-700'
               }`}
@@ -66,7 +84,9 @@ const Footer = ({ currentDesign = 'dark' }) => {
                 { id: 'skills', label: 'Skills' },
                 { id: 'projects', label: 'Projects' },
                 { id: 'contact', label: 'Contact' }
-              ].map((item) => (
+              ]
+                .filter(item => !(isProjectsPage && item.id === 'projects')) // Remove Projects if on projects page
+                .map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}

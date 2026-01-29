@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import Header from './Header';
 import Hero from './Hero';
 import About from './About';
@@ -14,6 +15,21 @@ import { Palette, Moon, Sun } from 'lucide-react';
 const Portfolio = () => {
   const [currentDesign, setCurrentDesign] = useState('dark'); // 'dark' or 'light'
   const [showDesignToggle, setShowDesignToggle] = useState(true);
+  const location = useLocation();
+
+  // Handle hash navigation
+  useEffect(() => {
+    if (location.hash) {
+      const sectionId = location.hash.replace('#', '');
+      // Wait for the page to render, then scroll
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    }
+  }, [location]);
 
   const toggleDesign = () => {
     setCurrentDesign(prev => prev === 'dark' ? 'light' : 'dark');
