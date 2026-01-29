@@ -10,7 +10,7 @@ export const personalInfo = {
   github: "https://github.com/JuliaBaucher",
   portfolio: "https://juliabaucher.github.io",
   location: "France",
-  bio: "Senior Product Leader with 15+ years of experience turning complex digital technologies into production-ready solutions that integrate seamlessly into real business and operational workflows. I lead products end to end, from identifying high-impact use cases and defining strategy to designing architectures and driving execution. My work includes AI-powered assistants, MCP frameworks, ML forecasting models, web platforms, and BI solutions.\n\nWith a background in leading multiple pre-sales engagements and consulting missions, I build long-lasting relationships with C-level stakeholders and translate executive vision into on-the-ground execution. Certified in Agile and SAFe, I run training sessions for large technical and non-technical audiences and support teams in adopting scalable delivery practices.\n\nI constantly thrive on building products that scale, teams that align, and solutions that deliver measurable impact."
+  bio: "Senior Product Leader with 15+ years of experience turning complex digital technologies into production-ready solutions that integrate seamlessly into real business and operational workflows.\n\nI lead products end to end, from identifying high-impact use cases and defining strategy to designing architectures and driving execution.\n\nWith a background in leading multiple pre-sales engagements and consulting missions, I build long-lasting relationships with C-level stakeholders and translate executive vision into on-the-ground execution.\n\nCertified in Agile and SAFe, I run training sessions for large technical and non-technical audiences and support teams in adopting scalable delivery practices.\n\nI constantly thrive on building products that scale, teams that align, and solutions that deliver measurable impact.\n\nMy work includes AI-powered assistants, MCP frameworks, ML forecasting models, web platforms, and BI solutions."
 };
 
 export const skills = {
@@ -52,7 +52,7 @@ export const experience = [
     description: "Led product strategy and delivery of machine learning and generative AI solutions, driving scalable, production-ready AI products aligned with business and operational needs.",
     achievements: [
       "Defined ML product strategy and identified expansion opportunities to increase product reach and impact",
-      "Led end-to-end development of an ML model forecasting employee absences, improving forecast accuracy by up to 400 bps",
+      "Led end-to-end development of an ML model forecasting employee absences, improving forecast accuracy by 400 bps",
       "Designed and delivered a GenAI chatbot on AWS Bedrock to interpret ML model outputs, including structured prompting (BPMN), input/output contracts, memory, autonomy levels, auditability, and sentiment analysis",
       "Prototyped multi-agent AI systems using Amazon Q and MCP to automate cross-platform workflows and reduce manual operational effort"
     ],
@@ -82,10 +82,10 @@ export const experience = [
     period: "2013 - 2020",
     description: "Managed development of accounting and audit software for airlines, providing strategic consulting to optimize business processes.",
     achievements: [
-      "Led product strategy alignment with airline consortium",
-      "Conducted on-site consulting for major airlines (Malaysia Airlines, Icelandair, Luxair)",
-      "Delivered pre-sales projects including RFPs and value propositions",
-      "Optimized system utilization and performance metrics"
+      "Led the full product lifecycle of enterprise accounting and auditing software used by global airline clients",
+      "Defined product strategy and aligned roadmap priorities with a consortium of enterprise customers",
+      "Delivered on-site consulting engagements to optimize system usage, business processes, and user experience, while monitoring SLA KPIs for major airlines (Malaysia Airlines, Vistara, Icelandair, Luxair, Widerøe, South African Airways)",
+      "Drove multiple pre-sales initiatives, including RFP/RFI responses, customer workshops, live demos, and value proposition development"
     ],
     technologies: ["Financial Software", "Business Process", "Consulting", "Strategy"]
   },
@@ -97,10 +97,10 @@ export const experience = [
     period: "2006 - 2013",
     description: "Drove development of web and mobile applications for major airlines, serving millions of monthly users globally.",
     achievements: [
-      "Managed airline websites used by millions of users (Lufthansa, Japan Airlines, LATAM)",
-      "Led payment platform redesign translating strategic goals into project plans",
-      "Built UX portfolio for airline website personalization",
-      "Managed search engine optimization programs"
+      "Led the development of B2C airline web and mobile applications used by millions of monthly users",
+      "Defined product vision, strategy, and value propositions for Travel Search Engine platforms",
+      "Redesigned an online banking platform, translating strategic objectives into a feature-based product roadmap",
+      "Built a UX portfolio for airline website personalization, supported by market research and business case analysis"
     ],
     technologies: ["Web Development", "Mobile Apps", "UX Design", "Payment Systems", "SEO"]
   }
@@ -204,9 +204,9 @@ export const awards = [
   },
   {
     year: "2002",
-    title: "International Scholarship for Doctoral Studies",
-    organization: "EGIDE, France",
-    description: "Merit-based scholarship for advanced studies"
+    title: "International PhD Scholarship Award",
+    organization: "Egide, France",
+    description: "Awarded a competitive international scholarship to support doctoral studies"
   }
 ];
 
