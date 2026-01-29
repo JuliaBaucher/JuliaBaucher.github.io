@@ -12,11 +12,11 @@ const Projects = ({ currentDesign = 'dark' }) => {
   const [selectedCategory, setSelectedCategory] = useState('All');
 
   // Define categories in specific order with Generative AI between All and Machine Learning
-  const allCategories = ['All', 'Enterprise Projects', 'Generative AI', 'Machine Learning', 'Web Development', 'Data Analytics'];
+  const allCategories = ['All', 'Generative AI', 'Machine Learning', 'Web Development', 'Data Analytics'];
   const projectCategories = new Set(projects.map(project => project.category));
-  const categories = allCategories.filter(cat => cat === 'All' || cat === 'Enterprise Projects' || projectCategories.has(cat));
+  const categories = allCategories.filter(cat => cat === 'All' || projectCategories.has(cat));
   
-  const filteredProjects = selectedCategory === 'All' || selectedCategory === 'Enterprise Projects'
+  const filteredProjects = selectedCategory === 'All'
     ? projects 
     : projects.filter(project => project.category === selectedCategory);
 
@@ -40,7 +40,7 @@ const Projects = ({ currentDesign = 'dark' }) => {
           <p className={`mt-6 text-lg max-w-2xl mx-auto ${
             isDark ? 'text-gray-400' : 'text-gray-600'
           }`}>
-            Showcasing impactful products that have driven real business value
+            A curated selection of impactful products and consulting initiatives across AI, ML, BI, and web platforms.
           </p>
         </div>
 
@@ -197,7 +197,12 @@ const Projects = ({ currentDesign = 'dark' }) => {
             size="lg"
             onClick={() => {
               const element = document.getElementById('contact');
-              if (element) element.scrollIntoView({ behavior: 'smooth' });
+              if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+              } else {
+                // If contact section doesn't exist (e.g., on projects page), navigate to main page
+                navigate('/#contact');
+              }
             }}
             className={`${
               isDark 
