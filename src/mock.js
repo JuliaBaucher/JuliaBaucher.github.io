@@ -175,6 +175,16 @@ export const projects = [
     technologies: ["Web Apps", "UX Design", "GDPR Compliance", "Agile / Scrum", "Distributed Team"],
     metrics: "Operations Optimization",
     status: "Production"
+  },
+  {
+    id: 8,
+    title: "Strategic Partnership Framework",
+    category: "Enterprise Software",
+    description: "Led a strategic partnership to define investment decisions for operational projects, supported by a strong governance model for project intake, product rollout, and change management, driven by continuous feedback from operations stakeholders.",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop",
+    technologies: ["Investment Strategy", "Stakeholder Alignment", "Governance", "Change Management", "Agile Delivery"],
+    metrics: "Product Strategy & Governance",
+    status: "Production"
   }
 ];
 
@@ -688,6 +698,86 @@ export const projectDetails = {
           "Add predictive staffing adjustments based on forecasted workload",
           "Enhance explainability of assignment decisions for managers and associates",
           "Expand real-time monitoring and analytics on assignment quality"
+        ]
+      }
+    ]
+  },
+  "8": {
+    title: "ACES & APP Tech Partnership Framework",
+    subtitle: "Feature Project — Technology Investment Strategy, Governance & Product Delivery at Scale",
+    sections: [
+      {
+        heading: "Problem",
+        content: [
+          "Technology investments supporting operations were fragmented across multiple teams, leading to overlapping initiatives, unclear ownership, inconsistent prioritization, and limited visibility into value delivered. Without a structured partnership and governance model, scaling tech solutions while controlling cost, compliance, and adoption was increasingly challenging."
+        ]
+      },
+      {
+        heading: "Context",
+        content: [
+          "This initiative operated in a large, multi-team operational environment, where dozens of technology requests competed for limited resources. Multiple projects targeted similar operational KPIs (labor rates, throughput, scanning performance, quality metrics), often with partial overlap and duplicated efforts. A unified framework was needed to align business priorities, technology investments, and delivery execution across teams."
+        ]
+      },
+      {
+        heading: "Your Role",
+        content: [
+          "I acted as Product and Program Lead, defining and driving the partnership model end to end:"
+        ],
+        list: [
+          "Designed the joint investment and prioritization framework",
+          "Structured intake processes (OP1 / OP2) for business and technical requests",
+          "Led requirement collection, benefit modeling, and effort estimation",
+          "Facilitated alignment workshops with business, tech teams, and leadership",
+          "Defined governance, communication cadence, and escalation paths",
+          "Ensured change management, rollout, and adoption were embedded from day one"
+        ]
+      },
+      {
+        heading: "Decisions & Trade-offs",
+        content: [],
+        list: [
+          "Centralized prioritization vs. local autonomy: Chose centralized decision-making to reduce duplication and optimize cost",
+          "Reuse over rebuild: Actively identified overlaps to leverage existing platforms and partner teams",
+          "Speed vs. rigor: Balanced fast intake cycles with structured benefit and effort validation",
+          "Governance without bureaucracy: Designed lightweight but enforceable processes",
+          "Operational safety first: Embedded compliance, data quality, and legal constraints (e.g. regional regulations)"
+        ]
+      },
+      {
+        heading: "Architecture (Product & Governance-focused)",
+        content: [
+          "Rather than a single system, the solution is a product governance and delivery architecture:"
+        ],
+        list: [
+          "Intake framework: OP1 / OP2 processes with standardized business and technical questionnaires",
+          "Prioritization model: Benefit-driven evaluation (financial impact, operational value, strategic alignment)",
+          "Delivery tracking: Shared roadmaps, Asana boards, MBRs, and status reporting",
+          "Cross-team collaboration: Defined ownership across multiple tech platforms and partner teams",
+          "Change management: Central change calendar, pilot sites, feedback loops, and adoption tracking",
+          "Financial visibility: Integration into a centralized financial dashboard measuring forecasted vs. actual benefits"
+        ]
+      },
+      {
+        heading: "Outcomes / Metrics",
+        content: [],
+        list: [
+          "Clear prioritization of above-the-line vs. below-the-line initiatives",
+          "Reduced duplication across tech investments addressing similar operational KPIs",
+          "Improved transparency for leadership on roadmap, risks, and delivered value",
+          "Faster alignment between business needs and technical execution",
+          "Stronger adoption through structured rollout, training, and compliance tracking",
+          "Established a repeatable model used across multiple planning cycles"
+        ]
+      },
+      {
+        heading: "What I'd Improve",
+        content: [],
+        list: [
+          "Introduce predictive portfolio modeling to simulate trade-offs earlier",
+          "Automate intake and prioritization scoring",
+          "Expand self-service dashboards for stakeholders",
+          "Add AI-assisted clustering of similar requests",
+          "Strengthen feedback loops between delivered value and future prioritization"
         ]
       }
     ]
