@@ -115,7 +115,7 @@ const About = ({ currentDesign = 'dark' }) => {
                 Recognition
               </h3>
               <div className="space-y-4">
-                {awards.slice(0, 2).map((award, index) => (
+                {awards.map((award, index) => (
                   <Card key={index} className={`${
                     isDark 
                       ? 'bg-gray-900 border-gray-800 hover:bg-gray-800' 
