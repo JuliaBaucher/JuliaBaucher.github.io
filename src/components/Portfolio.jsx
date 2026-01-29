@@ -7,6 +7,7 @@ import Skills from './Skills';
 import Projects from './Projects';
 import Contact from './Contact';
 import Footer from './Footer';
+import Chatbot from './Chatbot';
 import { Button } from './ui/button';
 import { Palette, Moon, Sun } from 'lucide-react';
 
@@ -73,6 +74,9 @@ const Portfolio = () => {
 
       {/* Footer */}
       <Footer currentDesign={currentDesign} />
+
+      {/* Chatbot */}
+      <Chatbot currentDesign={currentDesign} />
     </div>
   );
 };

@@ -7,6 +7,7 @@ import { Button } from './ui/button';
 import { projects, projectDetails } from '../mock';
 import Header from './Header';
 import Footer from './Footer';
+import Chatbot from './Chatbot';
 
 const ProjectDetail = ({ currentDesign = 'dark' }) => {
   const { id } = useParams();
@@ -188,6 +189,7 @@ const ProjectDetail = ({ currentDesign = 'dark' }) => {
       </div>
 
       <Footer currentDesign={currentDesign} />
+      <Chatbot currentDesign={currentDesign} />
     </div>
   );
 };

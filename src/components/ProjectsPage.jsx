@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './Header';
 import Projects from './Projects';
 import Footer from './Footer';
+import Chatbot from './Chatbot';
 
 const ProjectsPage = ({ currentDesign = 'dark' }) => {
   const isDark = currentDesign === 'dark';
@@ -11,6 +12,7 @@ const ProjectsPage = ({ currentDesign = 'dark' }) => {
       <Header currentDesign={currentDesign} />
       <Projects currentDesign={currentDesign} />
       <Footer currentDesign={currentDesign} />
+      <Chatbot currentDesign={currentDesign} />
     </div>
   );
 };
