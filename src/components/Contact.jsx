@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Phone, Linkedin, ExternalLink, MapPin } from 'lucide-react';
+import { Mail, Phone, Linkedin, Github, MapPin } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
 import { personalInfo } from '../mock';
 
@@ -33,11 +33,11 @@ const Contact = ({ currentDesign = 'dark' }) => {
       description: 'Professional networking'
     },
     {
-      icon: ExternalLink,
-      label: 'CV website with chatbot',
-      value: 'View my profile',
-      href: personalInfo.portfolio,
-      description: 'Chat with my AI Assistant to get more details'
+      icon: Github,
+      label: 'GitHub',
+      value: 'Projects, guides, and demos',
+      href: personalInfo.github,
+      description: 'Web, AI, ML & automation'
     }
   ];
 
@@ -97,8 +97,8 @@ const Contact = ({ currentDesign = 'dark' }) => {
                   <a
                     key={index}
                     href={method.href}
-                    target={method.label === 'LinkedIn' || method.label === 'Portfolio' ? '_blank' : undefined}
-                    rel={method.label === 'LinkedIn' || method.label === 'Portfolio' ? 'noopener noreferrer' : undefined}
+                    target={method.label === 'LinkedIn' || method.label === 'GitHub' ? '_blank' : undefined}
+                    rel={method.label === 'LinkedIn' || method.label === 'GitHub' ? 'noopener noreferrer' : undefined}
                     className="group"
                   >
                     <Card className={`${

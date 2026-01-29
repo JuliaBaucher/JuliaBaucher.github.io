@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { Mail, Linkedin, ExternalLink, Heart } from 'lucide-react';
+import { Mail, Linkedin, Github, Heart } from 'lucide-react';
 import { personalInfo } from '../mock';
 
 const Footer = ({ currentDesign = 'dark' }) => {
@@ -26,9 +26,9 @@ const Footer = ({ currentDesign = 'dark' }) => {
       label: 'LinkedIn'
     },
     {
-      icon: ExternalLink,
-      href: personalInfo.portfolio,
-      label: 'Portfolio'
+      icon: Github,
+      href: personalInfo.github,
+      label: 'GitHub'
     }
   ];
 

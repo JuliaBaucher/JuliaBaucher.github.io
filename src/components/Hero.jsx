@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowDown, Download, Mail, Linkedin, ExternalLink } from 'lucide-react';
+import { ArrowDown, Download, Mail, Linkedin, Github } from 'lucide-react';
 import { Button } from './ui/button';
 import { personalInfo } from '../mock';
 
@@ -77,7 +77,7 @@ const Hero = ({ currentDesign = 'dark' }) => {
               } transition-all duration-300 hover:scale-105`}
             >
               View My Work
-              <ExternalLink className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              <Github className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Button>
 
             <Button
@@ -124,7 +124,7 @@ const Hero = ({ currentDesign = 'dark' }) => {
             </a>
 
             <a
-              href={personalInfo.portfolio}
+              href={personalInfo.github}
               target="_blank"
               rel="noopener noreferrer"
               className={`p-3 rounded-full transition-all duration-300 hover:scale-110 ${
@@ -132,9 +132,9 @@ const Hero = ({ currentDesign = 'dark' }) => {
                   ? 'bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-white' 
                   : 'bg-white text-gray-600 hover:bg-gray-100 hover:text-gray-900 shadow-md'
               }`}
-              title="Portfolio"
+              title="GitHub"
             >
-              <ExternalLink className="h-5 w-5" />
+              <Github className="h-5 w-5" />
             </a>
           </div>
         </div>
