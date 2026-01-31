@@ -1,0 +1,46 @@
+---
+title: "Skills & Expertise"
+doc_type: "profile"
+tags: ["Skills","Technical","Management","Languages"]
+timeframe: "2006-2026"
+seniority: "Senior Product Leader"
+language: "en"
+source: "portfolio"
+pii: "low"
+---
+
+## Technical Skills
+
+### AI & Machine Learning
+GenAI, LLMs, RAG, MCP, MLOps
+
+### Data & Business Intelligence
+BI, ETL, SQL, QuickSight, Tableau
+
+### Cloud & Platform
+AWS, GCP, Azure, GitHub
+
+### APIs & DevOps
+APIs, FastAPI, CI/CD, DevOps
+
+### Product & Delivery
+UX, Agile, SAFe
+
+### Security & Compliance
+PCI DSS, GDPR
+
+## Management Skills
+
+- Analytical & systems thinking
+- Problem solving & decision-making
+- Stakeholder alignment
+- Clear and concise communication
+- Empathy & customer focus
+- Continuous learning & adaptability
+
+## Languages
+
+- French (Fluent)
+- English (Fluent)
+- Russian (Fluent)
+- Spanish (Conversational)

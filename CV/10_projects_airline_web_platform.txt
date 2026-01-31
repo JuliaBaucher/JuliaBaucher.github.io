@@ -1,0 +1,73 @@
+---
+title: "Airline Web Platform"
+doc_type: "project"
+tags: ["Web Development","E-Commerce","Travel","Search Engine","UX","B2C"]
+timeframe: "2006-2013"
+seniority: "Senior Product Leader"
+language: "en"
+source: "portfolio"
+pii: "low"
+---
+
+## Summary
+
+Led the development of B2C airline web and mobile applications used by millions of monthly users. Defined product vision and strategy for Travel Search Engine platforms, delivering fast search results, improved price consistency, and enhanced user experience for major global airlines.
+
+## Problem
+
+Airline customers faced slow search results, inconsistent pricing, and poor user experience when booking flights online. Legacy search systems struggled with performance, accuracy, and modern UX expectations, leading to abandoned bookings and lost revenue.
+
+## Context
+
+The project involved building and optimizing web platforms for major airlines serving millions of users monthly. The solution needed to handle high traffic volumes, deliver fast search results, maintain price accuracy, and provide seamless booking experiences across web and mobile devices.
+
+## My Role
+
+I acted as E-Commerce & Mobile Product Manager:
+
+- Led the development of B2C airline web and mobile applications
+- Defined product vision, strategy, and value propositions for Travel Search Engine platforms
+- Redesigned online booking platforms, translating strategic objectives into feature-based product roadmaps
+- Built UX portfolios for airline website personalization, supported by market research and business case analysis
+- Managed cross-functional teams across design, engineering, and operations
+
+## Decisions & Trade-offs
+
+- **Performance first**: Prioritized fast search results to reduce abandonment rates
+- **Price consistency**: Invested in real-time pricing accuracy to build customer trust
+- **Mobile-first design**: Adapted UX for mobile devices as traffic shifted from desktop
+- **Personalization**: Balanced customization with development complexity and privacy concerns
+- **Scalability**: Built infrastructure to handle traffic spikes during peak booking periods
+
+## Architecture
+
+The platform provides end-to-end flight search and booking capabilities:
+
+- **Search engine**: Fast, scalable flight search across multiple airlines and routes
+- **Pricing engine**: Real-time price calculation and consistency validation
+- **Booking workflow**: Streamlined multi-step booking process with error handling
+- **Payment integration**: Secure payment processing with multiple payment methods
+- **Mobile optimization**: Responsive design and native mobile app support
+- **Personalization engine**: User preferences and recommendation system
+- **Analytics**: User behavior tracking and conversion optimization
+
+## Outcomes / Metrics
+
+- Served millions of monthly users across major global airlines
+- Improved search performance and reduced page load times
+- Enhanced price consistency and booking accuracy
+- Increased conversion rates through UX optimization
+- Successfully deployed across web and mobile platforms
+- Positive user feedback and increased customer satisfaction
+
+## What I'd Improve
+
+- Add AI-powered personalization and recommendation engine
+- Implement predictive pricing and demand forecasting
+- Enhance mobile app features with offline capabilities
+- Integrate social proof and user reviews
+- Develop more sophisticated A/B testing framework
+
+## Keywords
+
+web development, e-commerce, travel, airline booking, search engine, UX design, mobile apps, B2C, payment systems, personalization, millions of users, conversion optimization

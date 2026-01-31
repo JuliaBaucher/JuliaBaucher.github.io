@@ -1,0 +1,48 @@
+---
+title: "Experience Summary"
+doc_type: "profile"
+tags: ["Experience","Career","Amazon","Amadeus"]
+timeframe: "2006-2026"
+seniority: "Senior Product Leader"
+language: "en"
+source: "portfolio"
+pii: "low"
+---
+
+## Experience Summary
+
+### Senior Product Manager III – ML & AI Solutions
+**Amazon Luxembourg | 2023 - 2026**
+
+- Led product strategy and delivery of machine learning and generative AI solutions
+- Defined ML product strategy and identified expansion opportunities to increase product reach and impact
+- Led end-to-end development of an ML model forecasting employee absences, improving forecast accuracy by 400 bps
+- Designed and delivered a GenAI chatbot on AWS Bedrock to interpret ML model outputs
+- Prototyped multi-agent AI systems using Amazon Q and MCP to automate cross-platform workflows
+
+### Senior BI Product Manager Tech – Transportation Services
+**Amazon Luxembourg | 2021 - 2023**
+
+- Led product vision and strategy for cloud-based logistics and transportation optimization platforms
+- Defined product vision, strategy, risks, and KPIs for cloud-based logistics optimization platforms
+- Led cross-functional, remote development of Labor Planning & Assignment web applications, data pipelines, and analytical dashboards
+- Owned end-to-end product delivery including roadmap definition, user journeys, BRDs, technical and UX design
+- Built and managed strategic partnerships, including investment strategy and stakeholder alignment
+- Delivered SCRUM training ranked 4.8/5
+
+### Product Manager & Financial Solutions Consultant
+**Amadeus France | 2013 - 2020**
+
+- Led the full product lifecycle of enterprise accounting and auditing software used by global airline clients
+- Defined product strategy and aligned roadmap priorities with a consortium of enterprise customers
+- Delivered on-site consulting engagements to optimize system usage, business processes, and user experience
+- Monitored SLA KPIs for major airlines including Malaysia Airlines, Vistara, Icelandair, Luxair, Widerøe, South African Airways
+- Drove multiple pre-sales initiatives, including RFP/RFI responses, customer workshops, live demos, and value proposition development
+
+### E-Commerce & Mobile Product Manager
+**Amadeus France | 2006 - 2013**
+
+- Led the development of B2C airline web and mobile applications used by millions of monthly users
+- Defined product vision, strategy, and value propositions for Travel Search Engine platforms
+- Redesigned an online banking platform, translating strategic objectives into a feature-based product roadmap
+- Built a UX portfolio for airline website personalization, supported by market research and business case analysis

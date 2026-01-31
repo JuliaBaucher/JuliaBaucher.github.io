@@ -1,0 +1,72 @@
+---
+title: "Revenue Accounting & Auditing Platform for Airlines"
+doc_type: "project"
+tags: ["Financial Software","Consulting","Airlines","Revenue Accounting","Auditing","Pre-sales"]
+timeframe: "2013-2020"
+seniority: "Senior Product Leader"
+language: "en"
+source: "portfolio"
+pii: "low"
+---
+
+## Summary
+
+Led the full product lifecycle of enterprise accounting and auditing software used by global airline clients. Delivered on-site consulting engagements, pre-sales initiatives, and product strategy alignment with a consortium of enterprise customers, optimizing revenue recognition, reducing manual workloads, and improving financial reporting accuracy.
+
+## Problem
+
+Airlines face persistent challenges in revenue accounting: delayed and inaccurate revenue recognition, heavy manual workloads, revenue leakage, and limited real-time visibility. Legacy systems are often fragmented, poorly integrated, and expensive to evolve, slowing down financial reporting and decision-making while increasing operational risk and cost.
+
+## Context
+
+The project involved managing enterprise-grade financial software for global airlines, requiring deep domain expertise in airline revenue accounting, regulatory compliance, and complex financial workflows. The solution needed to handle high transaction volumes, multiple currencies, and diverse revenue streams while maintaining audit trails and compliance.
+
+## My Role
+
+I acted as Product Manager and Financial Solutions Consultant:
+
+- Led the full product lifecycle from strategy to delivery
+- Defined product strategy and aligned roadmap priorities with a consortium of enterprise customers
+- Delivered on-site consulting engagements to optimize system usage, business processes, and user experience
+- Monitored SLA KPIs for major airlines (Malaysia Airlines, Vistara, Icelandair, Luxair, Widerøe, South African Airways)
+- Drove multiple pre-sales initiatives, including RFP/RFI responses, customer workshops, live demos, and value proposition development
+
+## Decisions & Trade-offs
+
+- **Automation over customization**: Prioritized scalable automation and workflows instead of airline-specific custom code
+- **Real-time processing**: Invested in real-time revenue recognition despite higher technical complexity to unlock decision-making value
+- **Value at minimal cost**: Delivered customer requirements through configuration and workarounds whenever possible, avoiding unnecessary development
+- **User efficiency first**: Focused on intuitive GUIs and workflow-driven controls to reduce human effort
+- **Compliance by design**: Embedded audit trails and regulatory requirements into core workflows
+
+## Architecture
+
+The platform provides end-to-end revenue accounting and auditing capabilities:
+
+- **Revenue recognition engine**: Automates complex revenue calculations across multiple streams
+- **Audit trail system**: Comprehensive logging of all financial transactions and adjustments
+- **Integration layer**: Connects with airline reservation systems, payment gateways, and financial systems
+- **Workflow automation**: Reduces manual intervention through intelligent routing and validation
+- **Reporting & analytics**: Real-time visibility into revenue performance and compliance status
+- **Multi-currency support**: Handles complex currency conversions and exchange rate management
+
+## Outcomes / Metrics
+
+- Reduced manual workloads through workflow automation
+- Improved revenue recognition accuracy and timeliness
+- Enhanced financial reporting and real-time visibility
+- Strengthened audit compliance and reduced regulatory risk
+- Successfully deployed across multiple global airline clients
+- High customer satisfaction through on-site consulting and support
+
+## What I'd Improve
+
+- Expand predictive analytics for revenue forecasting
+- Enhance integration with modern cloud-based airline systems
+- Add machine learning for anomaly detection in revenue patterns
+- Improve mobile access for on-the-go financial reviews
+- Develop more sophisticated revenue leakage detection
+
+## Keywords
+
+revenue accounting, auditing, airlines, financial software, consulting, pre-sales, RFP, compliance, automation, SLA, on-site consulting, enterprise software, product lifecycle

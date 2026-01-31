@@ -1,0 +1,70 @@
+---
+title: "ML Model for Employee Absence Forecasting"
+doc_type: "project"
+tags: ["ML","Forecasting","MLOps","Python","Data Science","Operations"]
+timeframe: "2023-2026"
+seniority: "Senior Product Leader"
+language: "en"
+source: "portfolio"
+pii: "low"
+---
+
+## Summary
+
+Led end-to-end development of a machine learning model that forecasts employee absences, improving forecast accuracy by 400 basis points. The model enables better capacity planning, staffing decisions, and operational efficiency in high-throughput environments.
+
+## Problem
+
+Operations teams struggled with inaccurate absence forecasts, leading to overstaffing (increased costs) or understaffing (reduced throughput and service quality). Existing forecasting methods were manual, inconsistent, and failed to capture complex patterns in absence behavior.
+
+## Context
+
+The project was developed for operational environments where workforce availability directly impacts business performance. Accurate absence forecasting is critical for capacity planning, shift scheduling, and maintaining service level agreements.
+
+## My Role
+
+I acted as Product Owner for the ML forecasting solution:
+
+- Identified the business need and validated the impact of improved forecasting
+- Defined success metrics and accuracy targets
+- Partnered with data science teams to develop and validate the model
+- Designed the integration with existing workforce planning systems
+- Oversaw model deployment, monitoring, and continuous improvement
+
+## Decisions & Trade-offs
+
+- **ML over rules-based**: Chose machine learning to capture complex patterns that rules couldn't handle
+- **Accuracy over interpretability**: Prioritized forecast accuracy while maintaining sufficient explainability for operations teams
+- **Historical data focus**: Leveraged extensive historical absence data to train robust models
+- **Incremental rollout**: Deployed gradually to validate performance before full adoption
+- **Continuous retraining**: Implemented MLOps pipeline for regular model updates
+
+## Architecture
+
+The ML forecasting solution integrates with workforce planning systems:
+
+- **Data pipeline**: Ingests historical absence data, schedules, and contextual factors
+- **Feature engineering**: Extracts temporal patterns, seasonality, and employee-specific trends
+- **ML model**: Trained on historical data to predict absence likelihood and duration
+- **MLOps pipeline**: Automated retraining, validation, and deployment
+- **Integration layer**: Delivers forecasts to workforce planning and scheduling systems
+- **Monitoring**: Tracks model performance and data drift
+
+## Outcomes / Metrics
+
+- Improved forecast accuracy by 400 basis points
+- Enabled more accurate capacity planning and staffing decisions
+- Reduced operational costs through better resource allocation
+- Provided foundation for additional ML-driven workforce optimization
+
+## What I'd Improve
+
+- Add real-time forecasting updates as new data becomes available
+- Incorporate external factors (weather, events) that influence absence patterns
+- Develop confidence intervals to communicate forecast uncertainty
+- Expand to predict absence types and durations, not just likelihood
+- Integrate with automated scheduling systems for end-to-end optimization
+
+## Keywords
+
+machine learning, forecasting, MLOps, Python, workforce planning, absence prediction, capacity planning, data science, model deployment, operational efficiency, 400 bps improvement

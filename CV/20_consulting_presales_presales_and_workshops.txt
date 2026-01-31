@@ -1,0 +1,30 @@
+---
+title: "Pre-sales & Customer Workshops"
+doc_type: "consulting"
+tags: ["Pre-sales","Consulting","RFP","Workshops","Demos","Value Proposition"]
+timeframe: "2013-2020"
+seniority: "Senior Product Leader"
+language: "en"
+source: "portfolio"
+pii: "low"
+---
+
+## Pre-sales & Customer Workshops
+
+### Overview
+
+Extensive experience leading pre-sales initiatives for enterprise software solutions, including RFP/RFI responses, customer workshops, live demos, and value proposition development. Successfully engaged with C-level stakeholders across multiple industries, particularly in airline and logistics sectors.
+
+### Key Activities
+
+**RFP/RFI Responses**
+- Led multiple RFP and RFI response efforts for enterprise software solutions
+- Developed compelling value propositions aligned with customer needs
+- Coordinated cross-functional teams to deliver comprehensive proposals
+- Achieved high win rates through customer-centric positioning
+
+**Customer Workshops**
+- Facilitated on-site workshops with airline clients to understand business processes
+- Identified optimization opportunities and system usage improvements
+- Built strong relationships with operational and executive stakeholders
+- Translated customer requirements into actionable product

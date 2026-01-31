@@ -1,0 +1,60 @@
+Complete Migration Steps:
+
+Step 1: Rename GitHub Repository
+Go to https://github.com/JuliaBaucher/portfolio
+Click Settings tab
+Scroll to Repository name
+Change from 
+Contact.jsx
+ to juliabaucher.github.io
+Click Rename
+
+Step 2: Update Local Git Remote
+In your local project folder, run:
+
+git remote set-url origin https://github.com/JuliaBaucher/juliabaucher.github.io.git
+Verify it worked:
+
+git remote -v
+Step 3: Update package.json
+Change the homepage field:
+
+"homepage": "https://juliabaucher.github.io"
+(Remove /portfolio)
+
+Step 4: Update src/index.js
+Change the basename:
+
+<BrowserRouter basename="/">
+  <App />
+</BrowserRouter>
+(Change from basename="/portfolio" to basename="/")
+
+Step 5: Commit and Deploy
+git add .
+git commit -m "Update URLs for main GitHub Pages site"
+git push
+npm run deploy
+Step 6: Update Kiro Workspace Connection
+Since the repo name changed, you need to update Kiro:
+
+Option A: Close and reopen workspace
+
+In Kiro, close the current workspace
+Open the folder again (same local path)
+Kiro will detect the new remote URL automatically
+Option B: Manual update (if needed)
+
+The local folder path stays the same
+Git remote is already updated in Step 2
+Kiro should automatically detect the change
+Final URLs After Migration:
+Main site: https://juliabaucher.github.io/
+Projects: https://juliabaucher.github.io/projects
+Project details: https://juliabaucher.github.io/project/2
+Verification:
+After deployment, wait 1-2 minutes and check:
+
+https://juliabaucher.github.io/ - should show your main page
+https://juliabaucher.github.io/projects - should show projects page
+That's it! The migration is complete. Your old URL (/portfolio/) will no longer work, but all your routes will work at the root domain.

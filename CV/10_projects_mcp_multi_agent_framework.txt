@@ -1,0 +1,70 @@
+---
+title: "MCP Multi-Agent Automation Framework"
+doc_type: "project"
+tags: ["AI","MCP","Multi-Agent","Amazon Q","Automation","Workflow"]
+timeframe: "2023-2026"
+seniority: "Senior Product Leader"
+language: "en"
+source: "portfolio"
+pii: "low"
+---
+
+## Summary
+
+Prototyped a multi-agent AI system using Amazon Q and the Model Context Protocol (MCP) to automate cross-platform workflows and reduce manual operational effort. The framework enables AI agents to coordinate tasks across different systems, improving efficiency and reducing human intervention in repetitive processes.
+
+## Problem
+
+Operational teams faced significant manual effort coordinating tasks across multiple platforms and systems. Workflows required context switching, manual data transfer, and repetitive decision-making, leading to inefficiencies, errors, and delayed execution.
+
+## Context
+
+The project was developed to explore how multi-agent AI systems could orchestrate complex workflows spanning multiple tools and platforms. The goal was to reduce operational overhead while maintaining control, auditability, and reliability in production environments.
+
+## My Role
+
+I acted as Product Lead for the MCP framework prototype:
+
+- Identified high-impact use cases for multi-agent automation
+- Defined the architecture and interaction patterns between agents
+- Designed the coordination logic and handoff protocols
+- Partnered with engineering teams to implement the MCP-based solution
+- Evaluated performance and identified opportunities for production deployment
+
+## Decisions & Trade-offs
+
+- **MCP over custom protocols**: Chose Model Context Protocol for standardization and interoperability
+- **Amazon Q integration**: Leveraged existing AI infrastructure to accelerate development
+- **Controlled autonomy**: Designed agents with explicit boundaries and human-in-the-loop checkpoints
+- **Prototype-first approach**: Focused on proving value before full production investment
+- **Cross-platform coordination**: Accepted complexity to enable true end-to-end automation
+
+## Architecture
+
+The MCP framework enables multiple AI agents to coordinate across platforms:
+
+- **Agent orchestration**: Central coordinator manages task distribution and agent communication
+- **MCP protocol**: Standardized context sharing and handoff between agents
+- **Amazon Q integration**: Leverages Amazon Q for natural language understanding and task execution
+- **Platform connectors**: Agents interface with multiple systems (databases, APIs, internal tools)
+- **Audit trail**: All agent actions and decisions are logged for traceability
+- **Human oversight**: Critical decisions escalate to human operators
+
+## Outcomes / Metrics
+
+- Successfully demonstrated cross-platform workflow automation
+- Reduced manual operational effort in pilot use cases
+- Validated MCP as a viable protocol for multi-agent coordination
+- Identified production deployment opportunities and requirements
+
+## What I'd Improve
+
+- Expand agent capabilities to cover more workflow types
+- Implement more sophisticated error handling and recovery
+- Add predictive task routing based on historical patterns
+- Develop better visualization of agent coordination and decision-making
+- Strengthen security and access control for cross-platform operations
+
+## Keywords
+
+MCP, Model Context Protocol, multi-agent systems, Amazon Q, workflow automation, AI orchestration, cross-platform integration, operational efficiency, agent coordination, prototype

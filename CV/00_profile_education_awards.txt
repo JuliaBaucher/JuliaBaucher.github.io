@@ -1,0 +1,39 @@
+---
+title: "Education & Recognition"
+doc_type: "profile"
+tags: ["Education","Awards","Recognition"]
+timeframe: "2002-2017"
+seniority: "Senior Product Leader"
+language: "en"
+source: "portfolio"
+pii: "low"
+---
+
+## Education
+
+### PhD in Applied Mathematics
+**University of Nice Sophia Antipolis, France | 2002-2006**
+
+Focus on computational methods and engineering applications.
+
+### Master's Degree in Applied Mathematics
+**Moscow State University, Russia | 1997-2002**
+
+Specialized in mathematical modeling and numerical analysis.
+
+## Recognition & Awards
+
+### 1st Prize - Startup Weekend
+**CCI & Google Monaco | 2017**
+
+Won first prize in a 54-hour startup competition, transforming an idea into a business concept.
+
+### Excellence Award in Engineering Calculations
+**Emerald Publishing, UK | 2008**
+
+Recognition for outstanding research contributions in engineering computations.
+
+### International PhD Scholarship Award
+**Egide, France | 2002**
+
+Awarded a competitive international scholarship to support doctoral studies in France.

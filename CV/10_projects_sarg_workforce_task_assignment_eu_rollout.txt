@@ -1,0 +1,74 @@
+---
+title: "SARG Workforce Task Allocation Platform - EU Rollout"
+doc_type: "project"
+tags: ["Web Development","Workforce","Operations","EU Rollout","Automation","Compliance"]
+timeframe: "2021-2023"
+seniority: "Senior Product Leader"
+language: "en"
+source: "portfolio"
+pii: "low"
+---
+
+## Summary
+
+Led the European adaptation and deployment of a web application that automates task and role assignment for warehouse associates based on schedules, staffing needs, and training certifications. The rollout delivered 4.8 minutes saved per associate per day, incident reduction of 5-17%, and $4.1 million in total benefits, while ensuring GDPR compliance and improving efficiency and safety at scale.
+
+## Problem
+
+Warehouse operations faced inefficient manual task assignment processes that didn't account for associate skills, certifications, or optimal workload distribution. This led to safety incidents, productivity losses, and compliance risks, particularly when scaling across European sites with strict GDPR requirements.
+
+## Context
+
+The project involved adapting a workforce task allocation platform for European deployment across multiple warehouse sites. The solution needed to handle complex scheduling, training certifications, GDPR compliance, and local labor regulations while maintaining high performance and reliability.
+
+## My Role
+
+I acted as Product Owner for the European rollout:
+
+- Led the European adaptation and deployment strategy
+- Ensured GDPR compliance and data privacy requirements
+- Defined requirements for training certification integration
+- Aligned operations, engineering, and compliance teams across multiple countries
+- Managed stakeholder expectations and change management
+- Tracked rollout metrics and business impact
+
+## Decisions & Trade-offs
+
+- **GDPR compliance first**: Prioritized data privacy and regulatory compliance from day one
+- **Distributed team coordination**: Managed remote teams across multiple European sites
+- **Certification integration**: Invested in training system integration to ensure safety and compliance
+- **Phased rollout**: Deployed incrementally to validate performance and gather feedback
+- **Local customization**: Balanced standardization with country-specific labor requirements
+
+## Architecture
+
+The platform automates workforce task allocation across warehouse operations:
+
+- **Scheduling engine**: Matches associates to tasks based on availability and skills
+- **Certification tracking**: Validates training requirements before task assignment
+- **Compliance layer**: Ensures GDPR compliance and local labor regulations
+- **Web application**: User-friendly interface for managers and associates
+- **Integration layer**: Connects with HR systems, training databases, and operational tools
+- **Analytics**: Tracks productivity, safety incidents, and efficiency metrics
+- **Distributed deployment**: Multi-site architecture for European operations
+
+## Outcomes / Metrics
+
+- 4.8 minutes saved per associate per day
+- Incident reduction of 5-17% across sites
+- $4.1 million in total benefits delivered
+- Improved efficiency and safety at scale
+- Successful GDPR compliance across all European sites
+- High user adoption and satisfaction
+
+## What I'd Improve
+
+- Add predictive task assignment based on historical performance
+- Enhance mobile experience for on-the-floor task management
+- Integrate real-time workload balancing across sites
+- Develop more sophisticated skills gap analysis
+- Expand automation to include break scheduling and rotation
+
+## Keywords
+
+workforce management, task allocation, EU rollout, GDPR compliance, web application, operations optimization, distributed team, Agile, Scrum, 4.8 minutes saved, incident reduction, $4.1M benefit, safety, efficiency

@@ -1,0 +1,74 @@
+---
+title: "Strategic Partnership Framework - ACES & APP Tech Governance"
+doc_type: "project"
+tags: ["Consulting","Partnership","Governance","Stakeholder Management","Investment Strategy"]
+timeframe: "2021-2023"
+seniority: "Senior Product Leader"
+language: "en"
+source: "portfolio"
+pii: "low"
+---
+
+## Summary
+
+Led a strategic partnership framework between operational projects, support teams, and technology partners. Established governance structures, investment strategies, and continuous feedback mechanisms to align stakeholders, optimize resource allocation, and ensure successful project delivery across multiple initiatives.
+
+## Problem
+
+Operational projects lacked clear governance structures and alignment mechanisms with technology partners and support teams. This resulted in misaligned priorities, inefficient resource allocation, unclear accountability, and delayed project delivery.
+
+## Context
+
+The project involved establishing a strategic partnership framework to coordinate multiple operational projects, support teams, and technology partners. The solution needed to balance competing priorities, manage investments, and ensure continuous alignment across diverse stakeholders.
+
+## My Role
+
+I acted as Product Manager for Partnership Governance:
+
+- Led strategic partnership framework design and implementation
+- Defined governance structures and decision-making processes
+- Developed investment strategy and resource allocation frameworks
+- Facilitated stakeholder alignment and executive reporting
+- Established continuous feedback loops and improvement mechanisms
+- Managed change management and adoption across teams
+
+## Decisions & Trade-offs
+
+- **Governance over autonomy**: Established clear structures while preserving team flexibility
+- **Investment transparency**: Prioritized clear investment tracking and ROI visibility
+- **Stakeholder alignment**: Invested in regular alignment sessions despite coordination overhead
+- **Continuous feedback**: Built feedback mechanisms to adapt quickly to changing needs
+- **Executive visibility**: Balanced detailed reporting with executive-level summaries
+
+## Architecture
+
+The partnership framework provides governance and coordination across initiatives:
+
+- **Governance structure**: Clear roles, responsibilities, and decision-making authority
+- **Investment framework**: Transparent resource allocation and ROI tracking
+- **Stakeholder alignment**: Regular sync meetings and alignment sessions
+- **Feedback mechanisms**: Continuous improvement loops and retrospectives
+- **Executive reporting**: Dashboards and summaries for leadership visibility
+- **Change management**: Communication plans and adoption support
+- **Risk management**: Proactive identification and mitigation of partnership risks
+
+## Outcomes / Metrics
+
+- Improved stakeholder alignment and reduced conflicts
+- More efficient resource allocation and investment decisions
+- Faster project delivery through better coordination
+- Increased transparency and accountability across teams
+- Stronger relationships with technology partners
+- Higher executive confidence in project outcomes
+
+## What I'd Improve
+
+- Automate more of the governance reporting and tracking
+- Develop predictive analytics for investment ROI
+- Enhance cross-project dependency management
+- Expand partnership framework to additional teams
+- Strengthen metrics for partnership health and effectiveness
+
+## Keywords
+
+strategic partnership, governance, stakeholder management, investment strategy, change management, executive reporting, alignment, resource allocation, consulting, project delivery, continuous feedback

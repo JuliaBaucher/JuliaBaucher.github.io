@@ -1,0 +1,74 @@
+---
+title: "Workforce Management Dashboard"
+doc_type: "project"
+tags: ["BI","Analytics","Workforce","Dashboard","Spektr","Real-time"]
+timeframe: "2021-2023"
+seniority: "Senior Product Leader"
+language: "en"
+source: "portfolio"
+pii: "low"
+---
+
+## Summary
+
+Delivered a real-time workforce management dashboard that improved productivity measurement accuracy by 3x, enabled 6% labor automation, and delivered €6.54 million in entitlement through better labor allocation. The solution replaced manual metrics with event-driven, scan-based measurements.
+
+## Problem
+
+Sort Centers had low confidence in unloading rates and benchmarking metrics because key indicators were manually coded and weakly linked to real operational events. This resulted in inaccurate productivity measurements, delayed reactions on the floor, and suboptimal labor allocation decisions.
+
+## Context
+
+The project was delivered in a high-throughput Sort Center environment, where productivity (TPH – Throughput Per Hour) and labor efficiency directly impact operational cost and execution quality. Existing workforce management metrics were disconnected from real scan and event data, limiting their reliability and real-time usefulness for operations managers.
+
+## My Role
+
+I acted as Product Owner for Workforce Analytics:
+
+- Identified gaps between workforce metrics and operational reality
+- Defined requirements for real-time, event-driven productivity tracking
+- Drove the solution selection through a structured trade-off analysis
+- Aligned operations, engineering, and analytics teams
+- Ensured fast delivery with minimal operational disruption
+
+## Decisions & Trade-offs
+
+- **Event-driven metrics over manual coding**: Chose scan-based measurement to significantly improve accuracy
+- **Internal platform over custom build**: Selected Spektr to minimize development time and operational risk
+- **Speed to value vs. perfect flexibility**: Accepted some dashboarding and dataset-join limitations to enable rapid rollout
+- **Scalability first**: Prioritized a solution proven at large data volumes and streaming scale
+- **Operational visibility**: Focused on real-time visual feedback rather than offline reporting
+
+## Architecture
+
+The solution is built around real-time event data and scalable analytics infrastructure:
+
+- **Data sources**: Scanner events, site cameras, workforce systems
+- **Event processing**: Conversion of scan events into direct task signals
+- **Analytics platform**: Spektr (internal analytics solution)
+  - Streaming and batch ETL support
+  - Calcite SQL (Redshift-like) for querying
+  - Centralized data lake (300+ PB)
+- **Visualization**: Real-time dashboards displayed on large screens for operations managers
+- **Access & security**: LDAP with federated access
+- **Monitoring**: Built-in monitoring and alerting with Sev2 SLA support
+
+## Outcomes / Metrics
+
+- 3× more accurate productivity rates compared to manual benchmarks
+- Enabled conversion of indirect to direct roles through scan-driven task measurement
+- 6% labor automation based on EUSC labor hours
+- Delivered €6.54 million entitlement through improved labor allocation
+- Real-time TPH visibility allowed operations managers to proactively intervene when flow slowed or stacked
+- Increased trust in workforce metrics and faster on-floor decision-making
+
+## What I'd Improve
+
+- Introduce advanced joins and transformations directly in the dashboard layer
+- Remove row limits on virtual datasets
+- Add predictive alerts for anticipated slowdowns
+- Extend dashboards with role-specific views for different operational personas
+
+## Keywords
+
+BI, workforce management, real-time analytics, Spektr, productivity tracking, TPH, labor automation, event-driven metrics, dashboards, operational efficiency, 3x accuracy, 6% automation, €6.54M entitlement
