@@ -114,7 +114,7 @@ export const projects = [
     title: "ML model for employee absence forecasting",
     category: "Machine Learning",
     description: "Developed and deployed machine learning models for workforce optimization, achieving 12% reduction in labor costs across multiple Amazon facilities.",
-    image: "/portfolio/ML workforce.png",
+    image: "/ML workforce.png",
     technologies: ["Python", "ML/AI", "AWS", "Data Analytics"],
     metrics: "12% cost reduction, 50+ facilities",
     status: "Production"
