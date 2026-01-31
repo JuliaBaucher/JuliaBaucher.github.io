@@ -78,7 +78,7 @@ const Projects = ({ currentDesign = 'dark' }) => {
               {/* Project Image */}
               <div className="relative h-48 overflow-hidden">
                 <img
-                  src={project.image}
+                  src={project.image.startsWith('/') ? `${process.env.PUBLIC_URL}${project.image}` : project.image}
                   alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />

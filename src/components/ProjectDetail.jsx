@@ -64,7 +64,7 @@ const ProjectDetail = ({ currentDesign = 'dark' }) => {
         {/* Hero Image */}
         <div className="relative h-96 rounded-lg overflow-hidden mb-12">
           <img
-            src={project.image}
+            src={project.image.startsWith('/') ? `${process.env.PUBLIC_URL}${project.image}` : project.image}
             alt={project.title}
             className="w-full h-full object-cover"
           />
