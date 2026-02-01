@@ -153,7 +153,7 @@ export const projects = [
     id: 5,
     title: "Revenue Accounting & Auditing Platform",
     category: "Consulting",
-    description: "Managed development of comprehensive accounting and audit software for airline industry, providing strategic consulting and optimization services.",
+    description: "Managed product strategy, consulting, and pre-sales for enterprise revenue accounting and auditing software for global airline clients, aiming to optimize revenue recognition, reduce manual effort, improve financial accuracy, and strengthen reporting and audit readiness.",
     image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=400&fit=crop",
     technologies: ["Enterprise Software", "Financial Systems", "Consulting"],
     metrics: "20+ airline clients globally",
@@ -163,7 +163,7 @@ export const projects = [
     id: 6,
     title: "Workforce Management Dashboard",
     category: "Data Analytics",
-    description: "Built comprehensive dashboards and analytics tools for workforce management, enabling data-driven decision making across logistics operations.",
+    description: "Delivered a real-time workforce management dashboard that replaced manual productivity metrics with event-driven, scan-based measurements, enabling more accurate performance tracking, faster operational decisions, and improved labor allocation for on-the-ground operations teams.",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
     technologies: ["Tableau", "Quicksight", "Python", "SQL"],
     metrics: "Real-time analytics, 100+ KPIs",
@@ -173,7 +173,7 @@ export const projects = [
     id: 7,
     title: "SARG Workforce Task Allocation Platform",
     category: "Web Development",
-    description: "Led the European adaptation and deployment of a web application that automates task and role assignment for warehouse associates based on schedules, staffing needs, and training certifications, improving efficiency and safety at scale.",
+    description: "Led the European adaptation and deployment of a web application that automates task and role assignment for warehouse associates based on schedules, staffing needs, and training certifications, improving operational performance, safety, and compliance across sites.",
     image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop",
     technologies: ["Web Apps", "UX Design", "GDPR Compliance", "Agile / Scrum", "Distributed Team"],
     metrics: "Operations Optimization",
@@ -183,7 +183,7 @@ export const projects = [
     id: 8,
     title: "Strategic Partnership Framework",
     category: "Consulting",
-    description: "Led a strategic partnership to define investment decisions for operational projects, supported by a strong governance model for project intake, product rollout, and change management, driven by continuous feedback from operations stakeholders.",
+    description: "Led a strategic partnership between operational projects, support teams, and technology partners. Established governance structures, investment strategies, and continuous feedback mechanisms to align stakeholders, optimize resource allocation, and ensure successful project delivery.",
     image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop",
     technologies: ["Investment Strategy", "Stakeholder Alignment", "Governance", "Change Management", "Agile Delivery"],
     metrics: "Product Strategy & Governance",
@@ -625,164 +625,164 @@ export const projectDetails = {
   },
   "7": {
     title: "SARG (Smart Assignment of Roles & Jobs)",
-    subtitle: "Feature Project — Workforce Task Assignment & Safety Optimization",
+    subtitle: "Feature Project — EU Workforce Task Allocation & Compliance Platform",
     sections: [
       {
         heading: "Problem",
         content: [
-          "Manual task assignment in Amazon fulfillment centers was time-consuming, error-prone, and insufficiently aligned with employee schedules, certifications, and operational constraints. This led to lost productivity, inconsistent execution on the floor, and higher safety incident rates."
+          "Warehouse operations faced inefficient manual task assignment processes that didn't account for associate skills, certifications, or optimal workload distribution. This led to safety incidents, productivity losses, and compliance risks, particularly when scaling across European sites with strict GDPR requirements."
         ]
       },
       {
         heading: "Context",
         content: [
-          "SARG is a web application originally developed in North America to automate task assignment for associates. My mission was to adapt and deploy SARG for Europe, connecting the right data sources and ensuring compliance with European labor laws, safety standards, and GDPR. The solution also integrates with FastStart, which displays assigned roles on screens when associates scan their badges."
+          "The project involved adapting a workforce task allocation platform for European deployment across multiple warehouse sites. The solution needed to handle complex scheduling, training certifications, GDPR compliance, and local labor regulations while maintaining high performance and reliability."
         ]
       },
       {
         heading: "Your Role",
         content: [
-          "I acted as Product Lead for the EU rollout, owning discovery, delivery, and long-term vision:"
+          "I acted as Product Owner for the European rollout:"
         ],
         list: [
-          "Conducted gap analysis between the NA product and EU operational, legal, and regulatory requirements",
-          "Identified and validated EU-specific data sources",
-          "Led stakeholder workshops to review gaps, define alternatives, and prioritize features",
-          "Delivered the product roadmap, including short-term MVP and long-term optimization vision",
-          "Authored BRDs with user stories, user journeys, and acceptance criteria",
-          "Coordinated EU and NA engineering teams on architecture and delivery",
-          "Led user research sessions on-site and iterated on UX based on feedback",
-          "Defined the Scrum framework and launched Agile delivery",
-          "Secured GDPR approval for employee data usage"
+          "Led the European adaptation and deployment strategy",
+          "Ensured GDPR compliance and data privacy requirements",
+          "Defined requirements for training certification integration",
+          "Aligned operations, engineering, and compliance teams across multiple countries",
+          "Managed stakeholder expectations and change management",
+          "Tracked rollout metrics and business impact"
         ]
       },
       {
         heading: "Decisions & Trade-offs",
         content: [],
         list: [
-          "Phased automation: Accepted partial manual inputs (Excel uploads) in the MVP to accelerate EU launch",
-          "Adaptation over rewrite: Reused the NA product foundation while extending it for EU constraints",
-          "Heuristic first: Chose a simple heuristic algorithm initially to maximize reliability and explainability",
-          "UX validation early: Invested in rapid prototyping and on-site testing to reduce adoption risk",
-          "Compliance-first: Prioritized GDPR and labor law alignment over feature richness"
+          "EU regionalization over global product: Chose a separate EU deployment to meet GDPR and worker-council constraints, accepting additional operational overhead compared to a single global stack",
+          "EU UI with US backend & storage: Kept the backend and database on the US side to avoid duplicating and synchronizing a full database in the EU, reducing cost and operational complexity",
+          "GDPR compliance first: Prioritized data privacy and regulatory compliance from day one",
+          "Distributed team coordination: Managed remote teams across multiple European sites",
+          "Certification integration: Invested in training system integration to ensure safety and compliance",
+          "Phased rollout: Deployed incrementally to validate performance and gather feedback",
+          "Local customization: Balanced standardization with country-specific labor requirements"
         ]
       },
       {
-        heading: "Architecture (Product / Data-focused)",
+        heading: "Architecture (Platform-focused)",
         content: [
-          "The solution is a web-based workforce assignment platform integrated into operational systems:"
+          "The solution is a comprehensive workforce allocation platform with EU-specific adaptations:"
         ],
         list: [
-          "Inputs: Employee schedules, required staffing per task, training certifications",
-          "Assignment logic: Heuristic algorithm assigning tasks based on availability and qualifications",
-          "Integration: Connected to FastStart for real-time role display at badge scan",
-          "Data handling: EU-compliant processing of personal data with explicit authorization",
-          "Delivery model:",
-          "  • 2024: MVP with partial manual inputs",
-          "  • 2025: End-to-end automation framework",
-          "  • 2026: Advanced optimization model incorporating additional criteria (e.g. employee preferences)"
+          "Web frontend (EU): Provides a dedicated European UI with region-specific shift configuration, templates, and access control while reusing shared platform components",
+          "API layer: Exposes domain-specific APIs for configuration, planning, roster generation, and publishing via API Gateway to separate concerns and scale independently",
+          "Data ingestion pipelines: Ingests employee schedules, availability, and certification data from EU systems, with controlled manual uploads during early rollout phases",
+          "Storage layer: Stores large shift plans and generated rosters in S3, while using DynamoDB for configuration data and frequently updated planning data",
+          "Workflow orchestration: Coordinates roster generation and publishing through event-driven Lambda workflows to ensure reliability and traceability",
+          "Downstream integration: Publishes generated rosters automatically to FastStart via S3, enabling a controlled transition from legacy upload tools",
+          "Security and access control: Enforces role-based authorization aligned with EU privacy and data-access requirements"
         ]
       },
       {
         heading: "Outcomes / Metrics",
         content: [],
         list: [
-          "Achieved ~4.8 minutes saved per associate per shift",
-          "Contributed to ~10% efficiency increase across sites",
-          "Reduced safety incidents by 5% to 17%, depending on the fulfillment center",
-          "Delivered an estimated $4.1M total benefit ($1.8M from SARG, $2.3M from FastStart)",
-          "Successfully launched and scaled SARG across European sites"
+          "4.8 minutes saved per associate per day",
+          "Incident reduction of 5-17% across sites",
+          "$4.1 million in total benefits delivered",
+          "Improved efficiency and safety at scale",
+          "Successful GDPR compliance across all European sites",
+          "High user adoption and satisfaction"
         ]
       },
       {
         heading: "What I'd Improve",
         content: [],
         list: [
-          "Introduce advanced optimization and constraint-based models",
-          "Incorporate employee preferences to improve satisfaction and retention",
-          "Add predictive staffing adjustments based on forecasted workload",
-          "Enhance explainability of assignment decisions for managers and associates",
-          "Expand real-time monitoring and analytics on assignment quality"
+          "Add predictive task assignment based on historical performance",
+          "Enhance mobile experience for on-the-floor task management",
+          "Integrate real-time workload balancing across sites",
+          "Develop more sophisticated skills gap analysis",
+          "Expand automation to include break scheduling and rotation"
         ]
       }
     ]
   },
   "8": {
     title: "ACES & APP Tech Partnership Framework",
-    subtitle: "Feature Project — Technology Investment Strategy, Governance & Product Delivery at Scale",
+    subtitle: "Feature Project — Strategic Partnership Governance & Investment Strategy",
     sections: [
       {
         heading: "Problem",
         content: [
-          "Technology investments supporting operations were fragmented across multiple teams, leading to overlapping initiatives, unclear ownership, inconsistent prioritization, and limited visibility into value delivered. Without a structured partnership and governance model, scaling tech solutions while controlling cost, compliance, and adoption was increasingly challenging."
+          "Operational projects lacked clear governance structures and alignment mechanisms with technology partners and support teams. This resulted in misaligned priorities, inefficient resource allocation, unclear accountability, and delayed project delivery."
         ]
       },
       {
         heading: "Context",
         content: [
-          "This initiative operated in a large, multi-team operational environment, where dozens of technology requests competed for limited resources. Multiple projects targeted similar operational KPIs (labor rates, throughput, scanning performance, quality metrics), often with partial overlap and duplicated efforts. A unified framework was needed to align business priorities, technology investments, and delivery execution across teams."
+          "The project involved establishing a strategic partnership framework to coordinate multiple operational projects, support teams, and technology partners. The solution needed to balance competing priorities, manage investments, and ensure continuous alignment across diverse stakeholders."
         ]
       },
       {
         heading: "Your Role",
         content: [
-          "I acted as Product and Program Lead, defining and driving the partnership model end to end:"
+          "I acted as Product Manager for Partnership Governance:"
         ],
         list: [
-          "Designed the joint investment and prioritization framework",
-          "Structured intake processes (OP1 / OP2) for business and technical requests",
-          "Led requirement collection, benefit modeling, and effort estimation",
-          "Facilitated alignment workshops with business, tech teams, and leadership",
-          "Defined governance, communication cadence, and escalation paths",
-          "Ensured change management, rollout, and adoption were embedded from day one"
+          "Led strategic partnership framework design and implementation",
+          "Defined governance structures and decision-making processes",
+          "Developed investment strategy and resource allocation frameworks",
+          "Facilitated stakeholder alignment and executive reporting",
+          "Established continuous feedback loops and improvement mechanisms",
+          "Oversaw change management and cross-functional adoption",
+          "Proactively identified and mitigated strategic partnership risks"
         ]
       },
       {
         heading: "Decisions & Trade-offs",
         content: [],
         list: [
-          "Centralized prioritization vs. local autonomy: Chose centralized decision-making to reduce duplication and optimize cost",
-          "Reuse over rebuild: Actively identified overlaps to leverage existing platforms and partner teams",
-          "Speed vs. rigor: Balanced fast intake cycles with structured benefit and effort validation",
-          "Governance without bureaucracy: Designed lightweight but enforceable processes",
-          "Operational safety first: Embedded compliance, data quality, and legal constraints (e.g. regional regulations)"
+          "Stakeholder alignment: Prioritized project roadmaps by leveraging data-driven insights and objective arguments",
+          "Governance over autonomy: Established clear structures while preserving team flexibility",
+          "Investment transparency: Prioritized clear investment tracking and ROI visibility",
+          "Continuous feedback: Built feedback mechanisms to adapt quickly to changing needs",
+          "Executive visibility: Balanced detailed reporting with executive-level summaries"
         ]
       },
       {
-        heading: "Architecture (Product & Governance-focused)",
+        heading: "Architecture (Governance-focused)",
         content: [
-          "Rather than a single system, the solution is a product governance and delivery architecture:"
+          "The solution is a comprehensive governance and partnership management framework:"
         ],
         list: [
-          "Intake framework: OP1 / OP2 processes with standardized business and technical questionnaires",
-          "Prioritization model: Benefit-driven evaluation (financial impact, operational value, strategic alignment)",
-          "Delivery tracking: Shared roadmaps, Asana boards, MBRs, and status reporting",
-          "Cross-team collaboration: Defined ownership across multiple tech platforms and partner teams",
-          "Change management: Central change calendar, pilot sites, feedback loops, and adoption tracking",
-          "Financial visibility: Integration into a centralized financial dashboard measuring forecasted vs. actual benefits"
+          "Governance structures: Clear decision-making processes and accountability frameworks",
+          "Investment strategy: Data-driven resource allocation and ROI tracking",
+          "Stakeholder alignment: Regular alignment sessions and feedback mechanisms",
+          "Executive reporting: Structured reporting with clear metrics and outcomes",
+          "Change management: Systematic approach to adoption and implementation",
+          "Risk management: Proactive identification and mitigation of partnership risks",
+          "Continuous improvement: Feedback loops and iterative framework enhancement"
         ]
       },
       {
         heading: "Outcomes / Metrics",
         content: [],
         list: [
-          "Clear prioritization of above-the-line vs. below-the-line initiatives",
-          "Reduced duplication across tech investments addressing similar operational KPIs",
-          "Improved transparency for leadership on roadmap, risks, and delivered value",
-          "Faster alignment between business needs and technical execution",
-          "Stronger adoption through structured rollout, training, and compliance tracking",
-          "Established a repeatable model used across multiple planning cycles"
+          "Investment decisions arbitrated and roadmaps defined and validated by all stakeholders",
+          "Programs coordinated across operational, support, and technology teams",
+          "Products delivered and successfully implemented in production",
+          "Improved delivery speed through clearer governance and ownership",
+          "Stronger relationships with technology partners",
+          "Higher executive confidence in project outcomes"
         ]
       },
       {
         heading: "What I'd Improve",
         content: [],
         list: [
-          "Introduce predictive portfolio modeling to simulate trade-offs earlier",
-          "Automate intake and prioritization scoring",
-          "Expand self-service dashboards for stakeholders",
-          "Add AI-assisted clustering of similar requests",
-          "Strengthen feedback loops between delivered value and future prioritization"
+          "Automate more of the governance reporting and tracking",
+          "Develop predictive analytics for investment ROI",
+          "Enhance cross-project dependency management",
+          "Expand partnership framework to additional teams"
         ]
       }
     ]
