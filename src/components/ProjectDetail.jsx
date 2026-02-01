@@ -126,11 +126,11 @@ const ProjectDetail = ({ currentDesign = 'dark' }) => {
                     </p>
                   ))}
                   {section.list && (
-                    <ul className={`list-disc list-inside space-y-2 mt-4 ${
+                    <ul className={`list-disc list-outside ml-6 space-y-2 mt-4 ${
                       isDark ? 'text-gray-400' : 'text-gray-600'
                     }`}>
                       {section.list.map((item, lIndex) => (
-                        <li key={lIndex}>{item}</li>
+                        <li key={lIndex} className="pl-2">{item}</li>
                       ))}
                     </ul>
                   )}

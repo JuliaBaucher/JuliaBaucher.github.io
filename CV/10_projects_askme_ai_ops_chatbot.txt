@@ -1,7 +1,8 @@
 ---
-title: "AskMe — AI Operations Support Chatbot"
+title: "AI Assistant for ML Forecast Explainability
+Generative AI"
 doc_type: "project"
-tags: ["AI","GenAI","RAG","AWS Bedrock","Operations","ML Forecasting","Chatbot"]
+tags: ["AI","GenAI","RAG","AWS Bedrock","Operations","Chatbot", "AWS Bedrock Chatbot", "GenAI Chatbot", AI Assistant]
 timeframe: "2023-2026"
 seniority: "Senior Product Leader"
 language: "en"
@@ -33,6 +34,8 @@ I acted as Product Lead and AI Product Owner, owning the solution end to end:
 
 ## Decisions & Trade-offs
 
+- **S3-based knowledge storage**: Chosen S3 storage over a database to keep the knowledge base simple, low-cost, versioned, and auditable for document-centric content, accepting limited query flexibility and higher retrieval latency compared to database-backed solutions.
+- **Simple semantic search**: Chosen a brute force semantic similarity scoring with top-K selection for rapid delivery and a strong relevance baseline, accepting scalability limits and lower precision compared to hybrid, filtered, or reranked retrieval approaches.
 - **Explanation over prediction**: Focused on interpreting existing ML outputs rather than building new models, maximizing adoption and trust
 - **Role-based responses**: Accepted higher prompt and logic complexity to ensure each persona received actionable, relevant answers
 - **Controlled autonomy**: Designed the chatbot as semi-autonomous, with explicit escalation paths to human experts to manage risk
@@ -43,15 +46,20 @@ I acted as Product Lead and AI Product Owner, owning the solution end to end:
 
 AskMe is a serverless, role-aware AI assistant integrated with internal forecasting knowledge:
 
-- **Authentication & identity**: User email and role determine prompt configuration and response depth
-- **Prompt structure**: System instructions, business context (problem categories, rules, sources), and user query
-- **RAG pipeline**: Dynamic retrieval of relevant internal documentation to ground responses and prevent hallucinations
-- **Application logic**: Classifies question type, routes queries, and structures outputs consistently
-- **Auditability**: Logs requests, detected categories, and sources used for traceability and improvement
-- **Feedback loop**: Users validate responses or escalate, feeding continuous model and knowledge refinement
+- **Authentication & identity**: User email and role determine prompt configuration and response depth  
+- **Prompt structure**: System instructions, business context (problem categories, rules, sources), and user query  
+- **Knowledge storage**: Forecasting documentation and operational references stored in an S3-based knowledge base, enabling low-cost, versioned, and auditable content management  
+- **RAG pipeline**: Brute-force semantic retrieval using precomputed embeddings to dynamically select the most relevant content and ground responses, reducing hallucinations  
+- **Search strategy**: Cosine similarity scoring with top-K selection to balance relevance, simplicity, and performance for a controlled knowledge corpus  
+- **Application logic**: Classifies question type, routes queries, and structures outputs consistently  
+- **Auditability**: Logs requests, detected categories, and knowledge sources used for traceability and continuous improvement  
+- **Feedback loop**: Users validate responses or escalate to experts, enabling iterative refinement of prompts, content, and retrieval logic  
+
 
 ## Outcomes / Metrics
 
+- S3-based knowledge storage: Chose S3 storage over a database to keep the knowledge base simple, low-cost, versioned, and auditable for document-centric content, accepting limited query flexibility and higher retrieval latency compared to database-backed solutions.
+- Simple semantic search: Started with brute-force semantic similarity and top-K selection for rapid delivery and a strong relevance baseline, accepting scalability limits and lower precision than hybrid, filtered, or reranked retrieval approaches.
 - Reduced time to access reliable explanations from days to minutes
 - Significantly decreased reliance on expert teams for repetitive investigations
 - Improved consistency and confidence in forecast-driven decisions across teams

@@ -33,11 +33,12 @@ I acted as Product Lead for the MCP framework prototype:
 
 ## Decisions & Trade-offs
 
-- **MCP over custom protocols**: Chose Model Context Protocol for standardization and interoperability
+- **CLI-first orchestration vs web UI**: Chose Amazon Q CLI as the primary interface to maximize speed for power users and enable scriptable workflows, accepting a steeper learning curve and less accessibility for non-technical users.
+- **MCP agents per system vs monolithic connector**: Exposed each business system as an independent MCP server (Outlook, MotherDuck, Asana) to keep integrations modular, replaceable, and failure-isolated, accepting additional orchestration logic and per-connector configuration compared to a single monolithic connector.
 - **Amazon Q integration**: Leveraged existing AI infrastructure to accelerate development
 - **Controlled autonomy**: Designed agents with explicit boundaries and human-in-the-loop checkpoints
-- **Prototype-first approach**: Focused on proving value before full production investment
-- **Cross-platform coordination**: Accepted complexity to enable true end-to-end automation
+
+
 
 ## Architecture
 
@@ -58,7 +59,7 @@ The MCP framework enables multiple AI agents to coordinate across platforms:
 - Identified production deployment opportunities and requirements
 
 ## What I'd Improve
-
+Asana
 - Expand agent capabilities to cover more workflow types
 - Implement more sophisticated error handling and recovery
 - Add predictive task routing based on historical patterns

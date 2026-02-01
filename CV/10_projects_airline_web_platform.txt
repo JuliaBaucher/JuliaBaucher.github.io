@@ -1,5 +1,5 @@
 ---
-title: "Airline Web Platform"
+title: "Airline Web Platform (Instant Search)"
 doc_type: "project"
 tags: ["Web Development","E-Commerce","Travel","Search Engine","UX","B2C"]
 timeframe: "2006-2013"
@@ -11,63 +11,65 @@ pii: "low"
 
 ## Summary
 
-Led the development of B2C airline web and mobile applications used by millions of monthly users. Defined product vision and strategy for Travel Search Engine platforms, delivering fast search results, improved price consistency, and enhanced user experience for major global airlines.
+Led the design and delivery of an Instant Search web platform for airlines and online travel agencies, enabling the display of hundreds of travel offers in real time for promotional campaigns, long-term calendars, and email alerts. The platform relied on a massive pre-computation approach to deliver instant responses at scale, improving user experience, early-funnel conversion, and operational efficiency.
 
 ## Problem
 
-Airline customers faced slow search results, inconsistent pricing, and poor user experience when booking flights online. Legacy search systems struggled with performance, accuracy, and modern UX expectations, leading to abandoned bookings and lost revenue.
+Traditional airline search systems depended on real-time queries to multiple providers, resulting in slow response times, inconsistent pricing, and poor user experience. These limitations reduced customer inspiration, increased booking abandonment, and generated higher volumes of customer support requests.
 
 ## Context
 
-The project involved building and optimizing web platforms for major airlines serving millions of users monthly. The solution needed to handle high traffic volumes, deliver fast search results, maintain price accuracy, and provide seamless booking experiences across web and mobile devices.
+The project targeted global airlines and travel platforms serving millions of users. The solution needed to support high traffic volumes, return search results instantly, and power marketing-driven use cases such as promotions, multi-month calendars, and personalized alerts, while managing controlled trade-offs on real-time availability.
 
 ## My Role
 
-I acted as E-Commerce & Mobile Product Manager:
+I acted as Product Manager for the Instant Search platform:
 
-- Led the development of B2C airline web and mobile applications
-- Defined product vision, strategy, and value propositions for Travel Search Engine platforms
-- Redesigned online booking platforms, translating strategic objectives into feature-based product roadmaps
-- Built UX portfolios for airline website personalization, supported by market research and business case analysis
-- Managed cross-functional teams across design, engineering, and operations
+- Led end-to-end product discovery, requirements gathering, and roadmap definition  
+- Conducted usage and benchmark analysis to identify high-impact business use cases  
+- Facilitated client workshops to define user journeys, interactions, and KPIs  
+- Authored and validated the Statement of Requirements (SOR) with all stakeholders  
+- Managed technical trade-offs and aligned expectations between business and engineering  
+- Owned backlog prioritization, sprint planning, and functional validation  
+- Acted as primary client point of contact during launch and early production phases  
 
 ## Decisions & Trade-offs
 
-- **Performance first**: Prioritized fast search results to reduce abandonment rates
-- **Price consistency**: Invested in real-time pricing accuracy to build customer trust
-- **Mobile-first design**: Adapted UX for mobile devices as traffic shifted from desktop
-- **Personalization**: Balanced customization with development complexity and privacy concerns
-- **Scalability**: Built infrastructure to handle traffic spikes during peak booking periods
+- **Pre-computation over real-time queries**: Enabled instant search results at the cost of potential availability drift  
+- **Inspiration-first UX**: Optimized for discovery and marketing use cases rather than strict transactional accuracy  
+- **Performance vs freshness**: Accepted controlled price consistency targets instead of real-time guarantees  
+- **Scalability**: Designed the platform to absorb traffic peaks driven by promotions  
+- **Flexibility**: Supported multiple use cases without duplicating platforms  
 
 ## Architecture
 
-The platform provides end-to-end flight search and booking capabilities:
+The platform was built on a Massive Computation Platform :
 
-- **Search engine**: Fast, scalable flight search across multiple airlines and routes
-- **Pricing engine**: Real-time price calculation and consistency validation
-- **Booking workflow**: Streamlined multi-step booking process with error handling
-- **Payment integration**: Secure payment processing with multiple payment methods
-- **Mobile optimization**: Responsive design and native mobile app support
-- **Personalization engine**: User preferences and recommendation system
-- **Analytics**: User behavior tracking and conversion optimization
+- Daily pre-calculation of travel offers across routes and dates  
+- Storage of computed offers in a high-performance data store  
+- Instant search APIs serving web and mobile frontends  
+- Integration with airline booking systems for downstream reservation flows  
+- Configurable UI components for promotions, long-range calendars, and alerts  
+- Monitoring of response time, availability consistency, and system uptime  
 
 ## Outcomes / Metrics
 
-- Served millions of monthly users across major global airlines
-- Improved search performance and reduced page load times
-- Enhanced price consistency and booking accuracy
-- Increased conversion rates through UX optimization
-- Successfully deployed across web and mobile platforms
-- Positive user feedback and increased customer satisfaction
+- Instant search feature delivered at scale for millions of users  
+- Widely adopted by airlines for promotional and discovery use cases  
+- Sub-second response times in early booking funnel stages  
+- Improved conversion through faster and more intuitive search experiences  
+- Reduced load on real-time airline pricing systems  
+- Positive customer feedback and long-term product adoption  
 
 ## What I'd Improve
 
-- Add AI-powered personalization and recommendation engine
-- Implement predictive pricing and demand forecasting
-- Enhance mobile app features with offline capabilities
-- Integrate social proof and user reviews
-- Develop more sophisticated A/B testing framework
+
+- Improve availability refresh strategies to reduce price drift  
+- Add predictive demand and pricing insights  
+- Strengthen experimentation and A/B testing frameworks  
+- Extend analytics on inspiration-to-booking conversion
+- Integrate social proof and user reviews  
 
 ## Keywords
 
-web development, e-commerce, travel, airline booking, search engine, UX design, mobile apps, B2C, payment systems, personalization, millions of users, conversion optimization
+web development, e-commerce, travel, airline booking, instant search, massive computation, UX design, B2C, promotional search, booking funnel, scalability, conversion optimization

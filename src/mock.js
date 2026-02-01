@@ -111,12 +111,12 @@ export const experience = [
 export const projects = [
   {
     id: 1,
-    title: "ML model for employee absence forecasting",
+    title: "ML Model for Employee Absence Forecasting",
     category: "Machine Learning",
-    description: "Developed and deployed machine learning models for workforce optimization, achieving 12% reduction in labor costs across multiple Amazon facilities.",
+    description: "Led end-to-end development of a machine learning model that forecasts employee absences, improving forecast accuracy by 400 basis points. The model enables better capacity planning, staffing decisions, and operational efficiency in high-throughput environments.",
     image: "/ML workforce.png",
-    technologies: ["Python", "ML/AI", "AWS", "Data Analytics"],
-    metrics: "12% cost reduction, 50+ facilities",
+    technologies: ["Python", "ML/AI", "MLOps", "Data Science"],
+    metrics: "400 bps accuracy improvement",
     status: "Production"
   },
   {
@@ -131,12 +131,12 @@ export const projects = [
   },
   {
     id: 3,
-    title: "MCP multi-agent automation framework",
+    title: "MCP Multi-Agent Automation Framework",
     category: "Generative AI",
-    description: "Prototyped an Amazon Q-powered multi-agent framework that orchestrates enterprise workflows—including data analytics, task management, and communication—via a single natural-language command.",
+    description: "Prototyped a multi-agent AI system using Amazon Q and the Model Context Protocol (MCP) to automate cross-platform workflows and reduce manual operational effort. The framework enables AI agents to coordinate tasks across different systems, improving efficiency and reducing human intervention in repetitive processes.",
     image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&h=400&fit=crop",
-    technologies: ["Amazon Q", "Multi-Agent Systems", "Workflow Automation", "NLP"],
-    metrics: "Single command workflow orchestration, cross-platform integration",
+    technologies: ["Amazon Q", "MCP", "Multi-Agent Systems", "Workflow Automation"],
+    metrics: "Cross-platform workflow automation, reduced manual effort",
     status: "Prototype"
   },
   {
@@ -385,78 +385,76 @@ export const projectDetails = {
   },
   "3": {
     title: "MCP Multi-Agent Automation Framework",
-    subtitle: "Feature Project — AI Orchestration for Cross-Tool Operational Workflows",
+    subtitle: "Feature Project — AI Orchestration for Cross-Platform Operational Workflows",
     sections: [
       {
         heading: "Problem",
         content: [
-          "Operational teams spent a significant amount of time switching between tools, manually copying information, and translating unstructured inputs—emails, ad-hoc requests, and analyses—into concrete actions such as tickets, reports, or follow-ups. Existing AI assistants could provide answers, but remained largely disconnected from real systems, limiting their usefulness in production workflows."
+          "Operational teams faced significant manual effort coordinating tasks across multiple platforms and systems. Workflows required context switching, manual data transfer, and repetitive decision-making, leading to inefficiencies, errors, and delayed execution."
         ]
       },
       {
         heading: "Context",
         content: [
-          "The framework was designed for internal Amazon teams (product managers, operations, and engineering) working in fast-paced, tool-heavy environments. The challenge was not to replace existing systems, but to connect them intelligently through an AI layer that is explainable, controlled, and action-oriented, while preserving existing workflows and governance."
+          "The project was developed to explore how multi-agent AI systems could orchestrate complex workflows spanning multiple tools and platforms. The goal was to reduce operational overhead while maintaining control, auditability, and reliability in production environments."
         ]
       },
       {
         heading: "Your Role",
         content: [
-          "I acted as Product Designer and Technical Architect, owning the concept from problem framing to prototype evaluation:"
+          "I acted as Product Lead for the MCP framework prototype:"
         ],
         list: [
-          "Identified high-friction operational workflows and validated automation opportunities",
-          "Defined product principles: explicit contracts, separation of reasoning and execution, and controlled autonomy",
-          "Designed the multi-agent architecture and interaction model",
-          "Built and tested the prototype in a real execution environment",
-          "Defined success metrics and collected structured user feedback"
+          "Identified high-impact use cases for multi-agent automation",
+          "Defined the architecture and interaction patterns between agents",
+          "Designed the coordination logic and handoff protocols",
+          "Partnered with engineering teams to implement the MCP-based solution",
+          "Evaluated performance and identified opportunities for production deployment"
         ]
       },
       {
         heading: "Decisions & Trade-offs",
         content: [],
         list: [
-          "Orchestration over replacement: Chose to augment existing tools rather than rebuild workflows",
-          "Multi-agent design: Accepted higher architectural complexity to achieve modularity and extensibility",
-          "CLI-first interface: Prioritized power users and precision over mass adoption in early stages",
-          "Explicit contracts: Enforced strict input/output schemas to improve reliability and auditability",
-          "Controlled autonomy: Limited agent permissions to reduce operational and security risks"
+          "CLI-first orchestration vs web UI: Chose Amazon Q CLI as the primary interface to maximize speed for power users and enable scriptable workflows, accepting a steeper learning curve and less accessibility for non-technical users",
+          "MCP agents per system vs monolithic connector: Exposed each business system as an independent MCP server (Outlook, MotherDuck, Asana) to keep integrations modular, replaceable, and failure-isolated, accepting additional orchestration logic and per-connector configuration compared to a single monolithic connector",
+          "Amazon Q integration: Leveraged existing AI infrastructure to accelerate development",
+          "Controlled autonomy: Designed agents with explicit boundaries and human-in-the-loop checkpoints"
         ]
       },
       {
         heading: "Architecture (AI-focused)",
         content: [
-          "The prototype is built on a Model Context Protocol (MCP) architecture, running in a Linux environment (WSL2) with Amazon Q CLI as the entry point:"
+          "The MCP framework enables multiple AI agents to coordinate across platforms:"
         ],
         list: [
-          "Natural language interface: Users issue commands via Amazon Q CLI",
-          "Reasoning layer: The AI interprets intent and plans actions without directly executing them",
-          "Execution layer: Independent MCP agents expose real systems:",
-          "  • Outlook agent for email analysis and triage",
-          "  • Jira / Asana (Rovo) agents for ticket creation and tracking",
-          "  • Data agent using DuckDB and MotherDuck for analytics",
-          "Agent communication: Standardized MCP contracts ensure clean separation between reasoning and execution",
-          "Feedback collection: Dedicated agents capture user validation and perceived value after workflow execution"
+          "Agent orchestration: Central coordinator manages task distribution and agent communication",
+          "MCP protocol: Standardized context sharing and handoff between agents",
+          "Amazon Q integration: Leverages Amazon Q for natural language understanding and task execution",
+          "Platform connectors: Agents interface with multiple systems (databases, APIs, internal tools)",
+          "Audit trail: All agent actions and decisions are logged for traceability",
+          "Human oversight: Critical decisions escalate to human operators"
         ]
       },
       {
         heading: "Outcomes / Metrics",
         content: [],
         list: [
-          "Significant reduction in time spent on repetitive, cross-tool operational tasks",
-          "High end-to-end workflow success rate without human intervention",
-          "Improved continuity between analysis, decision, and execution",
-          "Positive qualitative feedback confirming the value of AI-driven orchestration embedded in existing tools"
+          "Successfully demonstrated cross-platform workflow automation",
+          "Reduced manual operational effort in pilot use cases",
+          "Validated MCP as a viable protocol for multi-agent coordination",
+          "Identified production deployment opportunities and requirements"
         ]
       },
       {
         heading: "What I'd Improve",
         content: [],
         list: [
-          "Add a lightweight UI layer for less technical users while keeping CLI power features",
-          "Introduce richer monitoring and observability for agent behavior and failures",
-          "Expand agent library to cover additional enterprise systems",
-          "Implement policy-based permissions to dynamically adjust agent autonomy by context"
+          "Expand agent capabilities to cover more workflow types",
+          "Implement more sophisticated error handling and recovery",
+          "Add predictive task routing based on historical patterns",
+          "Develop better visualization of agent coordination and decision-making",
+          "Strengthen security and access control for cross-platform operations"
         ]
       }
     ]

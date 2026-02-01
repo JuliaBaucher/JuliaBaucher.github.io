@@ -34,6 +34,9 @@ I acted as Product Owner for the European rollout:
 
 ## Decisions & Trade-offs
 
+
+- **EU regionalization over global product**: Chose a separate EU deployment to meet GDPR and worker-council constraints, accepting additional operational overhead compared to a single global stack.
+- **EU UI with US backend & storage**: Kept the backend and database on the US side to avoid duplicating and synchronizing a full database in the EU, reducing cost and operational complexity
 - **GDPR compliance first**: Prioritized data privacy and regulatory compliance from day one
 - **Distributed team coordination**: Managed remote teams across multiple European sites
 - **Certification integration**: Invested in training system integration to ensure safety and compliance
@@ -42,15 +45,20 @@ I acted as Product Owner for the European rollout:
 
 ## Architecture
 
-The platform automates workforce task allocation across warehouse operations:
 
-- **Scheduling engine**: Matches associates to tasks based on availability and skills
-- **Certification tracking**: Validates training requirements before task assignment
-- **Compliance layer**: Ensures GDPR compliance and local labor regulations
-- **Web application**: User-friendly interface for managers and associates
-- **Integration layer**: Connects with HR systems, training databases, and operational tools
-- **Analytics**: Tracks productivity, safety incidents, and efficiency metrics
-- **Distributed deployment**: Multi-site architecture for European operations
+- **Web frontend (EU)**: Provides a dedicated European UI with region-specific shift configuration, templates, and access control while reusing shared platform components
+
+- **API layer**: Exposes domain-specific APIs for configuration, planning, roster generation, and publishing via API Gateway to separate concerns and scale independently
+
+- **Data ingestion pipelines**: Ingests employee schedules, availability, and certification data from EU systems, with controlled manual uploads during early rollout phases
+
+- **Storage layer**: Stores large shift plans and generated rosters in S3, while using DynamoDB for configuration data and frequently updated planning data
+
+- **Workflow orchestration**: Coordinates roster generation and publishing through event-driven Lambda workflows to ensure reliability and traceability
+
+- **Downstream integration**: Publishes generated rosters automatically to FastStart via S3, enabling a controlled transition from legacy upload Tools
+
+- **Security and access control**: Enforces role-based authorization aligned with EU privacy and data-access requirements
 
 ## Outcomes / Metrics
 

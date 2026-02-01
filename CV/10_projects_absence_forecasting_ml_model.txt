@@ -28,7 +28,7 @@ I acted as Product Owner for the ML forecasting solution:
 - Identified the business need and validated the impact of improved forecasting
 - Defined success metrics and accuracy targets
 - Partnered with data science teams to develop and validate the model
-- Designed the integration with existing workforce planning systems
+- Managed the integration with existing workforce planning systems
 - Oversaw model deployment, monitoring, and continuous improvement
 
 ## Decisions & Trade-offs
@@ -63,7 +63,6 @@ The ML forecasting solution integrates with workforce planning systems:
 - Incorporate external factors (weather, events) that influence absence patterns
 - Develop confidence intervals to communicate forecast uncertainty
 - Expand to predict absence types and durations, not just likelihood
-- Integrate with automated scheduling systems for end-to-end optimization
 
 ## Keywords
 

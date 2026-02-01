@@ -11,15 +11,15 @@ pii: "low"
 
 ## Education
 
-### PhD in Applied Mathematics
-**University of Nice Sophia Antipolis, France | 2002-2006**
+### PhD in Numerical Mechanics
+**École des Mines de Paris, France | 2002-2006**
 
-Focus on computational methods and engineering applications.
 
-### Master's Degree in Applied Mathematics
+
+### Engineering Degree in Computer Science
 **Moscow State University, Russia | 1997-2002**
 
-Specialized in mathematical modeling and numerical analysis.
+
 
 ## Recognition & Awards
 
