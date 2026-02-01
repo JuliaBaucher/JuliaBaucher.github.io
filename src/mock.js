@@ -123,17 +123,17 @@ export const projects = [
     id: 2,
     title: "AI Assistant for ML Forecast Explainability",
     category: "Generative AI",
-    description: "Shipped an AWS Bedrock–powered AI assistant that explains ML forecast results to business users and reduced investigation effort from days to minutes.",
+    description: "AskMe is a GenAI-powered chatbot built on AWS Bedrock that interprets ML forecast outputs for operational and planning teams. It provides role-based, explainable answers grounded in trusted data sources, reducing reliance on expert teams and accelerating decision-making from days to minutes.",
     image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop",
-    technologies: ["AWS Bedrock", "Serverless", "NLP", "Data Integration"],
-    metrics: "Days to minutes insight reduction, expert dependency eliminated",
+    technologies: ["AWS Bedrock", "GenAI", "RAG", "Serverless"],
+    metrics: "Days to minutes decision-making, reduced expert dependency",
     status: "Production"
   },
   {
     id: 3,
     title: "MCP Multi-Agent Automation Framework",
     category: "Generative AI",
-    description: "Prototyped a multi-agent AI system using Amazon Q and the Model Context Protocol (MCP) to automate cross-platform workflows and reduce manual operational effort. The framework enables AI agents to coordinate tasks across different systems, improving efficiency and reducing human intervention in repetitive processes.",
+    description: "Prototyped a multi-agent AI system using Amazon Q and MCP, accessible via a command-line interface. The framework enables AI agents to coordinate actions across multiple systems, reducing manual tasks and improving efficiency in repetitive operational workflows.",
     image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&h=400&fit=crop",
     technologies: ["Amazon Q", "MCP", "Multi-Agent Systems", "Workflow Automation"],
     metrics: "Cross-platform workflow automation, reduced manual effort",
@@ -141,9 +141,9 @@ export const projects = [
   },
   {
     id: 4,
-    title: "Airline Web Platforms",
+    title: "Airline Web Platform (Instant Search)",
     category: "Web Development",
-    description: "Led the product development of airline web and mobile applications serving millions of monthly users. Delivered an innovative instant search feature for promoting travel offers, adopted by the majority of European airlines.",
+    description: "Led the design and delivery of an Instant Search web platform for airlines, enabling the display of hundreds of travel offers for promotional campaigns, long-term calendars, and email alerts. The platform improves user experience, early-funnel conversion, and operational efficiency.",
     image: "https://images.unsplash.com/photo-1556075798-4825dfaaf498?w=600&h=400&fit=crop",
     technologies: ["Web Apps", "Mobile", "UX Design", "Payment Systems"],
     metrics: "Millions of monthly users, 15+ airlines",
@@ -308,8 +308,8 @@ export const projectDetails = {
     ]
   },
   "2": {
-    title: "AskMeAI Operations Support Chatbot",
-    subtitle: "Feature Project — AI Assistant for ML Forecast Explainability",
+    title: "AI Assistant for ML Forecast Explainability",
+    subtitle: "Feature Project — AskMe Operations Support Chatbot",
     sections: [
       {
         heading: "Problem",
@@ -340,6 +340,8 @@ export const projectDetails = {
         heading: "Decisions & Trade-offs",
         content: [],
         list: [
+          "S3-based knowledge storage: Chosen S3 storage over a database to keep the knowledge base simple, low-cost, versioned, and auditable for document-centric content, accepting limited query flexibility and higher retrieval latency compared to database-backed solutions",
+          "Simple semantic search: Chosen a brute force semantic similarity scoring with top-K selection for rapid delivery and a strong relevance baseline, accepting scalability limits and lower precision compared to hybrid, filtered, or reranked retrieval approaches",
           "Explanation over prediction: Focused on interpreting existing ML outputs rather than building new models, maximizing adoption and trust",
           "Role-based responses: Accepted higher prompt and logic complexity to ensure each persona received actionable, relevant answers",
           "Controlled autonomy: Designed the chatbot as semi-autonomous, with explicit escalation paths to human experts to manage risk",
@@ -355,10 +357,12 @@ export const projectDetails = {
         list: [
           "Authentication & identity: User email and role determine prompt configuration and response depth",
           "Prompt structure: System instructions, business context (problem categories, rules, sources), and user query",
-          "RAG pipeline: Dynamic retrieval of relevant internal documentation to ground responses and prevent hallucinations",
+          "Knowledge storage: Forecasting documentation and operational references stored in an S3-based knowledge base, enabling low-cost, versioned, and auditable content management",
+          "RAG pipeline: Brute-force semantic retrieval using precomputed embeddings to dynamically select the most relevant content and ground responses, reducing hallucinations",
+          "Search strategy: Cosine similarity scoring with top-K selection to balance relevance, simplicity, and performance for a controlled knowledge corpus",
           "Application logic: Classifies question type, routes queries, and structures outputs consistently",
-          "Auditability: Logs requests, detected categories, and sources used for traceability and improvement",
-          "Feedback loop: Users validate responses or escalate, feeding continuous model and knowledge refinement"
+          "Auditability: Logs requests, detected categories, and knowledge sources used for traceability and continuous improvement",
+          "Feedback loop: Users validate responses or escalate to experts, enabling iterative refinement of prompts, content, and retrieval logic"
         ]
       },
       {
