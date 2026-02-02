@@ -1,0 +1,263 @@
+// ====== Your existing helpers kept intact (CORS stays identical) ======
+async function fetchWithTimeout(url, options = {}, timeoutMs = 8000) {
+  const controller = new AbortController();
+  const id = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    console.log("About to call fetch:", url);
+    const res = await fetch(url, { ...options, signal: controller.signal });
+    console.log("Fetch returned status:", res.status);
+    return res;
+  } catch (err) {
+    console.error("Fetch failed/aborted:", err);
+    throw err;
+  } finally {
+    clearTimeout(id);
+  }
+}
+
+async function callOpenAI(userMessage, systemMessage) {
+  const apiKey = process.env.OPENAI_API_KEY;
+  console.log("callOpenAI start. userMessage length:", userMessage.length);
+  
+  const body = {
+    model: "gpt-4o-mini",
+    input: [
+      { role: "system", content: systemMessage },
+      { role: "user", content: userMessage }
+    ]
+  };
+
+  const response = await fetchWithTimeout("https://api.openai.com/v1/responses", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${apiKey}`,
+    },
+    body: JSON.stringify(body),
+  }, 8000);
+
+  if (!response.ok) {
+    const errText = await response.text();
+    console.error("OpenAI error:", errText);
+    throw new Error("OpenAI API call failed");
+  }
+
+  const data = await response.json();
+  console.log("OpenAI raw response:", JSON.stringify(data));
+
+  // ✅ parsing logic you already use
+  let assistantText = "";
+  if (Array.isArray(data.output)) {
+    for (const messageChunk of data.output) {
+      if (Array.isArray(messageChunk.content)) {
+        for (const contentPiece of messageChunk.content) {
+          if (contentPiece.type === "output_text" && typeof contentPiece.text === "string") {
+            assistantText += contentPiece.text;
+          }
+        }
+      }
+    }
+  }
+
+  if (!assistantText && data.output_text) {
+    assistantText = data.output_text;
+  }
+
+  assistantText = assistantText.trim();
+  console.log("assistantText after parse:", assistantText);
+  return assistantText;
+}
+
+function jsonResponse(statusCode, obj) {
+  return {
+    statusCode,
+    headers: {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "https://juliabaucher.github.io",
+      "Access-Control-Allow-Headers": "Content-Type",
+      "Access-Control-Allow-Methods": "POST,OPTIONS",
+    },
+    body: JSON.stringify(obj),
+  };
+}
+
+// ✅ NEW: Function to format conversation history
+function formatConversationHistory(history) {
+  if (!history || history.length === 0) return "";
+  
+  let formatted = "\n\nRecent conversation context:\n";
+  for (const msg of history) {
+    const role = msg.role === 'user' ? 'User' : 'Assistant';
+    formatted += `${role}: ${msg.content}\n`;
+  }
+  return formatted + "\n";
+}
+
+// ====== RAG ADDITIONS (kept minimal, no change to CORS) ======
+const BUCKET = process.env.BUCKET || "juliabaucher-cv-kb";
+const EMB_PREFIX = process.env.EMB_PREFIX || "kb/embeddings/";
+const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
+
+// ✅ NEW: system prompt read from environment variable (no other behavior changes)
+const SYSTEM_PROMPT = process.env.SYSTEM_PROMPT;
+
+// Use AWS SDK v3 for S3 (works in Lambda Node 18+ if layer is available)
+import { S3Client, ListObjectsV2Command, GetObjectCommand } from "@aws-sdk/client-s3";
+const s3 = new S3Client({});
+
+let cachedChunks = null;
+
+function cosine(a, b) {
+  let dot = 0, na = 0, nb = 0;
+  const n = Math.min(a.length, b.length);
+  for (let i = 0; i < n; i++) {
+    const x = a[i], y = b[i];
+    dot += x * y;
+    na += x * x;
+    nb += y * y;
+  }
+  na = Math.sqrt(na) + 1e-10;
+  nb = Math.sqrt(nb) + 1e-10;
+  return dot / (na * nb);
+}
+
+async function embedText(text) {
+  const payload = {
+    model: "text-embedding-3-small",
+    input: [text]
+  };
+
+  const res = await fetchWithTimeout("https://api.openai.com/v1/embeddings", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${OPENAI_API_KEY}`
+    },
+    body: JSON.stringify(payload)
+  }, 8000);
+
+  if (!res.ok) {
+    const t = await res.text().catch(() => "");
+    throw new Error(`Embeddings failed: ${res.status} ${t}`);
+  }
+
+  const data = await res.json();
+  return data.data?.[0]?.embedding || [];
+}
+
+function streamToString(stream) {
+  return new Promise((resolve, reject) => {
+    const chunks = [];
+    stream.on("data", (d) => chunks.push(Buffer.from(d)));
+    stream.on("error", reject);
+    stream.on("end", () => resolve(Buffer.concat(chunks).toString("utf-8")));
+  });
+}
+
+async function loadAllChunks() {
+  if (cachedChunks) return cachedChunks;
+
+  const out = [];
+  let token = undefined;
+
+  do {
+    const listed = await s3.send(new ListObjectsV2Command({
+      Bucket: BUCKET,
+      Prefix: EMB_PREFIX,
+      ContinuationToken: token
+    }));
+
+    for (const obj of listed.Contents || []) {
+      const key = obj.Key;
+      if (!key || !key.endsWith(".json")) continue;
+
+      const got = await s3.send(new GetObjectCommand({ Bucket: BUCKET, Key: key }));
+      const body = await streamToString(got.Body);
+      const arr = JSON.parse(body); // [{ text, embedding }]
+      out.push(...arr);
+    }
+
+    token = listed.IsTruncated ? listed.NextContinuationToken : undefined;
+  } while (token);
+
+  cachedChunks = out;
+  console.log(`Loaded ${out.length} chunks from s3://${BUCKET}/${EMB_PREFIX}`);
+  return out;
+}
+
+// ====== Main handler (keeps your CORS logic identical) ======
+export const handler = async (event) => {
+  try {
+    console.log("Lambda invoked with method:", event.requestContext?.http?.method);
+    const method = event.requestContext?.http?.method || "GET";
+
+    if (method === "OPTIONS") {
+      console.log("Handling OPTIONS");
+      return jsonResponse(200, { ok: true });
+    }
+
+    if (method === "POST") {
+      console.log("Handling POST");
+      const body = event.body ? JSON.parse(event.body) : {};
+      console.log("Request body parsed:", JSON.stringify(body));
+
+      const userMessage = (body.message || "").trim();
+      const conversationHistory = body.conversation_history || []; // ✅ NEW: Extract conversation history
+
+      if (!userMessage) {
+        console.warn("No user message provided");
+        return jsonResponse(400, { error: "No message provided" });
+      }
+
+      // ------- RAG flow -------
+      // ✅ CHANGED: default systemMessage now comes from env var (fallback to previous hardcoded string)
+      let systemMessage = (SYSTEM_PROMPT && String(SYSTEM_PROMPT).trim().length > 0)
+        ? String(SYSTEM_PROMPT)
+        : "You are a helpful AI assistant on Julia Baucher's CV website. Answer politely and concisely.";
+
+      try {
+        const qVec = await embedText(userMessage);
+        const chunks = await loadAllChunks();
+
+        if (chunks.length) {
+          const scored = [];
+          for (const item of chunks) {
+            const sim = cosine(qVec, item.embedding);
+            scored.push([sim, item.text]);
+          }
+
+          scored.sort((a, b) => b[0] - a[0]);
+          const topTexts = scored.slice(0, 5).map(([_, t]) => t);
+          const contextText = topTexts.join("\n\n---\n\n");
+
+          // ✅ CHANGED: use env prompt as the base instructions when available; otherwise keep your existing hardcoded prompt
+          const baseInstructions = (SYSTEM_PROMPT && String(SYSTEM_PROMPT).trim().length > 0)
+            ? String(SYSTEM_PROMPT).trim()
+            : ("You are Julia Baucher's AI assistant for recruiters.\n" +
+               "Use ONLY the context below when relevant. If you don't find the answer in the context, say you don't know.\n\n" +
+               "Answer in 1-5 sentences, in plain text, no lists unless the user specifically asks for a lists.\n\n");
+
+          systemMessage = baseInstructions + 
+                         formatConversationHistory(conversationHistory) + // ✅ NEW: Add conversation history
+                         "\n\nContext:\n" + contextText;
+        } else {
+          console.log("No embeddings available—falling back to generic prompt.");
+        }
+      } catch (e) {
+        console.warn("RAG step failed, falling back to generic prompt:", e?.message || e);
+      }
+
+      // Call your existing OpenAI wrapper (kept exactly)
+      const answer = await callOpenAI(userMessage, systemMessage);
+      console.log("Final answer length:", answer.length);
+      return jsonResponse(200, { reply: answer });
+    }
+
+    console.warn("Method not allowed:", method);
+    return jsonResponse(405, { error: "Method not allowed" });
+  } catch (err) {
+    console.error("Lambda error:", err);
+    // keep your graceful behavior
+    return jsonResponse(200, { reply: "" });
+  }
+};

@@ -102,18 +102,24 @@ const Chatbot = ({ currentDesign = 'dark' }) => {
     };
 
     // Optimistic UI - add user message immediately
-    const updatedMessages = [...messages, userMessage];
-    setMessages(updatedMessages);
+    setMessages(prev => [...prev, userMessage]);
     setInput('');
     setIsLoading(true);
 
     try {
       // Get recent conversation history (last 6 messages = 3 exchanges)
-      // Use updatedMessages instead of messages to include current conversation
-      const recentMessages = updatedMessages.slice(-6).map(msg => ({
+      // Use messages (before current message) for conversation history
+      const recentMessages = messages.slice(-6).map(msg => ({
         role: msg.type === 'user' ? 'user' : 'assistant',
         content: msg.text
       }));
+
+      console.log('=== CONVERSATION DEBUG ===');
+      console.log('Current messages array length:', messages.length);
+      console.log('Recent messages (last 6):', messages.slice(-6));
+      console.log('Mapped conversation_history:', recentMessages);
+      console.log('Sending to API:', { message: trimmedInput, conversation_history: recentMessages });
+      console.log('========================');
 
       const response = await fetch(API_ENDPOINT, {
         method: 'POST',
@@ -126,14 +132,20 @@ const Chatbot = ({ currentDesign = 'dark' }) => {
         })
       });
 
+      console.log('Response status:', response.status);
+      console.log('Response headers:', response.headers);
+
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
       const data = await response.json();
+      console.log('Response data:', data);
       
       // Extract assistant response from various possible fields
       const assistantText = data.reply ?? data.response ?? data.assistant ?? data.message ?? 'Sorry, I could not process your request.';
+
+      console.log('Extracted assistant text:', assistantText);
 
       const assistantMessage = {
         id: Date.now() + 1,
