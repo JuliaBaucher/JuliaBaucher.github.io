@@ -69,6 +69,7 @@ I acted as Product Owner for the ML forecasting solution:
 - Improved forecast accuracy by 400 basis points
 - Enabled more accurate capacity planning and staffing decisions
 - Reduced operational costs through better resource allocation
+- Reduced workforce planning time through automated absence predictions and seamless platform integration
 - Provided foundation for additional ML-driven workforce optimization
 
 ## What I'd Improve

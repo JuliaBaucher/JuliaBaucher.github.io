@@ -106,12 +106,21 @@ const Chatbot = ({ currentDesign = 'dark' }) => {
     setIsLoading(true);
 
     try {
+      // Get recent conversation history (last 6 messages = 3 exchanges)
+      const recentMessages = messages.slice(-6).map(msg => ({
+        role: msg.type === 'user' ? 'user' : 'assistant',
+        content: msg.text
+      }));
+
       const response = await fetch(API_ENDPOINT, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ message: trimmedInput })
+        body: JSON.stringify({ 
+          message: trimmedInput,
+          conversation_history: recentMessages
+        })
       });
 
       if (!response.ok) {
