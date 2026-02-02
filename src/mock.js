@@ -246,7 +246,7 @@ export const projectDetails = {
         ]
       },
       {
-        heading: "Your Role",
+        heading: "My Role",
         content: [
           "I acted as Product Lead for the ML initiative, working closely with data scientists, engineers, and business stakeholders:"
         ],
@@ -324,7 +324,7 @@ export const projectDetails = {
         ]
       },
       {
-        heading: "Your Role",
+        heading: "My Role",
         content: [
           "I acted as Product Lead and AI Product Owner, owning the solution end to end:"
         ],
@@ -404,7 +404,7 @@ export const projectDetails = {
         ]
       },
       {
-        heading: "Your Role",
+        heading: "My Role",
         content: [
           "I acted as Product Lead for the MCP framework prototype:"
         ],
@@ -480,7 +480,7 @@ export const projectDetails = {
         ]
       },
       {
-        heading: "Your Role",
+        heading: "My Role",
         content: [
           "I acted as Product Manager for the Airline Web Platform, owning the product from discovery to production:"
         ],
@@ -559,7 +559,7 @@ export const projectDetails = {
         ]
       },
       {
-        heading: "Your Role",
+        heading: "My Role",
         content: [
           "I acted as Product Owner for Workforce Analytics, responsible for:"
         ],
@@ -640,7 +640,7 @@ export const projectDetails = {
         ]
       },
       {
-        heading: "Your Role",
+        heading: "My Role",
         content: [
           "I acted as Product Owner for the European rollout:"
         ],
@@ -723,7 +723,7 @@ export const projectDetails = {
         ]
       },
       {
-        heading: "Your Role",
+        heading: "My Role",
         content: [
           "I acted as Product Manager for Partnership Governance:"
         ],
@@ -804,7 +804,7 @@ export const projectDetails = {
         ]
       },
       {
-        heading: "Your Role",
+        heading: "My Role",
         content: [
           "I acted as Product Manager and Domain Lead for Revenue Accounting & Auditing, owning both product strategy and customer alignment:"
         ],

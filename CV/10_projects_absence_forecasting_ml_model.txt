@@ -25,15 +25,23 @@ The project was developed for operational environments where workforce availabil
 
 I acted as Product Owner for the ML forecasting solution:
 
-- Identified the business need and validated the impact of improved forecasting
-- Defined success metrics and accuracy targets
-- Partnered with data science teams to develop and validate the model
-- Managed the integration with existing workforce planning systems
-- Oversaw model deployment, monitoring, and continuous improvement
+- Defined the end-to-end product strategy, including the business problem, roadmap, success criteria, and key risks  
+- Aligned the definition of employee absence across stakeholders to ensure consistent data and decision-making  
+- Identified, assessed, and prepared relevant data sources in collaboration with data and engineering teams  
+- Led model development with data scientists, from design through validation and performance evaluation  
+- Defined accuracy targets and success metrics, and oversaw model testing and comparison with existing baselines  
+- Managed integration with workforce planning systems and supported production rollout and adoption  
+- Established monitoring and continuous improvement processes post-deployment  
+- Contributed to the expansion strategy to scale the model to additional sites and business lines  
+
+
+
 
 ## Decisions & Trade-offs
 
-- **ML over rules-based**: Chose machine learning to capture complex patterns that rules couldn't handle
+- **Probabilistic vs deterministic ML**: Selected a probabilistic model to capture uncertainty and variability in absence patterns, using the median forecast as a stable point estimate for planning, accepting increased training and operational complexity.
+- **Weekly retraining over real-time learning**: Chosen weekly retraining to prioritize forecast stability, governance, and alignment with workforce planning cycles, accepting slower reactions to sudden changes.
+
 - **Accuracy over interpretability**: Prioritized forecast accuracy while maintaining sufficient explainability for operations teams
 - **Historical data focus**: Leveraged extensive historical absence data to train robust models
 - **Incremental rollout**: Deployed gradually to validate performance before full adoption
@@ -41,14 +49,20 @@ I acted as Product Owner for the ML forecasting solution:
 
 ## Architecture
 
-The ML forecasting solution integrates with workforce planning systems:
+- **Data pipeline**: Defined weekly pipelines ingesting historical attendance data, shift schedules, known absences (holidays, planned leave), and contextual signals such as day-of-week, seasonality, bank holidays, and major operational events.
 
-- **Data pipeline**: Ingests historical absence data, schedules, and contextual factors
-- **Feature engineering**: Extracts temporal patterns, seasonality, and employee-specific trends
-- **ML model**: Trained on historical data to predict absence likelihood and duration
-- **MLOps pipeline**: Automated retraining, validation, and deployment
-- **Integration layer**: Delivers forecasts to workforce planning and scheduling systems
-- **Monitoring**: Tracks model performance and data drift
+- **ML model**: Selected a probabilistic deep learning time-series model (DeepAR, an autoregressive recurrent neural network implemented in GluonTS) to learn temporal dependencies, seasonality, and event-driven patterns across thousands of related time series.
+
+- **Output format**: Produced a probability distribution (Student-t) for unknown absence rates, generated multiple forecast samples per site, shift, and employee category, and used the median as a stable point estimate for operational planning.
+
+- **Feature engineering**: Extracted temporal patterns, seasonality effects, and employee-specific trends to improve forecast accuracy and robustness.
+
+- **Training & evaluation**: Retrained the model weekly, evaluated performance using WAPE and MAE, and validated results across multiple runs to ensure robustness and consistency before deployment.
+
+- **Integration layer**: Integrated forecasts into the workforce management platform to enable timely and automated delivery of predictions to operations teams.
+
+- **Monitoring**: Tracked model outputs and performance metrics through a BI dashboard, enabling operations and planning teams to monitor forecast quality and adoption over time.
+
 
 ## Outcomes / Metrics
 
@@ -59,10 +73,10 @@ The ML forecasting solution integrates with workforce planning systems:
 
 ## What I'd Improve
 
-- Add real-time forecasting updates as new data becomes available
-- Incorporate external factors (weather, events) that influence absence patterns
-- Develop confidence intervals to communicate forecast uncertainty
-- Expand to predict absence types and durations, not just likelihood
+- Incorporate additional external signals (e.g., weather, employee feedback) to improve absence predictions
+- Increase explainability by exposing the factors influencing each prediction to support adoption
+- Communicate confidence intervals to users to convey forecast uncertainty and support better risk evaluation
+- Expand the model to other business lines 
 
 ## Keywords
 
