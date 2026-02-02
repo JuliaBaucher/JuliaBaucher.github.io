@@ -236,73 +236,77 @@ export const projectDetails = {
       {
         heading: "Problem",
         content: [
-          "Employee absenteeism directly impacts delivery promises and cost per package. When absenteeism is underestimated, teams are understaffed and unable to process all parcels on time; when overestimated, unnecessary labor costs are incurred. Historically, absenteeism forecasts relied on a simple rolling average of the previous two weeks, which failed to account for seasonality, holidays, weekends, and workforce heterogeneity—leading to systematic inaccuracies."
+          "Operations teams struggled with inaccurate absence forecasts, leading to overstaffing (increased costs) or understaffing (reduced throughput and service quality). Existing forecasting methods were manual, inconsistent, and failed to capture complex patterns in absence behavior."
         ]
       },
       {
         heading: "Context",
         content: [
-          "The model was developed for Amazon fulfillment centers, where workforce planning decisions must be made several weeks in advance and at fine operational granularity. Absenteeism forecasting is a critical input to staffing tools used by operations and planning teams, and errors have immediate financial and customer impact."
+          "The project was developed for operational environments where workforce availability directly impacts business performance. Accurate absence forecasting is critical for capacity planning, shift scheduling, and maintaining service level agreements."
         ]
       },
       {
         heading: "My Role",
         content: [
-          "I acted as Product Lead for the ML initiative, working closely with data scientists, engineers, and business stakeholders:"
+          "I acted as Product Owner for the ML forecasting solution:"
         ],
         list: [
-          "Defined the business problem, success metrics, and expected ROI",
-          "Aligned all stakeholders on a shared, precise definition of \"absence\"",
-          "Translated operational constraints into ML requirements (horizon, granularity, frequency)",
-          "Oversaw model comparison against the existing baseline",
-          "Led integration of predictions into the workforce management system"
+          "Defined the end-to-end product strategy, including the business problem, roadmap, success criteria, and key risks",
+          "Aligned the definition of employee absence across stakeholders to ensure consistent data and decision-making",
+          "Identified, assessed, and prepared relevant data sources in collaboration with data and engineering teams",
+          "Led model development with data scientists, from design through validation and performance evaluation",
+          "Defined accuracy targets and success metrics, and oversaw model testing and comparison with existing baselines",
+          "Managed integration with workforce planning systems and supported production rollout and adoption",
+          "Established monitoring and continuous improvement processes post-deployment",
+          "Contributed to the expansion strategy to scale the model to additional sites and business lines"
         ]
       },
       {
         heading: "Decisions & Trade-offs",
         content: [],
         list: [
-          "Business alignment first: Prioritized a shared operational definition of absence before modeling to avoid downstream misinterpretation",
-          "Forecast horizon vs. accuracy: Selected a three-week prediction horizon to align with workforce planning cycles, accepting higher uncertainty than short-term forecasts",
-          "Granularity vs. complexity: Chose fine-grained predictions (site, shift, employee type) despite increased model and data complexity",
-          "Human override: Kept manual editability of predictions to preserve operational trust and flexibility",
-          "Maintainability: Planned for retraining cadence and feature evolution from the start to ensure long-term viability"
+          "Probabilistic vs deterministic ML: Selected a probabilistic model to capture uncertainty and variability in absence patterns, using the median forecast as a stable point estimate for planning, accepting increased training and operational complexity",
+          "Weekly retraining over real-time learning: Chosen weekly retraining to prioritize forecast stability, governance, and alignment with workforce planning cycles, accepting slower reactions to sudden changes",
+          "Accuracy over interpretability: Prioritized forecast accuracy while maintaining sufficient explainability for operations teams",
+          "Historical data focus: Leveraged extensive historical absence data to train robust models",
+          "Incremental rollout: Deployed gradually to validate performance before full adoption",
+          "Continuous retraining: Implemented MLOps pipeline for regular model updates"
         ]
       },
       {
-        heading: "Architecture (AI-focused)",
+        heading: "Architecture (ML-focused)",
         content: [
-          "The solution follows a standard production ML pipeline integrated into operational systems:"
+          "The solution follows a comprehensive ML pipeline optimized for operational forecasting:"
         ],
         list: [
-          "Data sources: HR attendance scans, workforce schedules, historical absenteeism, calendar data (holidays, events)",
-          "Feature engineering: Day-of-week effects, seasonality, holidays, Amazon-specific events, employee type",
-          "Prediction setup: Weekly predictions with a three-week horizon, segmented by site, shift, and employee category",
-          "Evaluation metrics: WAPE and MAE to balance interpretability and business relevance",
-          "Deployment: Predictions automatically pre-fill absenteeism rates in the workforce management tool",
-          "Operations: Model retraining and feature updates planned on a defined cadence"
+          "Data pipeline: Defined weekly pipelines ingesting historical attendance data, shift schedules, known absences (holidays, planned leave), and contextual signals such as day-of-week, seasonality, bank holidays, and major operational events",
+          "ML model: Selected a probabilistic deep learning time-series model (DeepAR, an autoregressive recurrent neural network implemented in GluonTS) to learn temporal dependencies, seasonality, and event-driven patterns across thousands of related time series",
+          "Output format: Produced a probability distribution (Student-t) for unknown absence rates, generated multiple forecast samples per site, shift, and employee category, and used the median as a stable point estimate for operational planning",
+          "Feature engineering: Extracted temporal patterns, seasonality effects, and employee-specific trends to improve forecast accuracy and robustness",
+          "Training & evaluation: Retrained the model weekly, evaluated performance using WAPE and MAE, and validated results across multiple runs to ensure robustness and consistency before deployment",
+          "Integration layer: Integrated forecasts into the workforce management platform to enable timely and automated delivery of predictions to operations teams",
+          "Monitoring: Tracked model outputs and performance metrics through a BI dashboard, enabling operations and planning teams to monitor forecast quality and adoption over time"
         ]
       },
       {
         heading: "Outcomes / Metrics",
         content: [],
         list: [
-          "Achieved an average forecasting error of ~3% across fulfillment centers, significantly outperforming the previous baseline",
-          "Reduced time spent manually preparing workforce plans",
-          "Improved staffing accuracy, leading to better delivery performance",
-          "Lowered costs associated with overstaffing and last-minute adjustments",
-          "Contributed to an estimated ~10% improvement potential, representing several million euros in savings"
+          "Improved forecast accuracy by 400 basis points",
+          "Enabled more accurate capacity planning and staffing decisions",
+          "Reduced operational costs through better resource allocation",
+          "Reduced workforce planning time through automated absence predictions and seamless platform integration",
+          "Provided foundation for additional ML-driven workforce optimization"
         ]
       },
       {
         heading: "What I'd Improve",
         content: [],
         list: [
-          "Introduce probabilistic forecasts to better represent uncertainty",
-          "Add confidence intervals directly into the planning UI",
-          "Incorporate external signals (e.g. weather, transport disruptions)",
-          "Enhance automated monitoring for drift and performance degradation",
-          "Extend explainability features for non-technical users"
+          "Incorporate additional external signals (e.g., weather, employee feedback) to improve absence predictions",
+          "Increase explainability by exposing the factors influencing each prediction to support adoption",
+          "Communicate confidence intervals to users to convey forecast uncertainty and support better risk evaluation",
+          "Expand the model to other business lines"
         ]
       }
     ]
