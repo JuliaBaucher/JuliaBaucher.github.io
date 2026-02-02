@@ -13,7 +13,6 @@ const Chatbot = ({ currentDesign = 'dark' }) => {
   const chatContainerRef = useRef(null);
 
   const MAX_CHARS = 4000;
-  // Conversation history support enabled
   const API_ENDPOINT = 'https://ip4v75ijp4.execute-api.eu-north-1.amazonaws.com/prod/chat';
   const WELCOME_MESSAGE = "Hello! I am Julia Baucher's AI assistant. Ask me about her experience, projects, or skills.";
 
@@ -107,45 +106,22 @@ const Chatbot = ({ currentDesign = 'dark' }) => {
     setIsLoading(true);
 
     try {
-      // Get recent conversation history (last 6 messages = 3 exchanges)
-      // Use messages (before current message) for conversation history
-      const recentMessages = messages.slice(-6).map(msg => ({
-        role: msg.type === 'user' ? 'user' : 'assistant',
-        content: msg.text
-      }));
-
-      console.log('=== CONVERSATION DEBUG ===');
-      console.log('Current messages array length:', messages.length);
-      console.log('Recent messages (last 6):', messages.slice(-6));
-      console.log('Mapped conversation_history:', recentMessages);
-      console.log('Sending to API:', { message: trimmedInput, conversation_history: recentMessages });
-      console.log('========================');
-
       const response = await fetch(API_ENDPOINT, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ 
-          message: trimmedInput,
-          conversation_history: recentMessages
-        })
+        body: JSON.stringify({ message: trimmedInput })
       });
-
-      console.log('Response status:', response.status);
-      console.log('Response headers:', response.headers);
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
       const data = await response.json();
-      console.log('Response data:', data);
       
       // Extract assistant response from various possible fields
       const assistantText = data.reply ?? data.response ?? data.assistant ?? data.message ?? 'Sorry, I could not process your request.';
-
-      console.log('Extracted assistant text:', assistantText);
 
       const assistantMessage = {
         id: Date.now() + 1,
