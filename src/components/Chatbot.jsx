@@ -102,13 +102,15 @@ const Chatbot = ({ currentDesign = 'dark' }) => {
     };
 
     // Optimistic UI - add user message immediately
-    setMessages(prev => [...prev, userMessage]);
+    const updatedMessages = [...messages, userMessage];
+    setMessages(updatedMessages);
     setInput('');
     setIsLoading(true);
 
     try {
       // Get recent conversation history (last 6 messages = 3 exchanges)
-      const recentMessages = messages.slice(-6).map(msg => ({
+      // Use updatedMessages instead of messages to include current conversation
+      const recentMessages = updatedMessages.slice(-6).map(msg => ({
         role: msg.type === 'user' ? 'user' : 'assistant',
         content: msg.text
       }));
