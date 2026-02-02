@@ -13,6 +13,7 @@ const Chatbot = ({ currentDesign = 'dark' }) => {
   const chatContainerRef = useRef(null);
 
   const MAX_CHARS = 4000;
+  // Conversation history support enabled
   const API_ENDPOINT = 'https://ip4v75ijp4.execute-api.eu-north-1.amazonaws.com/prod/chat';
   const WELCOME_MESSAGE = "Hello! I am Julia Baucher's AI assistant. Ask me about her experience, projects, or skills.";
 
