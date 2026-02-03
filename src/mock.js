@@ -231,7 +231,7 @@ export const education = [
 export const projectDetails = {
   "1": {
     title: "ML Model for Employee Absence Forecasting",
-    subtitle: "Feature Project — Workforce Planning & Cost Optimization",
+    subtitle: "Featured Project — Workforce Planning & Cost Optimization",
     sections: [
       {
         heading: "Problem",
@@ -313,7 +313,7 @@ export const projectDetails = {
   },
   "2": {
     title: "AI Assistant for ML Forecast Explainability",
-    subtitle: "Feature Project — AskMe Operations Support Chatbot",
+    subtitle: "Featured Project — AskMe Operations Support Chatbot",
     sections: [
       {
         heading: "Problem",
@@ -393,7 +393,7 @@ export const projectDetails = {
   },
   "3": {
     title: "MCP Multi-Agent Automation Framework",
-    subtitle: "Feature Project — AI Orchestration for Cross-Platform Operational Workflows",
+    subtitle: "Featured Project — AI Orchestration for Cross-Platform Operational Workflows",
     sections: [
       {
         heading: "Problem",
@@ -469,7 +469,7 @@ export const projectDetails = {
   },
   "4": {
     title: "Airline Web Platforms (Instant Search)",
-    subtitle: "Feature Project — High-Performance Travel Search & Conversion Engine",
+    subtitle: "Featured Project — High-Performance Travel Search & Conversion Engine",
     sections: [
       {
         heading: "Problem",
@@ -548,7 +548,7 @@ export const projectDetails = {
   },
   "6": {
     title: "Workforce Management Dashboard",
-    subtitle: "Feature Project — Real-Time Productivity Analytics & Labor Optimization",
+    subtitle: "Featured Project — Real-Time Productivity Analytics & Labor Optimization",
     sections: [
       {
         heading: "Problem",
@@ -629,7 +629,7 @@ export const projectDetails = {
   },
   "7": {
     title: "SARG (Smart Assignment of Roles & Jobs)",
-    subtitle: "Feature Project — EU Workforce Task Allocation & Compliance Platform",
+    subtitle: "Featured Project — EU Workforce Task Allocation & Compliance Platform",
     sections: [
       {
         heading: "Problem",
@@ -712,7 +712,7 @@ export const projectDetails = {
   },
   "8": {
     title: "ACES & APP Tech Partnership Framework",
-    subtitle: "Feature Project — Strategic Partnership Governance & Investment Strategy",
+    subtitle: "Featured Project — Strategic Partnership Governance & Investment Strategy",
     sections: [
       {
         heading: "Problem",
@@ -793,7 +793,7 @@ export const projectDetails = {
   },
   "5": {
     title: "Revenue Accounting & Auditing Platform",
-    subtitle: "Feature Project — Airline Financial Operations, Automation & Revenue Protection",
+    subtitle: "Featured Project — Airline Financial Operations, Automation & Revenue Protection",
     sections: [
       {
         heading: "Problem",
