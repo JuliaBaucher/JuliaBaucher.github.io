@@ -398,7 +398,7 @@ export const projectDetails = {
       {
         heading: "Problem",
         content: [
-          "Operational teams faced significant manual effort coordinating tasks across multiple platforms and systems. Workflows required context switching, manual data transfer, and repetitive decision-making, leading to inefficiencies, errors, and delayed execution."
+          "Task coordination across multiple platforms and systems required substantial manual effort. Workflows relied on context switching, manual data transfer, and repetitive decision-making, leading to inefficiencies, errors, and delayed execution."
         ]
       },
       {
