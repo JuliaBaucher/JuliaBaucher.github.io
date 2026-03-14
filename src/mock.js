@@ -345,7 +345,6 @@ export const projectDetails = {
         content: [],
         list: [
           "S3-based knowledge storage: Chosen S3 storage over a database to keep the knowledge base simple, low-cost, versioned, and auditable for document-centric content, accepting limited query flexibility and higher retrieval latency compared to database-backed solutions",
-          "Simple semantic search: Chosen a brute force semantic similarity scoring with top-K selection for rapid delivery and a strong relevance baseline, accepting scalability limits and lower precision compared to hybrid, filtered, or reranked retrieval approaches",
           "Explanation over prediction: Focused on interpreting existing ML outputs rather than building new models, maximizing adoption and trust",
           "Role-based responses: Accepted higher prompt and logic complexity to ensure each persona received actionable, relevant answers",
           "Controlled autonomy: Designed the chatbot as semi-autonomous, with explicit escalation paths to human experts to manage risk",
