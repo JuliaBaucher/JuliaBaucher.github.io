@@ -358,14 +358,16 @@ export const projectDetails = {
           "AskMe is a serverless, role-aware AI assistant integrated with internal forecasting knowledge:"
         ],
         list: [
-          "Authentication & identity: User email and role determine prompt configuration and response depth",
-          "Prompt structure: System instructions, business context (problem categories, rules, sources), and user query",
-          "Knowledge storage: Forecasting documentation and operational references stored in an S3-based knowledge base, enabling low-cost, versioned, and auditable content management",
-          "RAG pipeline: Brute-force semantic retrieval using precomputed embeddings to dynamically select the most relevant content and ground responses, reducing hallucinations",
-          "Search strategy: Cosine similarity scoring with top-K selection to balance relevance, simplicity, and performance for a controlled knowledge corpus",
-          "Application logic: Classifies question type, routes queries, and structures outputs consistently",
-          "Auditability: Logs requests, detected categories, and knowledge sources used for traceability and continuous improvement",
-          "Feedback loop: Users validate responses or escalate to experts, enabling iterative refinement of prompts, content, and retrieval logic"
+          "Authentication & identity: User role determines prompt configuration, explanation depth, and response style (Operations Manager vs Forecasting Analyst)",
+          "Prompt structure: System instructions, retrieved SOP (model-specific), relevant FAQ knowledge, ML signals, session context, and user query",
+          "Knowledge storage: SOP documents and FAQ knowledge are stored in S3 as structured JSON with embedded vectors, enabling low-cost, versioned, and auditable content management",
+          "Retrieval pipeline: Deterministic SOP retrieval based on model_type combined with brute-force semantic search over FAQ embeddings to ground responses and reduce hallucinations",
+          "Search strategy: Cosine similarity scoring with top-K FAQ selection, combined with metadata filtering for SOP, ensuring simplicity, control, and high relevance on a small knowledge base",
+          "Application logic: No routing layer; every request systematically combines SOP + FAQ + signals + session context to ensure consistent and explainable behavior",
+          "Reasoning engine: Bedrock Converse API applies SOP classification rules in priority order using retrieved signals, enforcing structured and traceable decision logic",
+          "Conversation memory: Bounded session memory (last 3–5 turns) stored in DynamoDB, enabling follow-up questions while preventing reliance on stale context",
+          "Auditability: Full trace logging of inputs, retrieved knowledge (SOP, FAQ, signals), and outputs for transparency and debugging",
+          "Feedback loop: Users provide like/dislike feedback or escalate to human experts, enabling continuous improvement of prompts, knowledge content, and retrieval quality"
         ]
       },
       {
