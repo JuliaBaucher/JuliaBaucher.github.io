@@ -18,7 +18,9 @@ const Projects = ({ currentDesign = 'dark' }) => {
   
   const filteredProjects = selectedCategory === 'All'
     ? projects 
-    : projects.filter(project => project.category === selectedCategory);
+    : projects.filter(project => 
+        (project.categories || [project.category]).includes(selectedCategory)
+      );
 
   const sectionClasses = `py-20 ${
     isDark ? 'bg-gray-950' : 'bg-gray-50'
