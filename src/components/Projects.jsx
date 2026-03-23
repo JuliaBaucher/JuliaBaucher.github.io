@@ -117,6 +117,18 @@ const Projects = ({ currentDesign = 'dark' }) => {
                     }`}>
                       {project.category}
                     </Badge>
+                    {project.categories && project.categories.length > 1 && project.categories
+                      .filter(cat => cat !== project.category)
+                      .map(cat => (
+                        <Badge key={cat} variant="secondary" className={`mb-3 ml-1 ${
+                          isDark 
+                            ? 'bg-gray-800 text-gray-300' 
+                            : 'bg-gray-100 text-gray-700'
+                        }`}>
+                          {cat}
+                        </Badge>
+                      ))
+                    }
                   </div>
                 </div>
               </CardHeader>
